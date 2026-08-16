@@ -14,6 +14,10 @@ config/name="Hindsight"
 run/main_scene="uid://bsmdyuo384i4t"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
+[autoload]
+
+SceneStateGlobal="*uid://jkkxhebkg8rk"
+
 [display]
 
 window/size/viewport_width=1920

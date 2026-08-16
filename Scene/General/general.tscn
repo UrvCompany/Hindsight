@@ -21,6 +21,7 @@ texture = ExtResource("2_kkjod")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1933379268]
 script = ExtResource("1_tnxl6")
+castle_interior_scene_path = "uid://cr8afvd0y8lek"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1785810922]
 visible = false

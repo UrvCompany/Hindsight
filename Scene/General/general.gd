@@ -3,7 +3,7 @@ extends Area2D
 @onready var outline = $"../Outline"
 
 # Сцена интерьера замка
-@export_file("*.tscn") var catle_interior_scene_path: String
+@export_file("*.tscn") var castle_interior_scene_path: String
 
 func _on_mouse_entered() -> void:
 	outline.show()
@@ -20,9 +20,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func interact() -> void:
-	print("general clicked!")
-	if catle_interior_scene_path.is_empty():
-		print("pidor")
+	if castle_interior_scene_path.is_empty():
 		return
-	get_tree().change_scene_to_file(catle_interior_scene_path)
+	get_tree().change_scene_to_file(castle_interior_scene_path)
 	

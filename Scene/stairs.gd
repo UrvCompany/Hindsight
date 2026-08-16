@@ -1,13 +1,20 @@
 extends Area2D
 
-@onready var stairs_outline = $Stairs_outline
+@onready var exit_outline = $Stairs_outline
+@export_file("*.tscn") var general_scene_path: String
+
+
 
 func _on_mouse_entered() -> void:
-	stairs_outline.show()
+	if general_scene_path.is_empty():
+		return
+	exit_outline.show()
 
 
 func _on_mouse_exited() -> void:
-	stairs_outline.hide()
+	if general_scene_path.is_empty():
+		return
+	exit_outline.hide()
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -17,4 +24,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func interact() -> void:
-	print("stairs clicked!")
+	if general_scene_path.is_empty():
+		return
+	get_tree().change_scene_to_file(general_scene_path)
+	

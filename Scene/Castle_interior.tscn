@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cr8afvd0y8lek"]
+
+[ext_resource type="Texture2D" uid="uid://bl2f4amomux1l" path="res://castle_courtyard_stairs_reversed.png" id="1_m1e7t"]
+[ext_resource type="Script" uid="uid://bhyy6mvmgppl1" path="res://Scene/stairs.gd" id="2_nw1ot"]
+[ext_resource type="Texture2D" uid="uid://ccb7n6jx5btki" path="res://Scene/General/Stairs.png" id="3_nw1ot"]
+[ext_resource type="Script" uid="uid://5u610yq0aup1" path="res://Scene/exit.gd" id="4_2gxig"]
+[ext_resource type="Texture2D" uid="uid://by4s7r4co1610" path="res://Scene/General/exit.png" id="4_cah6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_guk64"]
+size = Vector2(454, 1191)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brsih"]
+size = Vector2(388, 605.25)
+
+[node name="CastleInterior" type="Node2D" unique_id=1758114385]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1529196207]
+position = Vector2(976, 699)
+scale = Vector2(0.71, 0.71)
+texture = ExtResource("1_m1e7t")
+
+[node name="Stairs" type="Area2D" parent="." unique_id=1810935009]
+script = ExtResource("2_nw1ot")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Stairs" unique_id=170464396]
+position = Vector2(217, 783.5)
+shape = SubResource("RectangleShape2D_guk64")
+
+[node name="Stairs_outline" type="Sprite2D" parent="Stairs" unique_id=1717523994]
+position = Vector2(211, 816)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_nw1ot")
+
+[node name="Exit" type="Area2D" parent="." unique_id=737333331]
+script = ExtResource("4_2gxig")
+
+[node name="Exit_outline" type="Sprite2D" parent="Exit" unique_id=110247228]
+position = Vector2(960.99994, 513)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_cah6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1645247508]
+position = Vector2(964, 502)
+shape = SubResource("RectangleShape2D_brsih")
+
+[connection signal="input_event" from="Stairs" to="Stairs" method="_on_input_event"]
+[connection signal="mouse_entered" from="Stairs" to="Stairs" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Stairs" to="Stairs" method="_on_mouse_exited"]
+[connection signal="input_event" from="Exit" to="Stairs" method="_on_exit_input_event"]
+[connection signal="mouse_entered" from="Exit" to="Stairs" method="_on_exit_mouse_entered"]
+[connection signal="mouse_exited" from="Exit" to="Stairs" method="_on_exit_mouse_exited"]

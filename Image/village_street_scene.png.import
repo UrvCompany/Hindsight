@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt8qr6oca37c0"
-path="res://.godot/imported/castle_town_fields_landscape_v2.png-23bedb70a79d292ee4ec224075e87427.ctex"
+uid="uid://ddetvbhvtsril"
+path="res://.godot/imported/village_street_scene.png-c2d112e37ffd17b3b742a4fb17a46753.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://castle_town_fields_landscape_v2.png"
-dest_files=["res://.godot/imported/castle_town_fields_landscape_v2.png-23bedb70a79d292ee4ec224075e87427.ctex"]
+source_file="res://Image/village_street_scene.png"
+dest_files=["res://.godot/imported/village_street_scene.png-c2d112e37ffd17b3b742a4fb17a46753.ctex"]
 
 [params]
 

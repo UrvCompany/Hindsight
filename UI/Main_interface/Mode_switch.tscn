@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://qtk6m4wutd7s"]
+
+[ext_resource type="Script" uid="uid://cdir07ygj8pin" path="res://UI/Main_interface/mode_switch.gd" id="1_2sd5k"]
+[ext_resource type="Texture2D" uid="uid://b3qs6kmrq6h5w" path="res://Image/words_bar.png" id="1_resle"]
+[ext_resource type="Texture2D" uid="uid://by4tmsf0wluhi" path="res://Image/arrow.png" id="2_if25o"]
+
+[node name="ModeSwitch" type="Node2D" unique_id=1512219395]
+script = ExtResource("1_2sd5k")
+thinking_scene_path = "uid://cmf8wotu3xhud"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=841878405]
+
+[node name="Words_bar_background" type="Sprite2D" parent="Area2D" unique_id=1476645071]
+position = Vector2(960, 771)
+scale = Vector2(0.20857377, 0.71052635)
+texture = ExtResource("1_resle")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D/Words_bar_background" unique_id=1985000144]
+
+[node name="Notes" type="Label" parent="Area2D/Words_bar_background/CanvasLayer" unique_id=1200600834]
+offset_left = 905.0
+offset_top = 714.00006
+offset_right = 1034.0
+offset_bottom = 766.00006
+text = "Notes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Area2D/Words_bar_background/CanvasLayer" unique_id=363640681]
+top_level = true
+offset_left = 709.0
+offset_top = 695.0
+offset_right = 1213.0
+offset_bottom = 849.0
+
+[node name="Thinking" type="Label" parent="Area2D/Words_bar_background/CanvasLayer" unique_id=363484183]
+offset_left = 1003.0
+offset_top = 775.0
+offset_right = 1132.0
+offset_bottom = 827.0
+text = "Thinking"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exploration" type="Label" parent="Area2D/Words_bar_background/CanvasLayer" unique_id=1320483171]
+offset_left = 806.0
+offset_top = 774.00006
+offset_right = 935.0
+offset_bottom = 826.00006
+text = "Exploration"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pivo" type="Sprite2D" parent="." unique_id=770146262]
+position = Vector2(970.99994, 782.00006)
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="arrow" type="Sprite2D" parent="Pivo" unique_id=982516296]
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("2_if25o")
+
+[connection signal="pressed" from="Area2D/Words_bar_background/CanvasLayer/Button" to="." method="_on_button_pressed"]

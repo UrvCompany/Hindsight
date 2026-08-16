@@ -13,7 +13,6 @@ config_version=5
 config/name="Hindsight"
 run/main_scene="uid://bsmdyuo384i4t"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 

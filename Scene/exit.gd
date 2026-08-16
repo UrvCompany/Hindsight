@@ -1,6 +1,9 @@
 extends Area2D
 
 @onready var exit_outline = $Exit_outline
+@export_file("res://Scene/General/general.tscn") var general_scene_path: String
+
+
 
 func _on_mouse_entered() -> void:
 	exit_outline.show()
@@ -18,3 +21,8 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func interact() -> void:
 	print("exit clicked!")
+	if general_scene_path.is_empty():
+		print("pidor")
+		return
+	get_tree().change_scene_to_file(general_scene_path)
+	

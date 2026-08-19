@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ducbga514ugqt"]
+
+[ext_resource type="Texture2D" uid="uid://cipy5v1as7hdg" path="res://Image/Scenes/castle_wall_walkway_view_v3.png" id="1_mtms1"]
+[ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="2_bnqeu"]
+[ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_cgynt"]
+[ext_resource type="Script" uid="uid://dfoxm5sl2er2a" path="res://Scene/Castle_wall/wall_stairs.gd" id="4_ylh8k"]
+[ext_resource type="Texture2D" uid="uid://ccb7n6jx5btki" path="res://Image/Scenes/Stairs.png" id="5_cfooh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aioa1"]
+radius = 87.0
+height = 270.0
+
+[node name="CastleWall" type="Node2D" unique_id=214649509]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1861742231]
+position = Vector2(979, 749)
+scale = Vector2(0.71, 0.71)
+texture = ExtResource("1_mtms1")
+
+[node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("2_bnqeu")]
+top_level = true
+
+[node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_cgynt")]
+
+[node name="WallStairs" type="Area2D" parent="." unique_id=783365790]
+script = ExtResource("4_ylh8k")
+castle_interior_scene_path = "uid://cr8afvd0y8lek"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallStairs" unique_id=392954023]
+top_level = true
+position = Vector2(63, 711)
+shape = SubResource("CapsuleShape2D_aioa1")
+
+[node name="WallStairs" type="Sprite2D" parent="WallStairs" unique_id=1933074552]
+position = Vector2(223, 1196)
+scale = Vector2(0.71, 0.71)
+texture = ExtResource("5_cfooh")
+
+[node name="WallStairsOutline" type="Sprite2D" parent="WallStairs" unique_id=777623526]
+position = Vector2(285, 1344.0001)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_cfooh")
+
+[connection signal="input_event" from="WallStairs" to="WallStairs" method="_on_input_event"]
+[connection signal="mouse_entered" from="WallStairs" to="WallStairs" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WallStairs" to="WallStairs" method="_on_mouse_exited"]

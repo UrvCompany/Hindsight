@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccb7n6jx5btki"
-path="res://.godot/imported/Stairs.png-a0d87fe35d3ded3944f7d3a3ab5ab7fa.ctex"
+uid="uid://be18bfac08l7e"
+path="res://.godot/imported/book_2.png-9c68b5a80c87afd9485637b8fd865ee7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scene/General/Stairs.png"
-dest_files=["res://.godot/imported/Stairs.png-a0d87fe35d3ded3944f7d3a3ab5ab7fa.ctex"]
+source_file="res://Image/Notes_screen/book_2.png"
+dest_files=["res://.godot/imported/book_2.png-9c68b5a80c87afd9485637b8fd865ee7.ctex"]
 
 [params]
 

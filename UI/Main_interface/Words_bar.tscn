@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cyhibh2uwf6gh"]
 
-[ext_resource type="Texture2D" uid="uid://b3qs6kmrq6h5w" path="res://Image/words_bar.png" id="1_8e5ya"]
+[ext_resource type="Texture2D" uid="uid://b3qs6kmrq6h5w" path="res://Image/Words_bar/words_bar.png" id="1_8e5ya"]
 
-[node name="WordsBor" type="Node2D" unique_id=1936151921]
+[node name="WordsBar" type="Node2D" unique_id=1936151921]
 
 [node name="Words_bar_background" type="Sprite2D" parent="." unique_id=1600646945]
 position = Vector2(959.5, 966)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cipy5v1as7hdg"
-path="res://.godot/imported/castle_wall_walkway_view_v3.png-4d5ed3d9e08b1b9cdac793233450a869.ctex"
+uid="uid://dt8qr6oca37c0"
+path="res://.godot/imported/castle_town_fields_landscape_v2.png-555c7ec123d909cc5aa55ee045bebfa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/castle_wall_walkway_view_v3.png"
-dest_files=["res://.godot/imported/castle_wall_walkway_view_v3.png-4d5ed3d9e08b1b9cdac793233450a869.ctex"]
+source_file="res://Image/Scenes/castle_town_fields_landscape_v2.png"
+dest_files=["res://.godot/imported/castle_town_fields_landscape_v2.png-555c7ec123d909cc5aa55ee045bebfa2.ctex"]
 
 [params]
 

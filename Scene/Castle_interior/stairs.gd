@@ -18,13 +18,16 @@ func _on_mouse_exited() -> void:
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			interact()
 
 
 func interact() -> void:
+	
 	if general_scene_path.is_empty():
 		return
+	
 	get_tree().change_scene_to_file(general_scene_path)
 	

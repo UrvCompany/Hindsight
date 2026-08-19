@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bsmdyuo384i4t"]
 
-[ext_resource type="Texture2D" uid="uid://dt8qr6oca37c0" path="res://Image/castle_town_fields_landscape_v2.png" id="1_gvch0"]
+[ext_resource type="Texture2D" uid="uid://dt8qr6oca37c0" path="res://Image/Scenes/castle_town_fields_landscape_v2.png" id="1_gvch0"]
 [ext_resource type="Script" uid="uid://brw2o3n38vpbx" path="res://Scene/General/general.gd" id="1_tnxl6"]
-[ext_resource type="Texture2D" uid="uid://bxe0sia2ofum5" path="res://Image/castle.png" id="2_kkjod"]
+[ext_resource type="Texture2D" uid="uid://bxe0sia2ofum5" path="res://Image/Scenes/castle.png" id="2_kkjod"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="4_i7tvd"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="5_lgp12"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddetvbhvtsril"
-path="res://.godot/imported/village_street_scene.png-c2d112e37ffd17b3b742a4fb17a46753.ctex"
+uid="uid://xkru2rv4cxwp"
+path="res://.godot/imported/book_spread.png-3778cca9cd2d7bce082da00ede104e97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/village_street_scene.png"
-dest_files=["res://.godot/imported/village_street_scene.png-c2d112e37ffd17b3b742a4fb17a46753.ctex"]
+source_file="res://Image/Notes_screen/book_spread.png"
+dest_files=["res://.godot/imported/book_spread.png-3778cca9cd2d7bce082da00ede104e97.ctex"]
 
 [params]
 

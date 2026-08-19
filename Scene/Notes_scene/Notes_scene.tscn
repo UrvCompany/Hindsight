@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bbhy3063aqlpf"]
+
+[ext_resource type="Texture2D" uid="uid://dwm0g7mu54lq" path="res://Image/Notes_screen/bookshelf.png" id="1_83vbs"]
+[ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="2_4hdi0"]
+[ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_w66vj"]
+[ext_resource type="Script" uid="uid://xw0v0x01pi01" path="res://Scene/Notes_scene/Notes_scene.gd" id="4_notes"]
+[ext_resource type="Texture2D" uid="uid://3kgapl2tccis" path="res://Image/Notes_screen/book_1.png" id="5_book1"]
+[ext_resource type="Texture2D" uid="uid://be18bfac08l7e" path="res://Image/Notes_screen/book_2.png" id="6_book2"]
+[ext_resource type="Texture2D" uid="uid://cjbae7sggt16m" path="res://Image/Notes_screen/book_3.png" id="7_book3"]
+[ext_resource type="Texture2D" uid="uid://co51hp78iibpk" path="res://Image/Notes_screen/book_4.png" id="8_book4"]
+[ext_resource type="Texture2D" uid="uid://djychg56a186" path="res://Image/Notes_screen/book_5.png" id="9_book5"]
+[ext_resource type="Texture2D" uid="uid://xkru2rv4cxwp" path="res://Image/Notes_screen/book_spread.png" id="10_spread"]
+
+[node name="NotesScene" type="Node2D" unique_id=1221154652]
+script = ExtResource("4_notes")
+book_textures = Array[Texture2D]([ExtResource("5_book1"), ExtResource("6_book2"), ExtResource("7_book3"), ExtResource("8_book4"), ExtResource("9_book5")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=113573710]
+position = Vector2(963.99994, 631)
+scale = Vector2(1.2838541, 1.2451172)
+texture = ExtResource("1_83vbs")
+
+[node name="BooksContainer" type="Node2D" parent="."]
+
+[node name="Reader" type="Area2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="Sprite2D" parent="Reader"]
+texture = ExtResource("10_spread")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reader"]
+
+[node name="WordsBar" parent="." unique_id=1936151921 instance=ExtResource("2_4hdi0")]
+
+[node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_w66vj")]
+
+[connection signal="input_event" from="Reader" to="." method="_on_reader_input_event"]

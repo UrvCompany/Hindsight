@@ -20,7 +20,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func interact() -> void:
+	
 	if general_scene_path.is_empty():
 		return
+		
 	get_tree().change_scene_to_file(general_scene_path)
 	

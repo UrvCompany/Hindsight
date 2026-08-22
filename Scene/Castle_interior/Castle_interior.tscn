@@ -7,12 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://by4s7r4co1610" path="res://Image/Scenes/exit.png" id="4_cah6m"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="6_ongvb"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="7_t2svq"]
+[ext_resource type="Script" uid="uid://dn8y6apnshtpu" path="res://Scene/Castle_interior/castle_interior_second_entrance.gd" id="8_ci2nd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guk64"]
 size = Vector2(454, 1191)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brsih"]
-size = Vector2(388, 605.25)
+size = Vector2(388, 482.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci2nd"]
+size = Vector2(295, 631)
 
 [node name="CastleInterior" type="Node2D" unique_id=1758114385]
 
@@ -44,12 +48,20 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_cah6m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1645247508]
-position = Vector2(964, 502)
+position = Vector2(964, 440.6875)
 shape = SubResource("RectangleShape2D_brsih")
 
 [node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("6_ongvb")]
 
 [node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("7_t2svq")]
+
+[node name="CastleInteriorSecondScene" type="Area2D" parent="." unique_id=861219022]
+position = Vector2(1711, 645)
+script = ExtResource("8_ci2nd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CastleInteriorSecondScene" unique_id=10409549]
+position = Vector2(57.5, -115.5)
+shape = SubResource("RectangleShape2D_ci2nd")
 
 [connection signal="input_event" from="Stairs" to="Stairs" method="_on_input_event"]
 [connection signal="mouse_entered" from="Stairs" to="Stairs" method="_on_mouse_entered"]
@@ -57,3 +69,6 @@ shape = SubResource("RectangleShape2D_brsih")
 [connection signal="input_event" from="Exit" to="Exit" method="_on_input_event"]
 [connection signal="mouse_entered" from="Exit" to="Exit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Exit" to="Exit" method="_on_mouse_exited"]
+[connection signal="input_event" from="CastleInteriorSecondScene" to="CastleInteriorSecondScene" method="_on_input_event"]
+[connection signal="mouse_entered" from="CastleInteriorSecondScene" to="CastleInteriorSecondScene" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CastleInteriorSecondScene" to="CastleInteriorSecondScene" method="_on_mouse_exited"]

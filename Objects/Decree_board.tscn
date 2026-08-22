@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://qx1r7s6xr3pv"]
+
+[ext_resource type="Texture2D" uid="uid://bbkotr827yi1x" path="res://Image/Objects/Decree_board.png" id="1_pn2ss"]
+[ext_resource type="Script" path="res://Objects/decree_board.gd" id="2_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqsbf"]
+size = Vector2(806, 1066)
+
+[node name="DecreeBoard" type="Area2D" unique_id=951285973]
+rotation = 0.30194196
+scale = Vector2(0.25, 0.25)
+skew = -0.3403392
+script = ExtResource("2_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2122745894]
+texture = ExtResource("1_pn2ss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=593629618]
+position = Vector2(-7, 14)
+shape = SubResource("RectangleShape2D_lqsbf")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

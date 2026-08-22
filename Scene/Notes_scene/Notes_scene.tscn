@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cjbae7sggt16m" path="res://Image/Notes_screen/book_3.png" id="7_book3"]
 [ext_resource type="Texture2D" uid="uid://co51hp78iibpk" path="res://Image/Notes_screen/book_4.png" id="8_book4"]
 [ext_resource type="Texture2D" uid="uid://djychg56a186" path="res://Image/Notes_screen/book_5.png" id="9_book5"]
-[ext_resource type="Texture2D" uid="uid://xkru2rv4cxwp" path="res://Image/Notes_screen/book_spread.png" id="10_spread"]
 
 [node name="NotesScene" type="Node2D" unique_id=1221154652]
 script = ExtResource("4_notes")
@@ -20,19 +19,8 @@ position = Vector2(963.99994, 631)
 scale = Vector2(1.2838541, 1.2451172)
 texture = ExtResource("1_83vbs")
 
-[node name="BooksContainer" type="Node2D" parent="."]
-
-[node name="Reader" type="Area2D" parent="."]
-position = Vector2(960, 540)
-scale = Vector2(0.9, 0.9)
-
-[node name="Sprite2D" type="Sprite2D" parent="Reader"]
-texture = ExtResource("10_spread")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Reader"]
+[node name="BooksContainer" type="Node2D" parent="." unique_id=2143359029]
 
 [node name="WordsBar" parent="." unique_id=1936151921 instance=ExtResource("2_4hdi0")]
 
 [node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_w66vj")]
-
-[connection signal="input_event" from="Reader" to="." method="_on_reader_input_event"]

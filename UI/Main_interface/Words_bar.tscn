@@ -1,10 +1,68 @@
 [gd_scene format=3 uid="uid://cyhibh2uwf6gh"]
 
 [ext_resource type="Texture2D" uid="uid://b3qs6kmrq6h5w" path="res://Image/Words_bar/words_bar.png" id="1_8e5ya"]
+[ext_resource type="PackedScene" uid="uid://c6ek2h82noovt" path="res://UI/Main_interface/words.tscn" id="2_foe3s"]
+[ext_resource type="Script" path="res://UI/Main_interface/words_bar.gd" id="3_wbscript"]
 
-[node name="WordsBar" type="Node2D" unique_id=1936151921]
+[node name="WordsBar" type="CanvasLayer" unique_id=1936151921]
+layer = 10
+script = ExtResource("3_wbscript")
 
 [node name="Words_bar_background" type="Sprite2D" parent="." unique_id=1600646945]
 position = Vector2(959.5, 966)
 scale = Vector2(0.791014, 1)
 texture = ExtResource("1_8e5ya")
+
+[node name="Slot1" parent="." unique_id=147135466 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(10, 878)
+
+[node name="Slot2" parent="." unique_id=774793037 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(327, 878)
+
+[node name="Slot3" parent="." unique_id=1299459292 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(644, 878)
+
+[node name="Slot4" parent="." unique_id=1879297213 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(961, 878)
+
+[node name="Slot5" parent="." unique_id=1479292324 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(1278, 878)
+
+[node name="Slot6" parent="." unique_id=1810302695 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(1595, 878)
+
+[node name="Slot7" parent="." unique_id=631725576 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(10, 938)
+
+[node name="Slot8" parent="." unique_id=1870635571 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(327, 938)
+
+[node name="Slot9" parent="." unique_id=23407141 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(644, 938)
+
+[node name="Slot10" parent="." unique_id=353148806 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(961, 938)
+
+[node name="Slot11" parent="." unique_id=1779539386 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(1278, 938)
+
+[node name="Slot12" parent="." unique_id=946242681 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(1595, 938)
+
+[node name="Slot13" parent="." unique_id=79859350 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(10, 998)
+
+[node name="Slot14" parent="." unique_id=983812754 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(327, 998)
+
+[node name="Slot15" parent="." unique_id=170679944 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(644, 998)
+
+[node name="Slot16" parent="." unique_id=477840312 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(961, 998)
+
+[node name="Slot17" parent="." unique_id=341357256 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(1278, 998)
+
+[node name="Slot18" parent="." unique_id=1288639789 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
+position = Vector2(1595, 998)

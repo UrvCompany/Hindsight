@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b1shgqsq1e6cq"]
+
+[ext_resource type="Texture2D" uid="uid://xkru2rv4cxwp" path="res://Image/Notes_screen/book_spread.png" id="1_spread"]
+[ext_resource type="Script" uid="uid://xeqkpny8q3p8" path="res://Scene/Notes_scene/book_spread.gd" id="2_script"]
+
+[node name="BookSpread" type="Control" unique_id=122996101]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 960.0
+offset_bottom = 540.0
+scale = Vector2(0.9, 0.9)
+script = ExtResource("2_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=712575431]
+layout_mode = 0
+offset_left = -768.0
+offset_top = -512.0
+offset_right = 768.0
+offset_bottom = 512.0
+mouse_filter = 0
+texture = ExtResource("1_spread")
+
+[node name="Paragraph1" type="RichTextLabel" parent="." unique_id=535362338]
+layout_mode = 0
+offset_left = -541.1111
+offset_top = -420.00003
+offset_right = -36.666626
+offset_bottom = -254.44443
+theme_override_colors/default_color = Color(0.15, 0.1, 0.08, 1)
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Замок короля превосходил все самые дерзкие представления того времени. Высота стен достигала [u][url=6 м]6 м[/url][/u]."
+fit_content = true
+scroll_active = false
+
+[node name="Paragraph2" type="RichTextLabel" parent="." unique_id=2120379191]
+layout_mode = 0
+offset_left = -541.1111
+offset_top = -230.0
+offset_right = -36.666626
+offset_bottom = -60.0
+theme_override_colors/default_color = Color(0.15, 0.1, 0.08, 1)
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Сточные воды из замка направлялись прямиком в [u][url=ров]ров[/url][/u] перед его стенами, который имел глубину [u][url=10 м]10 м[/url][/u]."
+fit_content = true
+scroll_active = false
+
+[connection signal="meta_clicked" from="Paragraph1" to="." method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="Paragraph2" to="." method="_on_meta_clicked"]

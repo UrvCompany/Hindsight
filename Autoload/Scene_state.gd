@@ -11,3 +11,4 @@ var current_degre: int = 0
 var current_scene: String
 var current_level: int = 0
 var books_per_level: Array[int] = [4]
+var collected_words: Array[String] = []

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ce78pn1q113fn"]
+
+[ext_resource type="Texture2D" uid="uid://dby130bom3h1y" path="res://Image/Scenes/Castle_interior_second.png" id="1_tvm07"]
+[ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="2_evmnk"]
+[ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="3_mp8c2"]
+[ext_resource type="Script" uid="uid://dn8y6apnshtpu" path="res://Scene/Castle_interior/castle_interior_second_entrance.gd" id="4_backexit"]
+[ext_resource type="Texture2D" uid="uid://du7fscr2wmnk2" path="res://Image/Arrow/cursor_left.png" id="5_cursorleft"]
+[ext_resource type="PackedScene" uid="uid://qx1r7s6xr3pv" path="res://Objects/Decree_board.tscn" id="6_iao5d"]
+[ext_resource type="Script" uid="uid://cf74xc2qyx6bs" path="res://Scene/Castle_interior/Castle_interior_second.gd" id="7_ci2script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_backexit"]
+size = Vector2(315, 636)
+
+[node name="CastleInteriorSecond" type="Node2D" unique_id=1439195218]
+script = ExtResource("7_ci2script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=863109951]
+position = Vector2(959, 536.75)
+scale = Vector2(1.1447369, 1.1333687)
+texture = ExtResource("1_tvm07")
+
+[node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("2_evmnk")]
+
+[node name="WordsBar" parent="." unique_id=1936151921 instance=ExtResource("3_mp8c2")]
+
+[node name="BackToCastleInterior" type="Area2D" parent="." unique_id=493529730]
+position = Vector2(75, 540)
+script = ExtResource("4_backexit")
+target_scene_path = "res://Scene/Castle_interior/Castle_interior.tscn"
+cursor_texture = ExtResource("5_cursorleft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackToCastleInterior" unique_id=1892031375]
+position = Vector2(82.5, -3)
+shape = SubResource("RectangleShape2D_backexit")
+
+[node name="DecreeBoard" parent="." unique_id=951285973 instance=ExtResource("6_iao5d")]
+position = Vector2(1780.0001, 459.00003)
+
+[connection signal="input_event" from="BackToCastleInterior" to="BackToCastleInterior" method="_on_input_event"]
+[connection signal="mouse_entered" from="BackToCastleInterior" to="BackToCastleInterior" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BackToCastleInterior" to="BackToCastleInterior" method="_on_mouse_exited"]

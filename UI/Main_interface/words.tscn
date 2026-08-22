@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c6ek2h82noovt"]
+
+[ext_resource type="Texture2D" uid="uid://cr7sr3iqrkxo" path="res://Image/Thinking_screen/Frame_D-Marble_01-256x256.png" id="1_k4kt7"]
+
+[node name="Marker2D" type="Marker2D" unique_id=147135466]
+
+[node name="FrameDMarble01256x256" type="Sprite2D" parent="." unique_id=1295013773]
+position = Vector2(155, 27)
+scale = Vector2(1.2031249, 0.21191406)
+texture = ExtResource("1_k4kt7")
+
+[node name="Label" type="Label" parent="." unique_id=1606631710]
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 270.0
+offset_bottom = 41.750004
+offset_transform_enabled = true
+text = "Вертикальный трубопровод"
+horizontal_alignment = 1
+vertical_alignment = 1

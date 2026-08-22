@@ -7,6 +7,11 @@ func _ready():
 	$Pivo.rotation_degrees = SceneStateGlobal.current_degre
 
 
+func set_ui_visible(value: bool) -> void:
+	visible = value
+	$Area2D/Words_bar_background/CanvasLayer.visible = value
+
+
 func _on_button_pressed() -> void:
 
 	var previous_state := SceneStateGlobal.current_state

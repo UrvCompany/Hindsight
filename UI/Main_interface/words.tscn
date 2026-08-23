@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://c6ek2h82noovt"]
 
 [ext_resource type="Texture2D" uid="uid://cr7sr3iqrkxo" path="res://Image/Thinking_screen/Frame_D-Marble_01-256x256.png" id="1_k4kt7"]
+[ext_resource type="Script" uid="uid://cxh3n8hq3q267" path="res://UI/Main_interface/button.gd" id="2_stwws"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivp42"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ohjme"]
 
 [node name="Marker2D" type="Marker2D" unique_id=147135466]
 
@@ -15,6 +20,12 @@ offset_top = 10.0
 offset_right = 270.0
 offset_bottom = 41.750004
 offset_transform_enabled = true
-text = "Вертикальный трубопровод"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1540128445]
+offset_right = 309.0
+offset_bottom = 55.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ivp42")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ohjme")
+script = ExtResource("2_stwws")

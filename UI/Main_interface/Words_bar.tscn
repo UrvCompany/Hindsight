@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b3qs6kmrq6h5w" path="res://Image/Words_bar/words_bar.png" id="1_8e5ya"]
 [ext_resource type="PackedScene" uid="uid://c6ek2h82noovt" path="res://UI/Main_interface/words.tscn" id="2_foe3s"]
-[ext_resource type="Script" path="res://UI/Main_interface/words_bar.gd" id="3_wbscript"]
+[ext_resource type="Script" uid="uid://cjdy64e7myemb" path="res://UI/Main_interface/words_bar.gd" id="3_wbscript"]
 
 [node name="WordsBar" type="CanvasLayer" unique_id=1936151921]
 layer = 10

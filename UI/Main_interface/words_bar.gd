@@ -30,10 +30,11 @@ func add_word(word: String) -> void:
 func set_words(words: Array[String]) -> void:
 	for i in slots.size():
 		var slot := slots[i]
-		var label := slot.get_node("Label") as Label
+		var button := slot.get_node("Button") as Button
+		
 		if i < words.size():
-			label.text = words[i]
+			button.text = words[i]
 			slot.visible = true
 		else:
-			label.text = ""
+			button.text = ""
 			slot.visible = false

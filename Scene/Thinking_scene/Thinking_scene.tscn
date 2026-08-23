@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bxk7umi4l46m1" path="res://Image/Thinking_screen/thinking_scene_bg.png" id="1_ojq03"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="2_chm0u"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="3_wkqcv"]
+[ext_resource type="PackedScene" uid="uid://c5y8axgdikmsb" path="res://Scene/Thinking_scene/Basic_plan.tscn" id="4_ejado"]
 
 [node name="ThinkingScene" type="Node2D" unique_id=453553026]
 
@@ -13,3 +14,6 @@ texture = ExtResource("1_ojq03")
 [node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("2_chm0u")]
 
 [node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("3_wkqcv")]
+
+[node name="Area2D" parent="." unique_id=607557947 instance=ExtResource("4_ejado")]
+position = Vector2(339, 466)

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c5y8axgdikmsb"]
+
+[ext_resource type="Script" uid="uid://c3da03fouo5mx" path="res://Scene/Thinking_scene/basic_plan.gd" id="1_0oprb"]
+[ext_resource type="Texture2D" uid="uid://bymox0y5ys1fe" path="res://Image/Scenes/old_paper.jpg" id="1_6gh1r"]
+[ext_resource type="Script" uid="uid://c5sqg0gwvdx5e" path="res://Scene/Thinking_scene/basic_plane_rich_text.gd" id="3_8i3ep"]
+[ext_resource type="Script" uid="uid://bjtepd6bqnt8g" path="res://Scene/Thinking_scene/WordDropSlot.gd" id="3_ywbi7"]
+[ext_resource type="Texture2D" uid="uid://bdnexs45q8u3k" path="res://Image/Scenes/old_paper_LOH.jpg" id="5_gcx3s"]
+
+[node name="Bumazhka" type="Area2D" unique_id=607557947]
+script = ExtResource("1_0oprb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1693362331]
+position = Vector2(0, -44.99999)
+scale = Vector2(0.8277717, 0.7028986)
+texture = ExtResource("1_6gh1r")
+
+[node name="Basic_plane_rich_text" type="RichTextLabel" parent="." unique_id=1255976325]
+offset_left = -278.0
+offset_top = -394.0
+offset_right = 397.30695
+offset_bottom = 599.0308
+text = "	План короля по обороне замка следующий:
+	1) Выкопать _____ глубиной ________
+	2) Заполнить его ______
+	3) Запустить в него ______
+	4) Отправить ____ армии/ию на патрулирование _____"
+script = ExtResource("3_8i3ep")
+
+[node name="Slot1" type="Button" parent="." unique_id=331257737]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("3_ywbi7")
+
+[node name="LOH" type="Sprite2D" parent="." unique_id=842009086]
+position = Vector2(0, -45)
+scale = Vector2(0.828, 0.703)
+texture = ExtResource("5_gcx3s")

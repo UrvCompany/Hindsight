@@ -4,7 +4,8 @@ extends Node2D
 
 
 func _ready():
-	$Pivo.rotation_degrees = SceneStateGlobal.current_degre
+	#$Pivo.rotation_degrees = SceneStateGlobal.current_degre
+	pass
 
 
 func set_ui_visible(value: bool) -> void:
@@ -14,7 +15,7 @@ func set_ui_visible(value: bool) -> void:
 
 func _on_button_pressed() -> void:
 
-	var previous_state := SceneStateGlobal.current_state
+	var previous_state = SceneStateGlobal.current_state
 
 	SceneStateGlobal.current_state = (SceneStateGlobal.current_state + 1) % 3
 	SceneStateGlobal.current_degre = (SceneStateGlobal.current_degre + 120) % 360
@@ -22,7 +23,7 @@ func _on_button_pressed() -> void:
 	if previous_state == SceneStateGlobal.State.EXPLORATION:
 		SceneStateGlobal.current_scene = get_tree().get_current_scene().scene_file_path
 
-	$Pivo.rotation_degrees = SceneStateGlobal.current_degre
+	#$Pivo.rotation_degrees = SceneStateGlobal.current_degre
 
 	match SceneStateGlobal.current_state:
 		SceneStateGlobal.State.THINKING:

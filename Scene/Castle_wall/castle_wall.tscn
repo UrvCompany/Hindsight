@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_cgynt"]
 [ext_resource type="Script" uid="uid://dfoxm5sl2er2a" path="res://Scene/Castle_wall/wall_stairs.gd" id="4_ylh8k"]
 [ext_resource type="Texture2D" uid="uid://ccb7n6jx5btki" path="res://Image/Scenes/Stairs.png" id="5_cfooh"]
+[ext_resource type="Texture2D" uid="uid://8acuyrvctl4q" path="res://Image/Arrow/cursor_down.png" id="5_x1uxs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aioa1"]
 radius = 87.0
@@ -18,13 +19,13 @@ scale = Vector2(0.71, 0.71)
 texture = ExtResource("1_mtms1")
 
 [node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("2_bnqeu")]
-top_level = true
 
 [node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_cgynt")]
 
 [node name="WallStairs" type="Area2D" parent="." unique_id=783365790]
 script = ExtResource("4_ylh8k")
 castle_interior_scene_path = "uid://cr8afvd0y8lek"
+cursor_texture = ExtResource("5_x1uxs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallStairs" unique_id=392954023]
 top_level = true

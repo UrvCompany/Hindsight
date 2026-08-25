@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bl2f4amomux1l" path="res://Image/Scenes/castle_courtyard_stairs_reversed.png" id="1_m1e7t"]
 [ext_resource type="Script" uid="uid://bhyy6mvmgppl1" path="res://Scene/Castle_interior/stairs.gd" id="2_nw1ot"]
 [ext_resource type="Texture2D" uid="uid://ccb7n6jx5btki" path="res://Image/Scenes/Stairs.png" id="3_nw1ot"]
+[ext_resource type="Texture2D" uid="uid://cdx8nxwnhbu0n" path="res://Image/Arrow/cursor_up.png" id="3_ye2ox"]
 [ext_resource type="Script" uid="uid://5u610yq0aup1" path="res://Scene/Castle_interior/exit.gd" id="4_2gxig"]
 [ext_resource type="Texture2D" uid="uid://by4s7r4co1610" path="res://Image/Scenes/exit.png" id="4_cah6m"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="6_ongvb"]
@@ -10,13 +11,13 @@
 [ext_resource type="Script" uid="uid://dn8y6apnshtpu" path="res://Scene/Castle_interior/castle_interior_second_entrance.gd" id="8_ci2nd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_guk64"]
-size = Vector2(454, 1191)
+size = Vector2(266, 1191)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brsih"]
-size = Vector2(388, 482.625)
+size = Vector2(388, 578.3125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci2nd"]
-size = Vector2(295, 631)
+size = Vector2(354, 494)
 
 [node name="CastleInterior" type="Node2D" unique_id=1758114385]
 
@@ -28,9 +29,10 @@ texture = ExtResource("1_m1e7t")
 [node name="Stairs" type="Area2D" parent="." unique_id=1810935009]
 script = ExtResource("2_nw1ot")
 general_scene_path = "uid://ducbga514ugqt"
+cursor_texture = ExtResource("3_ye2ox")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Stairs" unique_id=170464396]
-position = Vector2(224, 781)
+position = Vector2(130, 781)
 shape = SubResource("RectangleShape2D_guk64")
 
 [node name="Stairs_outline" type="Sprite2D" parent="Stairs" unique_id=1717523994]
@@ -48,7 +50,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_cah6m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1645247508]
-position = Vector2(964, 440.6875)
+position = Vector2(956, 493)
 shape = SubResource("RectangleShape2D_brsih")
 
 [node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("6_ongvb")]
@@ -60,7 +62,7 @@ position = Vector2(1711, 645)
 script = ExtResource("8_ci2nd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CastleInteriorSecondScene" unique_id=10409549]
-position = Vector2(57.5, -115.5)
+position = Vector2(28, -47)
 shape = SubResource("RectangleShape2D_ci2nd")
 
 [connection signal="input_event" from="Stairs" to="Stairs" method="_on_input_event"]

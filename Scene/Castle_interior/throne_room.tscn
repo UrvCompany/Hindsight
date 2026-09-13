@@ -1,21 +1,19 @@
 [gd_scene format=3 uid="uid://dcjbg2rxm0pqh"]
 
-[ext_resource type="Script" uid="uid://cf74xc2qyx6bs" path="res://Scene/Castle_interior/Castle_interior_second.gd" id="1_f4j7a"]
-[ext_resource type="Texture2D" uid="uid://c3nnubh4bhww" path="res://Image/Scenes/throne_room.jpg" id="2_t5nq3"]
+[ext_resource type="Texture2D" uid="uid://c4y72lo5085t5" path="res://Image/Scenes/throne_room1.jpg" id="2_t5nq3"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_qm7gh"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_lqdk0"]
 [ext_resource type="Script" uid="uid://xh3th3ssp5og" path="res://Scene/Castle_interior/from_throne_to_castle_interior.gd" id="6_f4j7a"]
 [ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Chars/guard_3.tscn" id="6_t5nq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm3c"]
-size = Vector2(367, 656)
+size = Vector2(701, 288)
 
 [node name="ThroneRoom" type="Node2D" unique_id=1439195218]
-script = ExtResource("1_f4j7a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=863109951]
-position = Vector2(960, 427)
-scale = Vector2(3.137255, 3.3944223)
+position = Vector2(958.99994, 504)
+scale = Vector2(1.408211, 1.3072917)
 texture = ExtResource("2_t5nq3")
 
 [node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_qm7gh")]
@@ -29,7 +27,7 @@ position = Vector2(1436, 605)
 script = ExtResource("6_f4j7a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FromThroneToCastleInterior" unique_id=1827038869]
-position = Vector2(188.5, 519)
+position = Vector2(355.5, 703)
 shape = SubResource("RectangleShape2D_7bm3c")
 
 [connection signal="input_event" from="FromThroneToCastleInterior" to="FromThroneToCastleInterior" method="_on_input_event"]

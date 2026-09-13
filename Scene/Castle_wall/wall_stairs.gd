@@ -1,27 +1,14 @@
 extends Area2D
 
 
-@onready var wall_stairs_outline = $WallStairsOutline
-
 @export_file("*.tscn") var castle_interior_scene_path: String
-@export var cursor_texture: Texture2D
-
+@export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_right.png")
 
 func _on_mouse_entered() -> void:
-	if castle_interior_scene_path.is_empty():
-		return
-
-	wall_stairs_outline.show()
-
-	if cursor_texture:
-		Input.set_custom_mouse_cursor(cursor_texture)
+	Input.set_custom_mouse_cursor(cursor_texture)
 
 
 func _on_mouse_exited() -> void:
-	if castle_interior_scene_path.is_empty():
-		return
-
-	wall_stairs_outline.hide()
 	Input.set_custom_mouse_cursor(null)
 
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccb7n6jx5btki"
-path="res://.godot/imported/Stairs.png-add7594096933d8ae7b34c2acda4eb36.ctex"
+uid="uid://e6umcttai63l"
+path="res://.godot/imported/castle_interior_2.png-50eadcda927373e6acdf1e83c5cf9893.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Scenes/Stairs.png"
-dest_files=["res://.godot/imported/Stairs.png-add7594096933d8ae7b34c2acda4eb36.ctex"]
+source_file="res://Image/Scenes/castle_interior_2.png"
+dest_files=["res://.godot/imported/castle_interior_2.png-50eadcda927373e6acdf1e83c5cf9893.ctex"]
 
 [params]
 

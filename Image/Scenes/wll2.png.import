@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl2f4amomux1l"
-path="res://.godot/imported/castle_courtyard_stairs_reversed.png-13f812d0cd0ddd7ccdd317c6aa9dc32a.ctex"
+uid="uid://ddix1ptwtguqe"
+path="res://.godot/imported/wll2.png-16b0a38fc7b15ec6a697c60ac5e07cdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Scenes/castle_courtyard_stairs_reversed.png"
-dest_files=["res://.godot/imported/castle_courtyard_stairs_reversed.png-13f812d0cd0ddd7ccdd317c6aa9dc32a.ctex"]
+source_file="res://Image/Scenes/wll2.png"
+dest_files=["res://.godot/imported/wll2.png-16b0a38fc7b15ec6a697c60ac5e07cdf.ctex"]
 
 [params]
 

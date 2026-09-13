@@ -1,19 +1,20 @@
 extends Area2D
 
-@onready var outline = $"../Outline"
 
 # Сцена интерьера замка
 @export_file("*.tscn") var castle_interior_scene_path: String
+@export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_up.png")
+
 
 func _on_mouse_entered() -> void:
-	outline.show()
+	Input.set_custom_mouse_cursor(cursor_texture)
 
 
 func _on_mouse_exited() -> void:
-	outline.hide()
+	Input.set_custom_mouse_cursor(null)
 
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

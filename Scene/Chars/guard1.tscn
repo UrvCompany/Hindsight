@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://d08rfg6y6wdwl" path="res://Image/Chars/1.png" id="1_fodaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm3c"]
-size = Vector2(149, 229.5)
+size = Vector2(133, 227.5)
 
 [node name="Guard1" type="CharacterBody2D" unique_id=1430557277]
+top_level = true
 script = ExtResource("1_2iwtu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1661816280]
@@ -15,7 +16,7 @@ texture = ExtResource("1_fodaa")
 [node name="Area2D" type="Area2D" parent="." unique_id=2122085625]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=92387179]
-position = Vector2(-3.5, 23.75)
+position = Vector2(4.5, 24.75)
 shape = SubResource("RectangleShape2D_7bm3c")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

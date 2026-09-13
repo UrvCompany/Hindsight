@@ -1,57 +1,43 @@
 [gd_scene format=3 uid="uid://cr8afvd0y8lek"]
 
-[ext_resource type="Texture2D" uid="uid://bl2f4amomux1l" path="res://Image/Scenes/castle_courtyard_stairs_reversed.png" id="1_m1e7t"]
+[ext_resource type="Texture2D" uid="uid://c1ngi8tlfkyfg" path="res://Image/Scenes/castle_innterior.png" id="1_mw8ui"]
 [ext_resource type="Script" uid="uid://bhyy6mvmgppl1" path="res://Scene/Castle_interior/stairs.gd" id="2_nw1ot"]
-[ext_resource type="Texture2D" uid="uid://ccb7n6jx5btki" path="res://Image/Scenes/Stairs.png" id="3_nw1ot"]
-[ext_resource type="Texture2D" uid="uid://cdx8nxwnhbu0n" path="res://Image/Arrow/cursor_up.png" id="3_ye2ox"]
 [ext_resource type="Script" uid="uid://5u610yq0aup1" path="res://Scene/Castle_interior/exit.gd" id="4_2gxig"]
-[ext_resource type="Texture2D" uid="uid://by4s7r4co1610" path="res://Image/Scenes/exit.png" id="4_cah6m"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="6_ongvb"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="7_t2svq"]
 [ext_resource type="Script" uid="uid://bncw25npnq0gs" path="res://Scene/Castle_interior/castle_interior_second_scene.gd" id="9_mw8ui"]
 [ext_resource type="PackedScene" uid="uid://bsj2jhrcd4i64" path="res://Scene/Chars/guard1.tscn" id="10_mw8ui"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_guk64"]
-size = Vector2(266, 1191)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3o8t"]
+size = Vector2(247, 526)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brsih"]
-size = Vector2(388, 578.3125)
+size = Vector2(311, 380)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci2nd"]
-size = Vector2(354, 494)
+size = Vector2(131.99988, 374)
 
 [node name="CastleInterior" type="Node2D" unique_id=1758114385]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1529196207]
-position = Vector2(976, 699)
-scale = Vector2(0.71, 0.71)
-texture = ExtResource("1_m1e7t")
+position = Vector2(961, 476.09003)
+scale = Vector2(1.4117647, 1.239349)
+texture = ExtResource("1_mw8ui")
 
 [node name="Stairs" type="Area2D" parent="." unique_id=1810935009]
 script = ExtResource("2_nw1ot")
 general_scene_path = "uid://ducbga514ugqt"
-cursor_texture = ExtResource("3_ye2ox")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Stairs" unique_id=170464396]
-position = Vector2(130, 781)
-shape = SubResource("RectangleShape2D_guk64")
-
-[node name="Stairs_outline" type="Sprite2D" parent="Stairs" unique_id=1717523994]
-position = Vector2(211, 816)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_nw1ot")
+position = Vector2(319.5, 439)
+shape = SubResource("RectangleShape2D_j3o8t")
 
 [node name="Exit" type="Area2D" parent="." unique_id=737333331]
 script = ExtResource("4_2gxig")
 general_scene_path = "uid://bsmdyuo384i4t"
 
-[node name="Exit_outline" type="Sprite2D" parent="Exit" unique_id=110247228]
-position = Vector2(960.99994, 513)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("4_cah6m")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1645247508]
-position = Vector2(956, 493)
+position = Vector2(953.5, 503)
 shape = SubResource("RectangleShape2D_brsih")
 
 [node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("6_ongvb")]
@@ -63,11 +49,12 @@ position = Vector2(1711, 645)
 script = ExtResource("9_mw8ui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CastleInteriorSecondScene" unique_id=10409549]
-position = Vector2(28, -47)
+position = Vector2(-98.99988, -87)
+rotation = -3.1415925
 shape = SubResource("RectangleShape2D_ci2nd")
 
 [node name="Guard1" parent="." unique_id=1430557277 instance=ExtResource("10_mw8ui")]
-position = Vector2(506, 695)
+position = Vector2(1300, 596)
 
 [connection signal="input_event" from="Stairs" to="Stairs" method="_on_input_event"]
 [connection signal="mouse_entered" from="Stairs" to="Stairs" method="_on_mouse_entered"]

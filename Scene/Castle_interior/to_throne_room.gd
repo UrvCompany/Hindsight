@@ -12,12 +12,10 @@ func _on_mouse_exited() -> void:
 	Input.set_custom_mouse_cursor(null)
 
 
-
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 
-		
 		if target_scene_path.is_empty():
 			return
 

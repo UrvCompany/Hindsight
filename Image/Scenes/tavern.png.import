@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by4s7r4co1610"
-path="res://.godot/imported/exit.png-c0512c2e86f3641da960762b0076c7fa.ctex"
+uid="uid://klmac41f8p2m"
+path="res://.godot/imported/tavern.png-2090307f4b67721d28144e8b4ab4483b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Scenes/exit.png"
-dest_files=["res://.godot/imported/exit.png-c0512c2e86f3641da960762b0076c7fa.ctex"]
+source_file="res://Image/Scenes/tavern.png"
+dest_files=["res://.godot/imported/tavern.png-2090307f4b67721d28144e8b4ab4483b.ctex"]
 
 [params]
 

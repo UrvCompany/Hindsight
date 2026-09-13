@@ -6,7 +6,6 @@ extends Node2D
 
 
 func _ready() -> void:
-	#$Pivo.rotation_degrees = SceneStateGlobal.current_degre
 
 	match SceneStateGlobal.current_state:
 		SceneStateGlobal.State.EXPLORATION:
@@ -34,14 +33,11 @@ func _on_button_pressed() -> void:
 
 	var previous_state = SceneStateGlobal.current_state
 
-	SceneStateGlobal.current_state = (SceneStateGlobal.current_state + 1) % 3
-	SceneStateGlobal.current_degre = (SceneStateGlobal.current_degre + 120) % 360
-
 	if previous_state == SceneStateGlobal.State.EXPLORATION:
+		print('первый иф')
 		SceneStateGlobal.current_scene = get_tree().get_current_scene().scene_file_path
 
-	#$Pivo.rotation_degrees = SceneStateGlobal.current_degre
-
+	print('_on_button_pressed')
 	match SceneStateGlobal.current_state:
 		SceneStateGlobal.State.THINKING:
 			if thinking_scene_path.is_empty():
@@ -60,6 +56,7 @@ func _on_button_pressed() -> void:
 
 
 func update_mode_outline(active_label: Label) -> void:
+	print('update_mode_outline')
 	var labels := [
 		$Area2D/Words_bar_background/CanvasLayer/Exploration,
 		$Area2D/Words_bar_background/CanvasLayer/Thinking,

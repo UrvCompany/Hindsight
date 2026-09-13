@@ -1,7 +1,10 @@
 extends Area2D
 
+const DECREE_READER_SCENE := preload("res://Scene/Castle_interior/decree_reader.tscn")
+
 @export_file("*.tscn") var target_scene_path: String = "res://Scene/Castle_interior/Castle_interior_second.tscn"
 @export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_right.png")
+
 
 
 func _on_mouse_entered() -> void:
@@ -16,10 +19,11 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if target_scene_path.is_empty():
 			return
+
 		if SceneStateGlobal.stage == 1 or SceneStateGlobal.stage == 3:
 			Input.set_custom_mouse_cursor(null)
 			SceneStateGlobal.current_scene = get_tree().get_current_scene().scene_file_path
 			get_tree().change_scene_to_file(target_scene_path)
+
 		if SceneStateGlobal.stage == 2:
 			return
-			

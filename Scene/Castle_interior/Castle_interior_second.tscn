@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ce78pn1q113fn"]
 
-[ext_resource type="Texture2D" uid="uid://dby130bom3h1y" path="res://Image/Scenes/Castle_interior_second.png" id="1_tvm07"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="2_evmnk"]
+[ext_resource type="Texture2D" uid="uid://e6umcttai63l" path="res://Image/Scenes/castle_interior_2.png" id="2_iao5d"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="3_mp8c2"]
 [ext_resource type="PackedScene" uid="uid://qx1r7s6xr3pv" path="res://Objects/Decree_board.tscn" id="6_iao5d"]
 [ext_resource type="Script" uid="uid://cf74xc2qyx6bs" path="res://Scene/Castle_interior/Castle_interior_second.gd" id="7_ci2script"]
@@ -34,18 +34,18 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_backexit"]
-size = Vector2(315, 636)
+size = Vector2(140.375, 397.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm3c"]
-size = Vector2(618.5, 316)
+size = Vector2(278, 366)
 
 [node name="CastleInteriorSecond" type="Node2D" unique_id=1439195218]
 script = ExtResource("7_ci2script")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=863109951]
-position = Vector2(959, 536.75)
-scale = Vector2(1.1447369, 1.1333687)
-texture = ExtResource("1_tvm07")
+position = Vector2(962.49994, 478.49994)
+scale = Vector2(1.4139706, 1.2408854)
+texture = ExtResource("2_iao5d")
 
 [node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("2_evmnk")]
 
@@ -57,18 +57,18 @@ script = SubResource("GDScript_aabb5")
 target_scene_path = "res://Scene/Castle_interior/Castle_interior.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BackToCastleInterior" unique_id=1892031375]
-position = Vector2(82.5, -3)
+position = Vector2(234.8125, 15.125)
 shape = SubResource("RectangleShape2D_backexit")
-
-[node name="DecreeBoard" parent="." unique_id=951285973 instance=ExtResource("6_iao5d")]
-position = Vector2(1780.0001, 459.00003)
 
 [node name="ToThroneRoom" type="Area2D" parent="." unique_id=1301289377]
 script = ExtResource("8_wfgjj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToThroneRoom" unique_id=1407834837]
-position = Vector2(951, 556)
+position = Vector2(969, 531)
 shape = SubResource("RectangleShape2D_7bm3c")
+
+[node name="DecreeBoard" parent="." unique_id=951285973 instance=ExtResource("6_iao5d")]
+position = Vector2(1675.0001, 471)
 
 [connection signal="input_event" from="BackToCastleInterior" to="BackToCastleInterior" method="_on_input_event"]
 [connection signal="mouse_entered" from="BackToCastleInterior" to="BackToCastleInterior" method="_on_mouse_entered"]

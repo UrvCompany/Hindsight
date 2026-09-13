@@ -7,7 +7,6 @@ const DECREE_READER_SCENE := preload("res://Scene/Castle_interior/decree_reader.
 
 
 func _ready() -> void:
-	decree_board.board_clicked.connect(_on_decree_board_clicked)
 
 	SupportingSceneManager.opened.connect(func(): mode_switch.set_ui_visible(false))
 	SupportingSceneManager.closed.connect(func(): mode_switch.set_ui_visible(true))

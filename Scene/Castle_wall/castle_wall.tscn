@@ -6,10 +6,16 @@
 [ext_resource type="Script" uid="uid://dfoxm5sl2er2a" path="res://Scene/Castle_wall/wall_stairs.gd" id="4_ylh8k"]
 [ext_resource type="Texture2D" uid="uid://ccb7n6jx5btki" path="res://Image/Scenes/Stairs.png" id="5_cfooh"]
 [ext_resource type="Texture2D" uid="uid://8acuyrvctl4q" path="res://Image/Arrow/cursor_down.png" id="5_x1uxs"]
+[ext_resource type="PackedScene" uid="uid://dgsibrposldxx" path="res://Scene/Chars/guard_2.tscn" id="7_x1uxs"]
+[ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Chars/guard_3.tscn" id="8_js6j8"]
+[ext_resource type="Script" uid="uid://d1cui0cjwo25s" path="res://Scene/Castle_wall/from_wall_to_wall_2.gd" id="9_jswec"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aioa1"]
 radius = 87.0
 height = 270.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_878ex"]
+size = Vector2(222, 408)
 
 [node name="CastleWall" type="Node2D" unique_id=214649509]
 
@@ -42,6 +48,22 @@ position = Vector2(285, 1344.0001)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("5_cfooh")
 
+[node name="Guard2" parent="." unique_id=937132247 instance=ExtResource("7_x1uxs")]
+position = Vector2(545, 671)
+
+[node name="Guard3" parent="." unique_id=383297953 instance=ExtResource("8_js6j8")]
+position = Vector2(1402, 651)
+
+[node name="FromWallToWall2" type="Area2D" parent="." unique_id=1655598633]
+script = ExtResource("9_jswec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FromWallToWall2" unique_id=444370261]
+position = Vector2(1816, 644)
+shape = SubResource("RectangleShape2D_878ex")
+
 [connection signal="input_event" from="WallStairs" to="WallStairs" method="_on_input_event"]
 [connection signal="mouse_entered" from="WallStairs" to="WallStairs" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="WallStairs" to="WallStairs" method="_on_mouse_exited"]
+[connection signal="input_event" from="FromWallToWall2" to="FromWallToWall2" method="_on_input_event"]
+[connection signal="mouse_entered" from="FromWallToWall2" to="FromWallToWall2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="FromWallToWall2" to="FromWallToWall2" method="_on_mouse_exited"]

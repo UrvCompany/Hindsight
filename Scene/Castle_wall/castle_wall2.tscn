@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dlav37qmdxxt5"]
+
+[ext_resource type="Texture2D" uid="uid://dxo3o2i1uo4jk" path="res://Image/Scenes/castle_wall_2_walkway_view_v3.png" id="1_eem41"]
+[ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="2_mj511"]
+[ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_7ectw"]
+[ext_resource type="Script" uid="uid://dkh4ybiqnknkv" path="res://Scene/Castle_wall/from_wall_2_to_wall.gd" id="5_eem41"]
+[ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Chars/guard_3.tscn" id="8_522qq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jswec"]
+size = Vector2(210, 369)
+
+[node name="CastleWall2" type="Node2D" unique_id=214649509]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1861742231]
+position = Vector2(979, 749)
+scale = Vector2(0.71, 0.71)
+texture = ExtResource("1_eem41")
+
+[node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("2_mj511")]
+
+[node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_7ectw")]
+
+[node name="Guard3" parent="." unique_id=383297953 instance=ExtResource("8_522qq")]
+position = Vector2(1593, 649)
+
+[node name="FromWall2ToWall" type="Area2D" parent="." unique_id=1655598633]
+script = ExtResource("5_eem41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FromWall2ToWall" unique_id=444370261]
+position = Vector2(105, 663)
+shape = SubResource("RectangleShape2D_jswec")
+
+[connection signal="input_event" from="FromWall2ToWall" to="FromWall2ToWall" method="_on_input_event"]
+[connection signal="mouse_entered" from="FromWall2ToWall" to="FromWall2ToWall" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="FromWall2ToWall" to="FromWall2ToWall" method="_on_mouse_exited"]

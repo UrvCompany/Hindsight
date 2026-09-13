@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://06o8nki5b2vr"]
 
-[ext_resource type="Texture2D" path="res://Image/Objects/royal_decree.jpeg" id="1_decree"]
-[ext_resource type="Script" path="res://Scene/Castle_interior/decree_reader.gd" id="2_script"]
+[ext_resource type="Texture2D" uid="uid://bo6bp3h87qo5t" path="res://Image/Objects/royal_decree.jpeg" id="1_decree"]
+[ext_resource type="Script" uid="uid://b1cpt7jj5gsoj" path="res://Scene/Castle_interior/decree_reader.gd" id="2_script"]
 
-[node name="DecreeReader" type="Control"]
-position = Vector2(960, 540)
+[node name="DecreeReader" type="Control" unique_id=307726021]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 960.0
+offset_bottom = 540.0
 scale = Vector2(0.5, 0.5)
-mouse_filter = 0
 script = ExtResource("2_script")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=273563265]
+layout_mode = 0
 offset_left = -1024.0
 offset_top = -991.0
 offset_right = 1024.0
@@ -17,7 +22,8 @@ offset_bottom = 991.0
 mouse_filter = 0
 texture = ExtResource("1_decree")
 
-[node name="Paragraph1" type="RichTextLabel" parent="."]
+[node name="Paragraph1" type="RichTextLabel" parent="." unique_id=403432639]
+layout_mode = 0
 offset_left = -480.0
 offset_top = -700.0
 offset_right = 430.0
@@ -28,9 +34,9 @@ bbcode_enabled = true
 fit_content = true
 scroll_active = false
 
-[node name="Paragraph2" type="RichTextLabel" parent="."]
+[node name="Paragraph2" type="RichTextLabel" parent="." unique_id=1277945823]
+layout_mode = 0
 offset_left = -480.0
-offset_top = 0.0
 offset_right = 430.0
 offset_bottom = 550.0
 theme_override_colors/default_color = Color(0.15, 0.1, 0.08, 1)

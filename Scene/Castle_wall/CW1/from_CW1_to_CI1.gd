@@ -1,7 +1,8 @@
 extends Area2D
 
-@export_file("*.tscn") var target_scene_path: String = "res://Scene/Castle_interior/Castle_interior_second.tscn"
+@export_file("*.tscn") var target_scene_path: String = "res://Scene/Castle_interior/CI1/Castle_interior.tscn"
 @export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_down.png")
+
 
 
 func _on_mouse_entered() -> void:

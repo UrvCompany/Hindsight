@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cr8afvd0y8lek"]
 
 [ext_resource type="Texture2D" uid="uid://c1ngi8tlfkyfg" path="res://Image/Scenes/castle_innterior.png" id="1_mw8ui"]
-[ext_resource type="Script" uid="uid://bhyy6mvmgppl1" path="res://Scene/Castle_interior/stairs.gd" id="2_nw1ot"]
-[ext_resource type="Script" uid="uid://5u610yq0aup1" path="res://Scene/Castle_interior/exit.gd" id="4_2gxig"]
+[ext_resource type="Script" uid="uid://bhyy6mvmgppl1" path="res://Scene/Castle_interior/CI1/stairs.gd" id="2_nw1ot"]
+[ext_resource type="Script" uid="uid://5u610yq0aup1" path="res://Scene/Castle_interior/CI1/exit.gd" id="4_2gxig"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="6_ongvb"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="7_t2svq"]
-[ext_resource type="Script" uid="uid://bncw25npnq0gs" path="res://Scene/Castle_interior/castle_interior_second_scene.gd" id="9_mw8ui"]
+[ext_resource type="Script" uid="uid://bncw25npnq0gs" path="res://Scene/Castle_interior/CI1/from_CI1_to_CI2.gd" id="9_mw8ui"]
 [ext_resource type="PackedScene" uid="uid://bsj2jhrcd4i64" path="res://Scene/Chars/guard1.tscn" id="10_mw8ui"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3o8t"]

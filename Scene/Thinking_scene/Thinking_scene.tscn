@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="2_chm0u"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="3_wkqcv"]
 [ext_resource type="PackedScene" uid="uid://c5y8axgdikmsb" path="res://Scene/Thinking_scene/Basic_plan.tscn" id="4_ejado"]
+[ext_resource type="PackedScene" uid="uid://slxfr37luo6x" path="res://Scene/Thinking_scene/go_next_stage_pls.tscn" id="5_yo0ax"]
 
 [node name="ThinkingScene" type="Node2D" unique_id=453553026]
 
@@ -15,5 +16,8 @@ texture = ExtResource("1_ojq03")
 
 [node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("3_wkqcv")]
 
-[node name="Area2D" parent="." unique_id=607557947 instance=ExtResource("4_ejado")]
+[node name="Bumazhka" parent="." unique_id=607557947 instance=ExtResource("4_ejado")]
 position = Vector2(339, 466)
+
+[node name="Go_next_stage_pls" parent="." unique_id=564575345 instance=ExtResource("5_yo0ax")]
+position = Vector2(1702, 231)

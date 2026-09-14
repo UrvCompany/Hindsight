@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ce78pn1q113fn"]
+
+[ext_resource type="Script" uid="uid://cf74xc2qyx6bs" path="res://Scene/Castle_interior/CI2/Castle_interior_second.gd" id="1_daggj"]
+[ext_resource type="Texture2D" uid="uid://e6umcttai63l" path="res://Image/Scenes/castle_interior_2.png" id="2_fwq5l"]
+[ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_da57y"]
+[ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_qdlwq"]
+[ext_resource type="Script" uid="uid://eh1lsrnov4hv" path="res://Scene/Castle_interior/CI2/from_CI2_to_CI1.gd" id="5_daggj"]
+[ext_resource type="Script" uid="uid://1ct4khfn1di1" path="res://Scene/Castle_interior/CI2/from_CI2_to_throne.gd" id="6_daggj"]
+[ext_resource type="PackedScene" uid="uid://qx1r7s6xr3pv" path="res://Objects/Decree_board/Decree_board.tscn" id="7_chc88"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_backexit"]
+size = Vector2(140.375, 397.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm3c"]
+size = Vector2(278, 366)
+
+[node name="CastleInteriorSecond" type="Node2D" unique_id=1439195218]
+script = ExtResource("1_daggj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=863109951]
+position = Vector2(962.49994, 478.49994)
+scale = Vector2(1.4139706, 1.2408854)
+texture = ExtResource("2_fwq5l")
+
+[node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_da57y")]
+
+[node name="WordsBar" parent="." unique_id=1936151921 instance=ExtResource("4_qdlwq")]
+
+[node name="BackToCastleInterior" type="Area2D" parent="." unique_id=493529730]
+position = Vector2(75, 540)
+script = ExtResource("5_daggj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BackToCastleInterior" unique_id=1892031375]
+position = Vector2(234.8125, 15.125)
+shape = SubResource("RectangleShape2D_backexit")
+
+[node name="ToThroneRoom" type="Area2D" parent="." unique_id=1301289377]
+script = ExtResource("6_daggj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToThroneRoom" unique_id=1407834837]
+position = Vector2(969, 531)
+shape = SubResource("RectangleShape2D_7bm3c")
+
+[node name="DecreeBoard" parent="." unique_id=951285973 instance=ExtResource("7_chc88")]
+position = Vector2(1675.0001, 471)
+
+[connection signal="input_event" from="BackToCastleInterior" to="BackToCastleInterior" method="_on_input_event"]
+[connection signal="mouse_entered" from="BackToCastleInterior" to="BackToCastleInterior" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="BackToCastleInterior" to="BackToCastleInterior" method="_on_mouse_exited"]
+[connection signal="input_event" from="ToThroneRoom" to="ToThroneRoom" method="_on_input_event"]
+[connection signal="mouse_entered" from="ToThroneRoom" to="ToThroneRoom" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ToThroneRoom" to="ToThroneRoom" method="_on_mouse_exited"]

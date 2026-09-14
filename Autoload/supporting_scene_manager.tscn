@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmghyfws655gv"]
 
-[ext_resource type="Script" uid="uid://b0jom2h5edxi2" path="res://supporting_scene_manager.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://b0jom2h5edxi2" path="res://Autoload/supporting_scene_manager.gd" id="1_script"]
 
 [node name="SupportingSceneManager" type="CanvasLayer" unique_id=1110913465]
 layer = 5

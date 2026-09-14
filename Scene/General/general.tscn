@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://bsmdyuo384i4t"]
 
 [ext_resource type="Texture2D" uid="uid://c2loiljx1pdrg" path="res://Image/Scenes/General.jpg" id="1_m6efd"]
-[ext_resource type="Script" uid="uid://brw2o3n38vpbx" path="res://Scene/General/general.gd" id="1_tnxl6"]
+[ext_resource type="Script" uid="uid://brw2o3n38vpbx" path="res://Scene/General/from_general_to_CI1.gd" id="1_tnxl6"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="4_i7tvd"]
+[ext_resource type="Script" uid="uid://bgjvqlh3u1mb1" path="res://Scene/General/from_general_to_village.gd" id="5_i7tvd"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="5_lgp12"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
 size = Vector2(480.75, 386)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqsbf"]
+size = Vector2(703, 236)
 
 [node name="General" type="Area2D" unique_id=513882028]
 
@@ -15,11 +19,11 @@ position = Vector2(961.99994, 497.99997)
 scale = Vector2(1.4088235, 1.2786459)
 texture = ExtResource("1_m6efd")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1933379268]
+[node name="to_Castle" type="Area2D" parent="." unique_id=1933379268]
 script = ExtResource("1_tnxl6")
 castle_interior_scene_path = "uid://cr8afvd0y8lek"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1785810922]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_Castle" unique_id=1785810922]
 top_level = true
 position = Vector2(1308.625, 261)
 shape = SubResource("RectangleShape2D_incjn")
@@ -28,6 +32,17 @@ shape = SubResource("RectangleShape2D_incjn")
 
 [node name="WordsBor" parent="ModeSwitch" unique_id=1936151921 instance=ExtResource("5_lgp12")]
 
-[connection signal="input_event" from="Area2D" to="Area2D" method="_on_input_event"]
-[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
+[node name="to_Village" type="Area2D" parent="." unique_id=1353458573]
+position = Vector2(249, 698)
+script = ExtResource("5_i7tvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_Village" unique_id=987456711]
+position = Vector2(101.5, 30)
+shape = SubResource("RectangleShape2D_lqsbf")
+
+[connection signal="input_event" from="to_Castle" to="to_Castle" method="_on_input_event"]
+[connection signal="mouse_entered" from="to_Castle" to="to_Castle" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="to_Castle" to="to_Castle" method="_on_mouse_exited"]
+[connection signal="input_event" from="to_Village" to="to_Village" method="_on_input_event"]
+[connection signal="mouse_entered" from="to_Village" to="to_Village" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="to_Village" to="to_Village" method="_on_mouse_exited"]

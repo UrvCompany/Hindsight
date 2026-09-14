@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c4y72lo5085t5" path="res://Image/Scenes/throne_room1.jpg" id="2_t5nq3"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_qm7gh"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_lqdk0"]
-[ext_resource type="Script" uid="uid://xh3th3ssp5og" path="res://Scene/Castle_interior/from_throne_to_castle_interior.gd" id="6_f4j7a"]
+[ext_resource type="Script" uid="uid://xh3th3ssp5og" path="res://Scene/Castle_interior/Throne_room/from_throne_to_CI2.gd" id="6_f4j7a"]
 [ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Chars/guard_3.tscn" id="6_t5nq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm3c"]

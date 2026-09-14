@@ -1,6 +1,6 @@
 extends Node2D
 
-const DECREE_READER_SCENE := preload("res://Scene/Castle_interior/decree_reader.tscn")
+const DECREE_READER_SCENE := preload("res://Scene/Castle_interior/CI2/decree_reader.tscn")
 
 @onready var decree_board := $DecreeBoard
 @onready var mode_switch := $ModeSwitch

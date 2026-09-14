@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ddix1ptwtguqe" path="res://Image/Scenes/wll2.png" id="1_eem41"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="2_mj511"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_7ectw"]
-[ext_resource type="Script" uid="uid://dkh4ybiqnknkv" path="res://Scene/Castle_wall/from_wall_2_to_wall.gd" id="5_eem41"]
+[ext_resource type="Script" uid="uid://dkh4ybiqnknkv" path="res://Scene/Castle_wall/CW2/from_CW2_to_CW1l.gd" id="5_eem41"]
 [ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Chars/guard_3.tscn" id="8_522qq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jswec"]

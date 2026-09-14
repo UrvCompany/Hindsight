@@ -1,8 +1,8 @@
 extends Area2D
 
 
-
-@export_file("*.tscn") var general_scene_path: String
+# Сцена интерьера замка
+@export_file("*.tscn") var castle_interior_scene_path: String
 @export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_up.png")
 
 
@@ -18,13 +18,14 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			Input.set_custom_mouse_cursor(null)
 			interact()
 
 
 func interact() -> void:
 	
-	if general_scene_path.is_empty():
+	if castle_interior_scene_path.is_empty():
 		return
+														
+	get_tree().change_scene_to_file(castle_interior_scene_path)
 	
-	Input.set_custom_mouse_cursor(null)
-	get_tree().change_scene_to_file(general_scene_path)

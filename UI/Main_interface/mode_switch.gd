@@ -11,17 +11,17 @@ func _ready() -> void:
 		SceneStateGlobal.State.EXPLORATION:
 			update_mode_outline(
 				$Area2D/Words_bar_background/CanvasLayer/Exploration
-			)
+				)
 
 		SceneStateGlobal.State.THINKING:
 			update_mode_outline(
 				$Area2D/Words_bar_background/CanvasLayer/Thinking
-			)
+				)
 
 		SceneStateGlobal.State.NOTES:
 			update_mode_outline(
 				$Area2D/Words_bar_background/CanvasLayer/Notes
-			)
+				)
 
 
 func set_ui_visible(value: bool) -> void:
@@ -32,15 +32,12 @@ func set_ui_visible(value: bool) -> void:
 func _on_button_pressed() -> void:
 
 	if SceneStateGlobal.current_state == SceneStateGlobal.State.EXPLORATION:
-		print("первый иф")
 		SceneStateGlobal.current_scene = get_tree().current_scene.scene_file_path
 
 	SceneStateGlobal.current_state = (
 		(SceneStateGlobal.current_state + 1) % 3
-	)
+		)
 
-	print("_on_button_pressed")
-	print("CURRENT STATE: ", SceneStateGlobal.current_state)
 
 	match SceneStateGlobal.current_state:
 
@@ -69,7 +66,7 @@ func update_mode_outline(active_label: Label) -> void:
 		$Area2D/Words_bar_background/CanvasLayer/Exploration,
 		$Area2D/Words_bar_background/CanvasLayer/Thinking,
 		$Area2D/Words_bar_background/CanvasLayer/Notes
-	]
+		]
 
 	for label in labels:
 		label.remove_theme_color_override("font_outline_color")
@@ -78,9 +75,9 @@ func update_mode_outline(active_label: Label) -> void:
 	active_label.add_theme_color_override(
 		"font_outline_color",
 		Color.CADET_BLUE
-	)
+		)
 
 	active_label.add_theme_constant_override(
 		"outline_size",
 		10
-	)
+		)

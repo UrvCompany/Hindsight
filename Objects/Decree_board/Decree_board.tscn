@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qx1r7s6xr3pv"]
 
 [ext_resource type="Texture2D" uid="uid://bbkotr827yi1x" path="res://Image/Objects/Decree_board.png" id="1_pn2ss"]
-[ext_resource type="Script" uid="uid://7ya4emo8et17" path="res://Objects/decree_board.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://7ya4emo8et17" path="res://Objects/Decree_board/decree_board.gd" id="2_script"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqsbf"]
 size = Vector2(806, 1066)

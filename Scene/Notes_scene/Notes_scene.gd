@@ -8,7 +8,7 @@ const BOOK_TEXTS_1: Array[String] = [
 ]
 const BOOK_TEXTS_2: Array[String] = [
 	"Сточные воды из замка направлялись прямиком в [u][url=ров]ров[/url][/u] перед его стенами, который имел глубину [u][url=10 м]10 м[/url][/u].",
-]
+]			#TODO Вынести текста книг в отдельный модуль, чтоб по уровням не бегать искать.
 
 @export var book_textures: Array[Texture2D] = []
 @export var book_scale: float = 0.35
@@ -35,7 +35,7 @@ func generate_books() -> void:
 	if book_textures.is_empty():
 		return
 
-	var level := clampi(SceneStateGlobal.current_level, 0, SceneStateGlobal.books_per_level.size() - 1)
+	var level := clampi(SceneStateGlobal.CURRENT_LEVEL, 0, SceneStateGlobal.books_per_level.size() - 1)		# TODO Шо це и зачем?
 	var count := SceneStateGlobal.books_per_level[level]
 	var spacing := (shelf_right_x - shelf_left_x) / float(max(count - 1, 1))
 

@@ -1,7 +1,6 @@
-[gd_scene format=3 uid="uid://c4b43815svt32"]
+[gd_scene format=3 uid="uid://mk76ix6fkmto"]
 
-[ext_resource type="Script" uid="uid://bhyy6mvmgppl1" path="res://Scene/Castle_interior/stairs.gd" id="1_cpr0m"]
-[ext_resource type="Texture2D" uid="uid://ccb7n6jx5btki" path="res://Image/Scenes/Stairs.png" id="2_4wjyc"]
+[ext_resource type="Script" uid="uid://bhyy6mvmgppl1" path="res://Scene/Castle_interior/CI1/stairs.gd" id="1_cpr0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmc50"]
 size = Vector2(454, 1191)
@@ -17,7 +16,6 @@ shape = SubResource("RectangleShape2D_kmc50")
 [node name="Stairs_outline" type="Sprite2D" parent="." unique_id=300199911]
 position = Vector2(211, 816)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_4wjyc")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://slxfr37luo6x"]
+
+[ext_resource type="Texture2D" uid="uid://cr7sr3iqrkxo" path="res://Image/Thinking_screen/Frame_D-Marble_01-256x256.png" id="1_e6n1i"]
+[ext_resource type="Script" uid="uid://cbmqq8ajp3amk" path="res://Scene/Thinking_scene/button.gd" id="2_cdqw3"]
+
+[node name="Go_next_stage_pls" type="Area2D" unique_id=564575345]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=458484834]
+texture = ExtResource("1_e6n1i")
+
+[node name="Label" type="Label" parent="." unique_id=337152649]
+offset_left = -86.0
+offset_top = -64.0
+offset_right = 89.0
+offset_bottom = 68.0
+text = "Go next stage pls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=6020852]
+offset_left = -92.0
+offset_top = -92.0
+offset_right = 93.0
+offset_bottom = 91.0
+script = ExtResource("2_cdqw3")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

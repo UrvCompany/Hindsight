@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://06o8nki5b2vr"]
 
 [ext_resource type="Texture2D" uid="uid://bo6bp3h87qo5t" path="res://Image/Objects/royal_decree.jpeg" id="1_decree"]
-[ext_resource type="Script" uid="uid://b1cpt7jj5gsoj" path="res://Scene/Castle_interior/decree_reader.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://b1cpt7jj5gsoj" path="res://Scene/Castle_interior/CI2/decree_reader.gd" id="2_script"]
 
 [node name="DecreeReader" type="Control" unique_id=307726021]
 layout_mode = 3

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://by7a45g8y7kpv"]
+
+[ext_resource type="Texture2D" uid="uid://bv3wdv0lnbpoo" path="res://Image/Scenes/village.png" id="1_n3r3j"]
+[ext_resource type="Script" uid="uid://c58doyr8unv4q" path="res://Scene/Village/from_village_to_tavern.gd" id="2_ixtae"]
+[ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_54nwh"]
+[ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_cf3ct"]
+[ext_resource type="Script" uid="uid://ddem8nruh1htf" path="res://Scene/Village/from_village_to_general.gd" id="5_bcmxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
+size = Vector2(365, 184)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqsbf"]
+size = Vector2(517, 126)
+
+[node name="Village" type="Area2D" unique_id=513882028]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873714766]
+position = Vector2(961.99994, 497.99997)
+scale = Vector2(1.4088235, 1.2786459)
+texture = ExtResource("1_n3r3j")
+
+[node name="to_Tavern" type="Area2D" parent="." unique_id=1933379268]
+script = ExtResource("2_ixtae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_Tavern" unique_id=1785810922]
+top_level = true
+position = Vector2(1478.5, 578)
+shape = SubResource("RectangleShape2D_incjn")
+
+[node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_54nwh")]
+
+[node name="WordsBor" parent="ModeSwitch" unique_id=1936151921 instance=ExtResource("4_cf3ct")]
+
+[node name="to_General" type="Area2D" parent="." unique_id=1353458573]
+position = Vector2(249, 698)
+script = ExtResource("5_bcmxs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_General" unique_id=987456711]
+position = Vector2(194.5, 46)
+shape = SubResource("RectangleShape2D_lqsbf")
+
+[connection signal="input_event" from="to_Tavern" to="to_Tavern" method="_on_input_event"]
+[connection signal="mouse_entered" from="to_Tavern" to="to_Tavern" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="to_Tavern" to="to_Tavern" method="_on_mouse_exited"]
+[connection signal="input_event" from="to_General" to="to_General" method="_on_input_event"]
+[connection signal="mouse_entered" from="to_General" to="to_General" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="to_General" to="to_General" method="_on_mouse_exited"]

@@ -1,9 +1,7 @@
 extends Area2D
 
-const DECREE_READER_SCENE := preload("res://Scene/Castle_interior/CI2/decree_reader.tscn")
+const target_scene_path := preload("res://Scene/Castle_interior/CI2/decree_reader.tscn")
 
-
-@export_file("*.tscn") var target_scene_path: String = "res://Scene/Castle_interior/CI2/Castle_interior_second.tscn"
 @export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_right.png")
 
 

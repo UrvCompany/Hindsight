@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cmyo4yyecqv22"]
+
+[ext_resource type="Texture2D" uid="uid://klmac41f8p2m" path="res://Image/Scenes/tavern.png" id="1_ibqaw"]
+[ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="2_bcs4l"]
+[ext_resource type="Script" uid="uid://bstlrnkloqx3t" path="res://Scene/Village/from_ tavern_to_village.gd" id="2_yoqn0"]
+[ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="3_exyls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
+size = Vector2(211, 563)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqsbf"]
+size = Vector2(517, 126)
+
+[node name="Village" type="Area2D" unique_id=513882028]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873714766]
+position = Vector2(961.99994, 497.99997)
+scale = Vector2(1.4088235, 1.2786459)
+texture = ExtResource("1_ibqaw")
+
+[node name="to_Village" type="Area2D" parent="." unique_id=1933379268]
+script = ExtResource("2_yoqn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_Village" unique_id=1785810922]
+top_level = true
+position = Vector2(1621.5, 562.5)
+shape = SubResource("RectangleShape2D_incjn")
+
+[node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("2_bcs4l")]
+
+[node name="WordsBor" parent="ModeSwitch" unique_id=1936151921 instance=ExtResource("3_exyls")]
+
+[node name="to_General" type="Area2D" parent="." unique_id=1353458573]
+position = Vector2(249, 698)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_General" unique_id=987456711]
+position = Vector2(177, 73)
+shape = SubResource("RectangleShape2D_lqsbf")
+
+[connection signal="input_event" from="to_Village" to="to_Village" method="_on_input_event"]
+[connection signal="mouse_entered" from="to_Village" to="to_Village" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="to_Village" to="to_Village" method="_on_mouse_exited"]
+[connection signal="input_event" from="to_General" to="to_General" method="_on_input_event"]
+[connection signal="mouse_entered" from="to_General" to="to_General" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="to_General" to="to_General" method="_on_mouse_exited"]

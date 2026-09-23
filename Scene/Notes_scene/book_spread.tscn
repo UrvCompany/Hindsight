@@ -31,16 +31,15 @@ offset_bottom = -254.44443
 theme_override_colors/default_color = Color(0.15, 0.1, 0.08, 1)
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "Замок короля превосходил все самые дерзкие представления того времени. Высота стен достигала [u][url=6 м]6 м[/url][/u]."
 fit_content = true
 scroll_active = false
 
 [node name="Paragraph2" type="RichTextLabel" parent="." unique_id=2120379191]
 layout_mode = 0
-offset_left = -541.1111
-offset_top = -230.0
-offset_right = -36.666626
-offset_bottom = -60.0
+offset_left = 80.00006
+offset_top = -430.0
+offset_right = 584.4445
+offset_bottom = -260.0
 theme_override_colors/default_color = Color(0.15, 0.1, 0.08, 1)
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true

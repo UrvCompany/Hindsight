@@ -1,7 +1,5 @@
 extends Area2D
-
-const target_scene_path := preload("res://Scene/Castle_interior/CI2/decree_reader.tscn")
-
+const target_scene_path := "res://Scene/Castle_interior/CI2/Castle_interior_second.tscn"
 @export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_right.png")
 
 
@@ -30,7 +28,6 @@ func _on_input_event(
 		var scene_path = choise_scene_path()
 		if !scene_path:
 			return
-
 		get_tree().change_scene_to_file(scene_path)
 		
 

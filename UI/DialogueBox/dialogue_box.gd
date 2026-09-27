@@ -1,2 +1,2 @@
-extends CanvasLayer
+extends Control
 class_name DialogueBox

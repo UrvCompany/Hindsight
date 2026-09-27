@@ -3,12 +3,21 @@
 [ext_resource type="Script" uid="uid://d311lan0k15cg" path="res://UI/DialogueBox/dialogue_box.gd" id="1_5j58o"]
 [ext_resource type="Texture2D" uid="uid://buusboiaqte14" path="res://Image/Portrait/portrait_detective.png" id="2_66las"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=55165352]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrfct"]
+bg_color = Color(0.5946484, 0.70900303, 0.70900303, 0.43529412)
+
+[node name="DialogueBox" type="Control" unique_id=1067716845]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_5j58o")
 
 [node name="Panel" type="Panel" parent="." unique_id=581347515]
-offset_right = 249.0
-offset_bottom = 66.0
+layout_mode = 0
+offset_left = 560.0
+offset_top = 325.0
+offset_right = 1360.0
+offset_bottom = 525.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qrfct")
 
 [node name="Portrait" type="TextureRect" parent="Panel" unique_id=1044303192]
 layout_mode = 0

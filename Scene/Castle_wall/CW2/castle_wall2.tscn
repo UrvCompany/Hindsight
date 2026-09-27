@@ -38,6 +38,7 @@ position = Vector2(1537, 703)
 position = Vector2(1177, 602)
 
 [node name="DialogueBox" parent="." unique_id=55165352 instance=ExtResource("8_h073p")]
+visible = false
 
 [connection signal="input_event" from="FromWall2ToWall" to="FromWall2ToWall" method="_on_input_event"]
 [connection signal="mouse_entered" from="FromWall2ToWall" to="FromWall2ToWall" method="_on_mouse_entered"]

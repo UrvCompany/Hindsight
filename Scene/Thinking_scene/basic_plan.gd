@@ -1,24 +1,7 @@
 extends Area2D
 class_name Basic_plane
+const CORRECT_ANSWER := preload("res://Data/CorrectAnswer.gd")
 
-
-const Basic_plane_chapter_1 := """
-План короля по обороне замка следующий:
-1) Выкопать [u][url=slot_0]_____[/url][/u](ы) глубиной [u][url=slot_1]________[/url][/u]
-2) Заполнить его(её) [u][url=slot_2]______[/url][/u]
-3) Запустить в неё(него) [u][url=slot_3]______[/url][/u](ы)
-4) Отправить [u][url=slot_4]____[/url][/u] на патрулирование [u][url=slot_5]_____[/url][/u]
-"""
-
-
-const CORRECT_ANSWERS: Array[String] = [
-	"ров",
-	"3 м",
-	"водой",
-	"крокодилов",
-	"всех воинов",
-	"вокруг замка"
-]
 
 
 @onready var Basic_plane_rich_text: RichTextLabel = $Basic_plane_rich_text
@@ -31,6 +14,13 @@ func _ready() -> void:
 	Basic_plane_rich_text.bbcode_enabled = true
 	Basic_plane_rich_text.modulate = Color.BLACK
 	
-	Basic_plane_rich_text.setup_text(Basic_plane_chapter_1)
-	Basic_plane_rich_text.set_correct_answers(CORRECT_ANSWERS)
-	Basic_plane_rich_text.set_loh(LOH)
+	if SceneStateGlobal.STAGE < 2:		#Пока хз что на третьем этапе будет
+		Basic_plane_rich_text.setup_text(CORRECT_ANSWER.Basic_plane[SceneStateGlobal.CURRENT_LEVEL][SceneStateGlobal.STAGE])
+		print(CORRECT_ANSWER.CORRECT_ANSWERS[SceneStateGlobal.CURRENT_LEVEL][SceneStateGlobal.STAGE])
+		Basic_plane_rich_text.set_correct_answers(CORRECT_ANSWER.CORRECT_ANSWERS[SceneStateGlobal.CURRENT_LEVEL][SceneStateGlobal.STAGE])
+		Basic_plane_rich_text.set_loh(LOH)
+
+	if SceneStateGlobal.STAGE == 2:		#Пока просто выводим план короны на третьем этапе
+		Basic_plane_rich_text.setup_text(CORRECT_ANSWER.Basic_plane[0][0])
+		Basic_plane_rich_text.set_correct_answers(CORRECT_ANSWER.CORRECT_ANSWERS[0][0])
+		Basic_plane_rich_text.set_loh(LOH)

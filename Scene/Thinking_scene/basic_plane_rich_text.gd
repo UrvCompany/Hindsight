@@ -3,14 +3,15 @@ extends RichTextLabel
 
 var original_text := ""
 var slot_words: Dictionary = {}
-var correct_answers: Array[String] = []
+var correct_answers: Array = []
 var hovered_slot := ""
 
 var loh: Sprite2D
+@onready var next_stage_button = $"../../Go_next_stage_pls"
 
 
 func _ready() -> void:
-	mouse_filter = Control.MOUSE_FILTER_STOP
+	mouse_filter = Control.MOUSE_FILTER_STOP 
 
 	meta_hover_started.connect(_on_meta_hover_started)
 	meta_hover_ended.connect(_on_meta_hover_ended)
@@ -25,7 +26,7 @@ func setup_text(new_text: String) -> void:
 	text = original_text
 
 
-func set_correct_answers(answers: Array[String]) -> void:
+func set_correct_answers(answers) -> void:
 	correct_answers = answers
 
 
@@ -67,6 +68,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if slot_words.size() == correct_answers.size():
 		if check_answers():
 			print("ПРАВИЛЬНО")
+			next_stage_button.visible = true
 			loh.visible = false
 		else:
 			print("НЕПРАВИЛЬНО")

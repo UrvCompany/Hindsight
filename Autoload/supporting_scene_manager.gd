@@ -14,10 +14,24 @@ var current_instance: Control = null
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if current_instance and event.is_action_pressed("ui_cancel"):
-		close()
+	if not current_instance:
+		return
 
+	# Закрытие по Escape
+	if event.is_action_pressed("ui_cancel"):
+		close()
 		get_viewport().set_input_as_handled()
+		return
+
+	# Закрытие по клику вне вспомогательной сцены
+	if (
+		event is InputEventMouseButton
+		and event.button_index == MOUSE_BUTTON_LEFT
+		and event.pressed
+		):
+		if not current_instance.get_global_rect().has_point(event.position):
+			close()
+			get_viewport().set_input_as_handled()
 
 
 func open(scene: PackedScene) -> Control:
@@ -46,18 +60,3 @@ func close() -> void:
 	dimmer.hide()
 
 	closed.emit()
-
-
-func _on_dimmer_gui_input(event: InputEvent) -> void:
-	if (
-		event is InputEventMouseButton
-		and event.button_index == MOUSE_BUTTON_LEFT
-		and event.pressed
-		):
-		if current_instance:
-			var view := current_instance as Control
-
-			if view.get_global_rect().has_point(event.position):
-				return
-
-		close()

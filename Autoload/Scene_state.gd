@@ -12,7 +12,7 @@ enum State {
 # 1 — первая стадия
 # 2 — вторая стадия
 # 3 — обе стадии
-var STAGE: int = 1
+var STAGE: int = 0
 
 
 # Текущий уровень.
@@ -29,3 +29,7 @@ var current_scene: String = ""
 
 # Слова, которые игрок уже собрал.
 var collected_words: Array[String] = []
+
+var HOME_SCENE= [
+	"res://Scene/General/general.tscn",
+	]

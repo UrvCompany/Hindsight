@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c5su7v4ranu8s"]
+
+[ext_resource type="Script" uid="uid://d311lan0k15cg" path="res://UI/DialogueBox/dialogue_box.gd" id="1_5j58o"]
+[ext_resource type="Texture2D" uid="uid://buusboiaqte14" path="res://Image/Portrait/portrait_detective.png" id="2_66las"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=55165352]
+script = ExtResource("1_5j58o")
+
+[node name="Panel" type="Panel" parent="." unique_id=581347515]
+offset_right = 249.0
+offset_bottom = 66.0
+
+[node name="Portrait" type="TextureRect" parent="Panel" unique_id=1044303192]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 63.0
+texture = ExtResource("2_66las")
+expand_mode = 1
+
+[node name="SpeakerLabel" type="Label" parent="Panel" unique_id=1075899592]
+layout_mode = 0
+offset_left = 60.0
+offset_right = 248.0
+offset_bottom = 27.0
+
+[node name="TextLabel" type="Label" parent="Panel" unique_id=1369893540]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 27.0
+offset_right = 249.0
+offset_bottom = 65.0

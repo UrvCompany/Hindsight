@@ -14,15 +14,10 @@ scale = Vector2(0.8277717, 0.7028986)
 texture = ExtResource("1_6gh1r")
 
 [node name="Basic_plane_rich_text" type="RichTextLabel" parent="." unique_id=1255976325]
-offset_left = -278.0
-offset_top = -394.0
-offset_right = 397.30695
-offset_bottom = 599.0308
-text = "	План короля по обороне замка следующий:
-	1) Выкопать _____ глубиной ________
-	2) Заполнить его ______
-	3) Запустить в него ______
-	4) Отправить ____ армии/ию на патрулирование _____"
+offset_left = -306.0
+offset_top = -314.0
+offset_right = 280.0
+offset_bottom = 192.0
 script = ExtResource("3_8i3ep")
 
 [node name="LOH" type="Sprite2D" parent="." unique_id=842009086]

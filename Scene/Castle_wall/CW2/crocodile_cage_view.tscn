@@ -9,12 +9,18 @@ height = 230.02734
 
 [node name="Control" type="Control" unique_id=149936639]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_left = 0.12200001
+anchor_top = 0.14400001
+anchor_right = 0.12200001
+anchor_bottom = 0.14400001
+offset_left = 495.75998
+offset_top = 230.48
+offset_right = 955.76
+offset_bottom = 538.48
+mouse_filter = 2
 
 [node name="CrocodileCage" type="Area2D" parent="." unique_id=527235431]
-position = Vector2(916, 579)
+position = Vector2(203, 181)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("2_3bppr")
 

@@ -37,12 +37,12 @@ func choise_scene_path():
 	Логика определения след сцены + фиксируем текущую сцену.
 	"""
 	
-	if SceneStateGlobal.STAGE == 1 or SceneStateGlobal.STAGE == 3:
+	if SceneStateGlobal.STAGE == 0 or SceneStateGlobal.STAGE == 2:
 			Input.set_custom_mouse_cursor(null)
 			SceneStateGlobal.current_scene = get_tree().get_current_scene().scene_file_path
 			return target_scene_path
 
-	if SceneStateGlobal.STAGE == 2:
+	if SceneStateGlobal.STAGE == 1:
 		return
 		
 		
@@ -50,7 +50,7 @@ func may_i_go():
 	"""
 	Решаем - есть ли возможность перехода на локацию.
 	"""
-	if SceneStateGlobal.STAGE == 1 or SceneStateGlobal.STAGE == 3:
+	if SceneStateGlobal.STAGE == 0 or SceneStateGlobal.STAGE == 2:
 		return true
 	
 	return false

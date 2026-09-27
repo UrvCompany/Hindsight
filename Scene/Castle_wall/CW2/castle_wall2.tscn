@@ -6,9 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_7ectw"]
 [ext_resource type="Script" uid="uid://dkh4ybiqnknkv" path="res://Scene/Castle_wall/CW2/from_CW2_to_CW1l.gd" id="5_eem41"]
 [ext_resource type="PackedScene" uid="uid://c6un7avb2qhti" path="res://Scene/Castle_wall/CW2/crocodile_cage.tscn" id="6_1y723"]
-[ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Chars/guard_3.tscn" id="8_522qq"]
-[ext_resource type="PackedScene" uid="uid://d2o0t8wlvrnkd" path="res://Scene/Castle_wall/CW2/crocodile_cage_view.tscn" id="8_lxch8"]
-[ext_resource type="Script" uid="uid://bdoe5rvqfyokk" path="res://Scene/Castle_wall/CW2/crocodile_cage_view.gd" id="9_lxch8"]
+[ext_resource type="PackedScene" uid="uid://dgsibrposldxx" path="res://Scene/Chars/guard_2.tscn" id="7_1y723"]
+[ext_resource type="PackedScene" uid="uid://c5su7v4ranu8s" path="res://UI/DialogueBox/DialogueBox.tscn" id="8_h073p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jswec"]
 size = Vector2(175, 460.5)
@@ -25,9 +24,6 @@ texture = ExtResource("1_m7bjk")
 
 [node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_7ectw")]
 
-[node name="Guard3" parent="." unique_id=383297953 instance=ExtResource("8_522qq")]
-position = Vector2(1153, 558)
-
 [node name="FromWall2ToWall" type="Area2D" parent="." unique_id=1655598633]
 script = ExtResource("5_eem41")
 
@@ -38,13 +34,10 @@ shape = SubResource("RectangleShape2D_jswec")
 [node name="СrocodileСage" parent="." unique_id=75112205 instance=ExtResource("6_1y723")]
 position = Vector2(1537, 703)
 
-[node name="crocodile_cage_view" parent="." unique_id=1037390906 instance=ExtResource("8_lxch8")]
-visible = false
-offset_left = 923.0
-offset_top = 646.0
-offset_right = 963.0
-offset_bottom = 686.0
-script = ExtResource("9_lxch8")
+[node name="Guard2" parent="." unique_id=937132247 instance=ExtResource("7_1y723")]
+position = Vector2(1177, 602)
+
+[node name="DialogueBox" parent="." unique_id=55165352 instance=ExtResource("8_h073p")]
 
 [connection signal="input_event" from="FromWall2ToWall" to="FromWall2ToWall" method="_on_input_event"]
 [connection signal="mouse_entered" from="FromWall2ToWall" to="FromWall2ToWall" method="_on_mouse_entered"]

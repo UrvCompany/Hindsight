@@ -4,14 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="2_bcs4l"]
 [ext_resource type="Script" uid="uid://bstlrnkloqx3t" path="res://Scene/Village/from_ tavern_to_village.gd" id="2_yoqn0"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="3_exyls"]
+[ext_resource type="Script" uid="uid://ppetwkjb0dy0" path="res://Scene/Village/from_tavern_to_basement.gd" id="5_bcs4l"]
+[ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Chars/guard_3.tscn" id="6_exyls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
 size = Vector2(211, 563)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqsbf"]
-size = Vector2(517, 126)
+size = Vector2(396.25, 168)
 
-[node name="Village" type="Area2D" unique_id=513882028]
+[node name="Tavern" type="Area2D" unique_id=513882028]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873714766]
 position = Vector2(961.99994, 497.99997)
@@ -30,16 +32,26 @@ shape = SubResource("RectangleShape2D_incjn")
 
 [node name="WordsBor" parent="ModeSwitch" unique_id=1936151921 instance=ExtResource("3_exyls")]
 
-[node name="to_General" type="Area2D" parent="." unique_id=1353458573]
+[node name="to_basement" type="Area2D" parent="." unique_id=1353458573]
 position = Vector2(249, 698)
+script = ExtResource("5_bcs4l")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="to_General" unique_id=987456711]
-position = Vector2(177, 73)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="to_basement" unique_id=987456711]
+position = Vector2(-49, 73)
 shape = SubResource("RectangleShape2D_lqsbf")
+
+[node name="Guard3" parent="." unique_id=937132247 instance=ExtResource("6_exyls")]
+position = Vector2(630, 670)
+
+[node name="Guard4" parent="." unique_id=1880189783 instance=ExtResource("6_exyls")]
+position = Vector2(1290, 655)
+
+[node name="Guard5" parent="." unique_id=2142039228 instance=ExtResource("6_exyls")]
+position = Vector2(1097, 592)
 
 [connection signal="input_event" from="to_Village" to="to_Village" method="_on_input_event"]
 [connection signal="mouse_entered" from="to_Village" to="to_Village" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="to_Village" to="to_Village" method="_on_mouse_exited"]
-[connection signal="input_event" from="to_General" to="to_General" method="_on_input_event"]
-[connection signal="mouse_entered" from="to_General" to="to_General" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="to_General" to="to_General" method="_on_mouse_exited"]
+[connection signal="input_event" from="to_basement" to="to_basement" method="_on_input_event"]
+[connection signal="mouse_entered" from="to_basement" to="to_basement" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="to_basement" to="to_basement" method="_on_mouse_exited"]

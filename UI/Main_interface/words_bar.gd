@@ -15,7 +15,7 @@ func _ready() -> void:
 		if not is_equal_approx(a.position.y, b.position.y):
 			return a.position.y < b.position.y
 		return a.position.x < b.position.x
-	)
+		)
 
 	set_words(SceneStateGlobal.collected_words)
 

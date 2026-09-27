@@ -3,15 +3,15 @@ extends Node2D
 
 const BOOK_SCENE := preload(
 	"res://Scene/Notes_scene/Book.tscn"
-)
+	)
 
 const BOOK_SPREAD_SCENE := preload(
 	"res://Scene/Notes_scene/book_spread.tscn"
-)
+	)
 
 const LEVEL_BOOKS := preload(
 	"res://Data/LevelBooks.gd"
-)
+	)
 
 
 @export var book_textures: Array[Texture2D] = []
@@ -30,12 +30,12 @@ func _ready() -> void:
 	SupportingSceneManager.opened.connect(
 		func():
 			mode_switch.set_ui_visible(false)
-	)
+			)
 
 	SupportingSceneManager.closed.connect(
 		func():
 			mode_switch.set_ui_visible(true)
-	)
+			)
 
 	generate_books()
 

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d2o0t8wlvrnkd"]
+
+[ext_resource type="Script" uid="uid://bvqrp0lr8miqj" path="res://Scene/Castle_wall/CW2/CrocodileCageSupScene.gd" id="2_3bppr"]
+[ext_resource type="Texture2D" uid="uid://c2h6pbprpwqm5" path="res://Image/Objects/crocodile_crop.png" id="2_dofts"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aioa1"]
+radius = 53.014343
+height = 230.02734
+
+[node name="Control" type="Control" unique_id=149936639]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CrocodileCage" type="Area2D" parent="." unique_id=527235431]
+position = Vector2(916, 579)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("2_3bppr")
+
+[node name="Sprite2D" type="Sprite2D" parent="CrocodileCage" unique_id=1935694115]
+position = Vector2(18, -18)
+texture = ExtResource("2_dofts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrocodileCage" unique_id=1957688613]
+position = Vector2(25, -8)
+rotation = 1.5758146
+shape = SubResource("CapsuleShape2D_aioa1")
+
+[connection signal="input_event" from="CrocodileCage" to="CrocodileCage" method="_on_input_event"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c6un7avb2qhti"]
+
+[ext_resource type="Texture2D" uid="uid://b8w8tapxnkw0e" path="res://Image/Objects/crocodile_crop2.png" id="2_1t5q0"]
+[ext_resource type="Script" uid="uid://qftgmhhdsph0" path="res://Scene/Castle_wall/CW2/crocodile_cage.gd" id="2_dt423"]
+
+[node name="Area2D" type="Area2D" unique_id=547108231]
+scale = Vector2(1.25, 1.25)
+script = ExtResource("2_dt423")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1811012206]
+position = Vector2(4.7999997, -4.7999997)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_1t5q0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=546499680]
+position = Vector2(-138, -70)
+polygon = PackedVector2Array(-3.600006, -2, 147.59999, -34, 288.39996, 4.399994, 287.59998, 117.19999, 119.59998, 167.59998, -3.600006, 115.59999)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

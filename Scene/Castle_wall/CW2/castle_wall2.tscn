@@ -1,20 +1,25 @@
 [gd_scene format=3 uid="uid://dlav37qmdxxt5"]
 
-[ext_resource type="Texture2D" uid="uid://ddix1ptwtguqe" path="res://Image/Scenes/wll2.png" id="1_eem41"]
+[ext_resource type="Script" uid="uid://ch3dgpkr3ec5c" path="res://Scene/Castle_wall/CW2/castle_wall_2.gd" id="1_h073p"]
+[ext_resource type="Texture2D" uid="uid://bsegx6bcgrbvc" path="res://Image/Scenes/CW2.png" id="1_m7bjk"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="2_mj511"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_7ectw"]
 [ext_resource type="Script" uid="uid://dkh4ybiqnknkv" path="res://Scene/Castle_wall/CW2/from_CW2_to_CW1l.gd" id="5_eem41"]
+[ext_resource type="PackedScene" uid="uid://c6un7avb2qhti" path="res://Scene/Castle_wall/CW2/crocodile_cage.tscn" id="6_1y723"]
 [ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Chars/guard_3.tscn" id="8_522qq"]
+[ext_resource type="PackedScene" uid="uid://d2o0t8wlvrnkd" path="res://Scene/Castle_wall/CW2/crocodile_cage_view.tscn" id="8_lxch8"]
+[ext_resource type="Script" uid="uid://bdoe5rvqfyokk" path="res://Scene/Castle_wall/CW2/crocodile_cage_view.gd" id="9_lxch8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jswec"]
 size = Vector2(175, 460.5)
 
 [node name="CastleWall2" type="Node2D" unique_id=214649509]
+script = ExtResource("1_h073p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1861742231]
-position = Vector2(962.1, 431.67996)
-scale = Vector2(1.4130882, 1.1180209)
-texture = ExtResource("1_eem41")
+position = Vector2(957.4999, 460)
+scale = Vector2(1.1516787, 0.9692471)
+texture = ExtResource("1_m7bjk")
 
 [node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("2_mj511")]
 
@@ -29,6 +34,17 @@ script = ExtResource("5_eem41")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FromWall2ToWall" unique_id=444370261]
 position = Vector2(87.5, 617.25)
 shape = SubResource("RectangleShape2D_jswec")
+
+[node name="СrocodileСage" parent="." unique_id=75112205 instance=ExtResource("6_1y723")]
+position = Vector2(1537, 703)
+
+[node name="crocodile_cage_view" parent="." unique_id=1037390906 instance=ExtResource("8_lxch8")]
+visible = false
+offset_left = 923.0
+offset_top = 646.0
+offset_right = 963.0
+offset_bottom = 686.0
+script = ExtResource("9_lxch8")
 
 [connection signal="input_event" from="FromWall2ToWall" to="FromWall2ToWall" method="_on_input_event"]
 [connection signal="mouse_entered" from="FromWall2ToWall" to="FromWall2ToWall" method="_on_mouse_entered"]

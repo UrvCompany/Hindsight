@@ -24,7 +24,6 @@ func open(scene: PackedScene) -> Control:
 	if current_instance:
 		close()
 
-
 	current_instance = scene.instantiate()
 
 	container.add_child(current_instance)
@@ -40,7 +39,6 @@ func close() -> void:
 	if not current_instance:
 		return
 
-
 	current_instance.queue_free()
 
 	current_instance = null
@@ -55,5 +53,11 @@ func _on_dimmer_gui_input(event: InputEvent) -> void:
 		event is InputEventMouseButton
 		and event.button_index == MOUSE_BUTTON_LEFT
 		and event.pressed
-	):
+		):
+		if current_instance:
+			var view := current_instance as Control
+
+			if view.get_global_rect().has_point(event.position):
+				return
+
 		close()

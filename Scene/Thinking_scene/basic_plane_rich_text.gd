@@ -67,11 +67,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	# Проверяем только после заполнения всех слотов.
 	if slot_words.size() == correct_answers.size():
 		if check_answers():
-			print("ПРАВИЛЬНО")
 			next_stage_button.visible = true
 			loh.visible = false
 		else:
-			print("НЕПРАВИЛЬНО")
 			loh.visible = true
 
 

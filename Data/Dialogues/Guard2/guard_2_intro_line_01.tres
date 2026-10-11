@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://c115lbqhpvgru"]
+
+[ext_resource type="Texture2D" uid="uid://cdk7xh0pw0q6m" path="res://Image/Portrait/2.png" id="1_jtm6e"]
+[ext_resource type="Script" uid="uid://bckcf0lamorra" path="res://Data/Dialogues/dialogue_line.gd" id="2_o8qr1"]
+[ext_resource type="Resource" uid="uid://c22xm33fjjwq5" path="res://Data/Characters/Guard2.tres" id="3_0iswm"]
+
+[resource]
+script = ExtResource("2_o8qr1")
+text = "Тебе что"
+speaker = ExtResource("3_0iswm")
+portrait = ExtResource("1_jtm6e")
+metadata/_custom_type_script = "uid://bckcf0lamorra"

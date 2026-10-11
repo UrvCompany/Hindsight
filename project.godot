@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 
 SceneStateGlobal="*uid://jkkxhebkg8rk"
 SupportingSceneManager="*res://Autoload/supporting_scene_manager.tscn"
+DialogueManager="*uid://dpihlkl8qbc3y"
 
 [display]
 

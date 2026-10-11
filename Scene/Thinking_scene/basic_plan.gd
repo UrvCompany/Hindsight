@@ -16,7 +16,6 @@ func _ready() -> void:
 	
 	if SceneStateGlobal.STAGE < 2:		#Пока хз что на третьем этапе будет
 		Basic_plane_rich_text.setup_text(CORRECT_ANSWER.Basic_plane[SceneStateGlobal.CURRENT_LEVEL][SceneStateGlobal.STAGE])
-		print(CORRECT_ANSWER.CORRECT_ANSWERS[SceneStateGlobal.CURRENT_LEVEL][SceneStateGlobal.STAGE])
 		Basic_plane_rich_text.set_correct_answers(CORRECT_ANSWER.CORRECT_ANSWERS[SceneStateGlobal.CURRENT_LEVEL][SceneStateGlobal.STAGE])
 		Basic_plane_rich_text.set_loh(LOH)
 

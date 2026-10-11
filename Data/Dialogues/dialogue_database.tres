@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueDatabase" format=3 uid="uid://6pqrryypnhfn"]
+
+[ext_resource type="Script" uid="uid://b8yn3u7m60rw8" path="res://Data/Dialogues/dialogue_rule.gd" id="1_1oyjl"]
+[ext_resource type="Script" uid="uid://dpg4l1cjeou3t" path="res://Data/Dialogues/dialogue_database.gd" id="2_1oyjl"]
+[ext_resource type="Resource" uid="uid://d0lhlw4wbej15" path="res://Data/Dialogues/Guard2/guard_2_intro_rule.tres" id="2_54jwa"]
+[ext_resource type="Resource" uid="uid://c3jc655iqqb5j" path="res://Data/Dialogues/King/King_rules.tres" id="3_mk3y3"]
+
+[resource]
+script = ExtResource("2_1oyjl")
+rules = Array[ExtResource("1_1oyjl")]([ExtResource("3_mk3y3"), ExtResource("2_54jwa")])
+metadata/_custom_type_script = "uid://dpg4l1cjeou3t"

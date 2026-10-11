@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://cbgicirxegg4n"]
+
+[ext_resource type="Script" uid="uid://bckcf0lamorra" path="res://Data/Dialogues/dialogue_line.gd" id="1_jrbbc"]
+[ext_resource type="Texture2D" uid="uid://cp7h8ugyue2lc" path="res://Image/Portrait/King.png" id="1_nc3v3"]
+[ext_resource type="Resource" uid="uid://d23fy4t1iln87" path="res://Data/Characters/King.tres" id="3_d2xas"]
+
+[resource]
+script = ExtResource("1_jrbbc")
+text = "Приветствую вас, путешественники!"
+speaker = ExtResource("3_d2xas")
+portrait = ExtResource("1_nc3v3")
+metadata/_custom_type_script = "uid://bckcf0lamorra"

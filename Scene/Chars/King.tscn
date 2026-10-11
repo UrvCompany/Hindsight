@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://crkl0kjusqaq8"]
+
+[ext_resource type="Texture2D" uid="uid://cf0t20x7koy2d" path="res://Image/Chars/King.png" id="1_psvvo"]
+[ext_resource type="Script" uid="uid://dcmaj824vv2a1" path="res://Scene/Chars/king.gd" id="1_tmuuv"]
+[ext_resource type="Resource" uid="uid://d23fy4t1iln87" path="res://Data/Characters/King.tres" id="2_hhrfl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psvvo"]
+size = Vector2(118.5, 203)
+
+[node name="King" type="CharacterBody2D" unique_id=70142671]
+script = ExtResource("1_tmuuv")
+character_data = ExtResource("2_hhrfl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=606442560]
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("1_psvvo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1987480789]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2038878325]
+position = Vector2(1.75, 23.5)
+shape = SubResource("RectangleShape2D_psvvo")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

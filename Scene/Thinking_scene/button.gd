@@ -4,7 +4,6 @@ extends Button
 func _on_pressed() -> void:
 	
 	if SceneStateGlobal.STAGE == 2:
-		print('sukablyat')
 		SceneStateGlobal.STAGE = 0
 	
 	if SceneStateGlobal.STAGE == 0 or SceneStateGlobal.STAGE == 1:

@@ -37,9 +37,6 @@ func _on_button_pressed() -> void:
 	SceneStateGlobal.current_state = (
 		(SceneStateGlobal.current_state + 1) % 3
 		) as SceneStateGlobal.State
-
-	print('SceneStateGlobal.CURRENT_LEVEL:', SceneStateGlobal.CURRENT_LEVEL)
-	print('SceneStateGlobal.STAGE:', SceneStateGlobal.STAGE)
 	
 	match SceneStateGlobal.current_state:
 

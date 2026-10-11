@@ -4,6 +4,7 @@ extends Area2D
 @export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_down.png")
 
 
+		
 func _on_mouse_entered() -> void:
 	Input.set_custom_mouse_cursor(cursor_texture)
 

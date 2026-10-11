@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6un7avb2qhti" path="res://Scene/Castle_wall/CW2/crocodile_cage.tscn" id="6_1y723"]
 [ext_resource type="PackedScene" uid="uid://dgsibrposldxx" path="res://Scene/Chars/guard_2.tscn" id="7_1y723"]
 [ext_resource type="PackedScene" uid="uid://c5su7v4ranu8s" path="res://UI/DialogueBox/DialogueBox.tscn" id="8_h073p"]
+[ext_resource type="Resource" uid="uid://c22xm33fjjwq5" path="res://Data/Characters/Guard2.tres" id="8_lxch8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jswec"]
 size = Vector2(175, 460.5)
@@ -36,6 +37,7 @@ position = Vector2(1537, 703)
 
 [node name="Guard2" parent="." unique_id=937132247 instance=ExtResource("7_1y723")]
 position = Vector2(1177, 602)
+character_data = ExtResource("8_lxch8")
 
 [node name="DialogueBox" parent="." unique_id=55165352 instance=ExtResource("8_h073p")]
 visible = false

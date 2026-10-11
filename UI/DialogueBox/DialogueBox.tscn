@@ -23,20 +23,21 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_qrfct")
 layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
-offset_right = 62.0
-offset_bottom = 63.0
+offset_right = 241.0
+offset_bottom = 196.0
 texture = ExtResource("2_66las")
 expand_mode = 1
 
 [node name="SpeakerLabel" type="Label" parent="Panel" unique_id=1075899592]
 layout_mode = 0
-offset_left = 60.0
-offset_right = 248.0
-offset_bottom = 27.0
+offset_left = 239.0
+offset_top = 8.0
+offset_right = 793.0
+offset_bottom = 90.0
 
 [node name="TextLabel" type="Label" parent="Panel" unique_id=1369893540]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 27.0
-offset_right = 249.0
-offset_bottom = 65.0
+offset_left = 240.0
+offset_top = 97.0
+offset_right = 794.0
+offset_bottom = 193.0

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://d23fy4t1iln87"]
+
+[ext_resource type="Script" uid="uid://bd41kpy2vwyx1" path="res://Data/Characters/character_data.gd" id="1_ovc42"]
+
+[resource]
+script = ExtResource("1_ovc42")
+id = "1"
+display_name = "King Artur"
+metadata/_custom_type_script = "uid://bd41kpy2vwyx1"

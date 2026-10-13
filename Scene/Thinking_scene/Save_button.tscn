@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bmccnihxntq2v"]
+
+[ext_resource type="Texture2D" uid="uid://cr7sr3iqrkxo" path="res://Image/Thinking_screen/Frame_D-Marble_01-256x256.png" id="1_iaqgm"]
+[ext_resource type="Script" uid="uid://im5au0w3auqb" path="res://Scene/Thinking_scene/Save_button.gd" id="2_iaqgm"]
+
+[node name="Save_button" type="Area2D" unique_id=564575345]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=458484834]
+texture = ExtResource("1_iaqgm")
+
+[node name="Label" type="Label" parent="." unique_id=337152649]
+offset_left = -86.0
+offset_top = -64.0
+offset_right = 89.0
+offset_bottom = 68.0
+text = "Save"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=6020852]
+offset_left = -92.0
+offset_top = -92.0
+offset_right = 93.0
+offset_bottom = 91.0
+script = ExtResource("2_iaqgm")

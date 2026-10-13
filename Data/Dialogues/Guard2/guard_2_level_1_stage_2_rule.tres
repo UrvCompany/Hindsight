@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialogueRule" format=3 uid="uid://cf613xtgbj26x"]
+
+[ext_resource type="Resource" uid="uid://c22xm33fjjwq5" path="res://Data/Characters/Guard2.tres" id="1_vgfty"]
+[ext_resource type="Script" uid="uid://ctcuqk68maycr" path="res://Data/Dialogues/dialogue_condition.gd" id="1_vk0qb"]
+[ext_resource type="Script" uid="uid://b8yn3u7m60rw8" path="res://Data/Dialogues/dialogue_rule.gd" id="2_6fewn"]
+[ext_resource type="Resource" uid="uid://c7memm28obfhw" path="res://Data/Dialogues/Guard2/guard_2_level_1_stage_2.tres" id="3_eq8rv"]
+[ext_resource type="Resource" uid="uid://blpds11528eso" path="res://Data/Dialogues/Guard2/guard_2_level_1_stage_2_dial_condition_1.tres" id="3_f4hyg"]
+[ext_resource type="Resource" uid="uid://bqnwdrwtap7jl" path="res://Data/Dialogues/Guard2/guard_2_level_1_stage_2_dial_condition_2.tres" id="4_glfq0"]
+
+[resource]
+script = ExtResource("2_6fewn")
+character = ExtResource("1_vgfty")
+dialogue = ExtResource("3_eq8rv")
+priority = 10
+conditions = Array[ExtResource("1_vk0qb")]([ExtResource("3_f4hyg"), ExtResource("4_glfq0")])
+metadata/_custom_type_script = "uid://b8yn3u7m60rw8"

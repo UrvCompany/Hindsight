@@ -6,7 +6,7 @@ func _on_pressed() -> void:
 	if SceneStateGlobal.STAGE == 2:
 		SceneStateGlobal.STAGE = 0
 	
-	if SceneStateGlobal.STAGE == 0 or SceneStateGlobal.STAGE == 1:
+	elif SceneStateGlobal.STAGE == 0 or SceneStateGlobal.STAGE == 1:
 		SceneStateGlobal.STAGE += 1
 	
 	

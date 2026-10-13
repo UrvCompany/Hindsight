@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Hindsight"
-run/main_scene="uid://bsmdyuo384i4t"
+run/main_scene="uid://242r32dcegnm"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 SceneStateGlobal="*uid://jkkxhebkg8rk"
 SupportingSceneManager="*res://Autoload/supporting_scene_manager.tscn"
 DialogueManager="*uid://dpihlkl8qbc3y"
+SaveManager="*uid://bny4v85lw548c"
 
 [display]
 

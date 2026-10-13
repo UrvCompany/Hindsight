@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://fn3tw2waut58"]
+
+[ext_resource type="Texture2D" uid="uid://kqtns35p533x" path="res://Image/Chars/Digger2.png" id="1_eq5jw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm3c"]
+size = Vector2(133, 227.5)
+
+[node name="Digger2" type="CharacterBody2D" unique_id=1430557277]
+top_level = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1661816280]
+position = Vector2(9, 1.000001)
+scale = Vector2(0.325, 0.325)
+texture = ExtResource("1_eq5jw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2122085625]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=92387179]
+position = Vector2(4.5, 24.75)
+shape = SubResource("RectangleShape2D_7bm3c")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

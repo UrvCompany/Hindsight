@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://br6hegvcb27ya" path="res://Scene/Village/from_basement_to_tavern.gd" id="2_nwomb"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_dtu6f"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_cfiwq"]
-[ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Chars/guard_3.tscn" id="5_nwomb"]
+[ext_resource type="PackedScene" uid="uid://ng4v71s88nel" path="res://Scene/Chars/Digger1.tscn" id="5_dtu6f"]
+[ext_resource type="PackedScene" uid="uid://fn3tw2waut58" path="res://Scene/Chars/Digger2.tscn" id="6_cfiwq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
 size = Vector2(436, 366.75)
@@ -28,11 +29,13 @@ shape = SubResource("RectangleShape2D_incjn")
 
 [node name="WordsBor" parent="ModeSwitch" unique_id=1936151921 instance=ExtResource("4_cfiwq")]
 
-[node name="Guard3" parent="." unique_id=937132247 instance=ExtResource("5_nwomb")]
-position = Vector2(1084, 560)
+[node name="Digger1" parent="." unique_id=1430557277 instance=ExtResource("5_dtu6f")]
+position = Vector2(1394, 605)
+scale = Vector2(1.375, 1.375)
 
-[node name="Guard4" parent="." unique_id=680945283 instance=ExtResource("5_nwomb")]
-position = Vector2(1398, 654)
+[node name="Digger2" parent="." unique_id=760289293 instance=ExtResource("6_cfiwq")]
+position = Vector2(1058.0001, 556.00006)
+scale = Vector2(1.375, 1.375)
 
 [connection signal="input_event" from="Tavern" to="Tavern" method="_on_input_event"]
 [connection signal="mouse_entered" from="Tavern" to="Tavern" method="_on_mouse_entered"]

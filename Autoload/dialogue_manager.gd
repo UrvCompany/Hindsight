@@ -42,7 +42,7 @@ func get_dialogue(character_data: CharacterData) -> DialogueData:
 func start_dialogue(character_data: CharacterData) -> void:
 
 	var dialogue_data: DialogueData = get_dialogue(character_data)
-
+	print('Stage: ', SceneStateGlobal.STAGE, 'Level: ',  SceneStateGlobal.CURRENT_LEVEL)
 	if dialogue_data == null:
 		return
 

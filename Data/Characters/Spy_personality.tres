@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DynamicName" format=3 uid="uid://t7fmransb84n"]
+
+[ext_resource type="Script" uid="uid://dqw1jltfl8arx" path="res://Data/Characters/dynamic_name.gd" id="1_vjumn"]
+
+[resource]
+script = ExtResource("1_vjumn")
+stage = 1
+display_name = "Spy"
+metadata/_custom_type_script = "uid://dqw1jltfl8arx"

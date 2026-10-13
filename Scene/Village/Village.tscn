@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://by7a45g8y7kpv"]
 
 [ext_resource type="Texture2D" uid="uid://bv3wdv0lnbpoo" path="res://Image/Scenes/village.png" id="1_n3r3j"]
+[ext_resource type="PackedScene" uid="uid://cgdxcup1amgqt" path="res://Scene/Chars/peasant.tscn" id="2_54nwh"]
 [ext_resource type="Script" uid="uid://c58doyr8unv4q" path="res://Scene/Village/from_village_to_tavern.gd" id="2_ixtae"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_54nwh"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_cf3ct"]
@@ -18,6 +19,14 @@ size = Vector2(517, 126)
 position = Vector2(961.99994, 497.99997)
 scale = Vector2(1.4088235, 1.2786459)
 texture = ExtResource("1_n3r3j")
+
+[node name="peasant" parent="Sprite2D" unique_id=1430557277 instance=ExtResource("2_54nwh")]
+position = Vector2(936, 574)
+scale = Vector2(0.18, 0.18)
+
+[node name="peasant2" parent="Sprite2D" unique_id=415911923 instance=ExtResource("2_54nwh")]
+position = Vector2(1470, 465)
+scale = Vector2(0.1, 0.1)
 
 [node name="to_Tavern" type="Area2D" parent="." unique_id=1933379268]
 script = ExtResource("2_ixtae")
@@ -38,6 +47,22 @@ script = ExtResource("5_bcmxs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_General" unique_id=987456711]
 position = Vector2(194.5, 46)
 shape = SubResource("RectangleShape2D_lqsbf")
+
+[node name="peasant" parent="." unique_id=1065615976 instance=ExtResource("2_54nwh")]
+position = Vector2(1878.0001, 626)
+scale = Vector2(0.18, 0.18)
+
+[node name="peasant2" parent="." unique_id=148973728 instance=ExtResource("2_54nwh")]
+position = Vector2(1083, 611)
+scale = Vector2(0.18, 0.18)
+
+[node name="peasant3" parent="." unique_id=778208182 instance=ExtResource("2_54nwh")]
+position = Vector2(1732.0001, 751)
+scale = Vector2(0.25, 0.25)
+
+[node name="peasant4" parent="." unique_id=1034616287 instance=ExtResource("2_54nwh")]
+position = Vector2(716, 557)
+scale = Vector2(0.18, 0.18)
 
 [connection signal="input_event" from="to_Tavern" to="to_Tavern" method="_on_input_event"]
 [connection signal="mouse_entered" from="to_Tavern" to="to_Tavern" method="_on_mouse_entered"]

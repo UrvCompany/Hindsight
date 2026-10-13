@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dgsibrposldxx"]
 
 [ext_resource type="Script" uid="uid://r2hqmxpjdt8t" path="res://Scene/Chars/guard_2.gd" id="1_nc28s"]
-[ext_resource type="Texture2D" uid="uid://bilwh4jruvjrx" path="res://Image/Chars/2.png" id="2_echp0"]
 [ext_resource type="Resource" uid="uid://c22xm33fjjwq5" path="res://Data/Characters/Guard2.tres" id="2_srm4v"]
+[ext_resource type="Texture2D" uid="uid://ggvq07a4bqan" path="res://Image/Chars/Archer.png" id="3_echp0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fiicb"]
 size = Vector2(125, 231)
@@ -12,8 +12,9 @@ script = ExtResource("1_nc28s")
 character_data = ExtResource("2_srm4v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=783087692]
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("2_echp0")
+position = Vector2(16, -8)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("3_echp0")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1189265654]
 

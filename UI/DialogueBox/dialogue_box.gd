@@ -49,7 +49,7 @@ func _show_current_line() -> void:
 		speaker = dialogue_data.character
 
 	if speaker != null:
-		name_label.text = speaker.display_name
+		name_label.text = speaker.get_display_name()
 	else:
 		name_label.text = ""
 

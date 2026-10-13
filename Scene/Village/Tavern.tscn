@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://bstlrnkloqx3t" path="res://Scene/Village/from_ tavern_to_village.gd" id="2_yoqn0"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="3_exyls"]
 [ext_resource type="Script" uid="uid://ppetwkjb0dy0" path="res://Scene/Village/from_tavern_to_basement.gd" id="5_bcs4l"]
-[ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Chars/guard_3.tscn" id="6_exyls"]
+[ext_resource type="PackedScene" uid="uid://bj3e0yqlxulu" path="res://Scene/Chars/Headman.tscn" id="6_exyls"]
+[ext_resource type="PackedScene" uid="uid://did306ukbv6n6" path="res://Scene/Chars/mercenary.tscn" id="7_i81rv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
 size = Vector2(211, 563)
@@ -37,17 +38,16 @@ position = Vector2(249, 698)
 script = ExtResource("5_bcs4l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_basement" unique_id=987456711]
-position = Vector2(-49, 73)
+position = Vector2(-49, 65)
 shape = SubResource("RectangleShape2D_lqsbf")
 
-[node name="Guard3" parent="." unique_id=937132247 instance=ExtResource("6_exyls")]
-position = Vector2(630, 670)
+[node name="Headman" parent="." unique_id=1430557277 instance=ExtResource("6_exyls")]
+position = Vector2(566, 600)
+scale = Vector2(1.785, 1.785)
 
-[node name="Guard4" parent="." unique_id=1880189783 instance=ExtResource("6_exyls")]
-position = Vector2(1290, 655)
-
-[node name="Guard5" parent="." unique_id=2142039228 instance=ExtResource("6_exyls")]
-position = Vector2(1097, 592)
+[node name="Mercenary" parent="." unique_id=1302927331 instance=ExtResource("7_i81rv")]
+position = Vector2(1071, 561)
+scale = Vector2(-1.64, 1.64)
 
 [connection signal="input_event" from="to_Village" to="to_Village" method="_on_input_event"]
 [connection signal="mouse_entered" from="to_Village" to="to_Village" method="_on_mouse_entered"]

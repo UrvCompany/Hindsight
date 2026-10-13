@@ -25,7 +25,10 @@ func _on_input_event(
 	При клике определяем путь следующей сцены и переходим на неё.
 	"""
 	
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+	if (event is InputEventMouseButton 
+		and event.button_index == MOUSE_BUTTON_LEFT 
+		and event.pressed
+		):
 		
 		var scene_path = choise_scene_path()
 		if !scene_path:
@@ -40,7 +43,7 @@ func choise_scene_path():
 	Логика определения след сцены + фиксируем текущую сцену.
 	"""
 	
-	if SceneStateGlobal.STAGE == 0 or SceneStateGlobal.STAGE == 1:
+	if SceneStateGlobal.STAGE == 2 or SceneStateGlobal.STAGE == 1:
 			Input.set_custom_mouse_cursor(null)
 			SceneStateGlobal.current_scene = get_tree().get_current_scene().scene_file_path
 			return target_scene_path

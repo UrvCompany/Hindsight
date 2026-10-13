@@ -1,11 +1,14 @@
 [gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://c22xm33fjjwq5"]
 
 [ext_resource type="Script" uid="uid://bd41kpy2vwyx1" path="res://Data/Characters/character_data.gd" id="1_52shp"]
-[ext_resource type="Texture2D" uid="uid://cdk7xh0pw0q6m" path="res://Image/Portrait/2.png" id="1_nfvwx"]
+[ext_resource type="Texture2D" uid="uid://dddn7yfvvtkli" path="res://Image/Portrait/Archer.png" id="1_nfvwx"]
+[ext_resource type="Script" uid="uid://dqw1jltfl8arx" path="res://Data/Characters/dynamic_name.gd" id="1_y4yvb"]
+[ext_resource type="Resource" uid="uid://t7fmransb84n" path="res://Data/Characters/Spy_personality.tres" id="2_vdqvq"]
 
 [resource]
 script = ExtResource("1_52shp")
 id = "2"
-display_name = "Guarder"
+display_name = "Archer"
 portrait = ExtResource("1_nfvwx")
+dynamic_names = Array[ExtResource("1_y4yvb")]([ExtResource("2_vdqvq")])
 metadata/_custom_type_script = "uid://bd41kpy2vwyx1"

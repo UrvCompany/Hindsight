@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://did306ukbv6n6"]
+
+[ext_resource type="Texture2D" uid="uid://dahll5ruum2t2" path="res://Image/Chars/mercenary.png" id="1_6knch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm3c"]
+size = Vector2(133, 227.5)
+
+[node name="Mercenary" type="CharacterBody2D" unique_id=1430557277]
+top_level = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1661816280]
+position = Vector2(0, 14.999999)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("1_6knch")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2122085625]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=92387179]
+position = Vector2(4.5, 24.75)
+shape = SubResource("RectangleShape2D_7bm3c")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

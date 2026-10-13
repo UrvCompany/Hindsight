@@ -46,6 +46,9 @@ offset_left = 240.0
 offset_top = 97.0
 offset_right = 794.0
 offset_bottom = 193.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="NextButton" type="Button" parent="Panel" unique_id=1945288572]
 layout_mode = 0

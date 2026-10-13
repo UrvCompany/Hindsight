@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://d2uphxysi7x82"]
+
+[ext_resource type="Script" uid="uid://bckcf0lamorra" path="res://Data/Dialogues/dialogue_line.gd" id="1_1aaj6"]
+[ext_resource type="Texture2D" uid="uid://dddn7yfvvtkli" path="res://Image/Portrait/Archer.png" id="1_1ignx"]
+[ext_resource type="Resource" uid="uid://c22xm33fjjwq5" path="res://Data/Characters/Guard2.tres" id="3_xmbwn"]
+
+[resource]
+script = ExtResource("1_1aaj6")
+text = "Мне удалось выяснить, что последние месяцы король находится в тронном зале днем и ночью."
+speaker = ExtResource("3_xmbwn")
+portrait = ExtResource("1_1ignx")
+emotion = 4
+metadata/_custom_type_script = "uid://bckcf0lamorra"

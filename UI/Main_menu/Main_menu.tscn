@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://242r32dcegnm"]
+
+[ext_resource type="Script" uid="uid://dj348yhoqdy31" path="res://UI/Main_menu/main_menu.gd" id="1_bd57o"]
+[ext_resource type="Script" uid="uid://b8j5hw0m4y0sx" path="res://UI/Main_menu/continue_button.gd" id="2_k8wto"]
+[ext_resource type="Texture2D" uid="uid://73l7kjpgliof" path="res://Image/Interface/main_menu.png" id="3_hprto"]
+
+[node name="MainMenu" type="Node2D" unique_id=1332706293]
+script = ExtResource("1_bd57o")
+
+[node name="LeftPanel" type="Control" parent="." unique_id=1312801824]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 919.0
+offset_bottom = 1073.0
+
+[node name="BoxContainer" type="BoxContainer" parent="LeftPanel" unique_id=2097796817]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 201.0
+offset_right = 765.0
+offset_bottom = 929.0
+alignment = 1
+vertical = true
+
+[node name="StartButton" type="Button" parent="LeftPanel/BoxContainer" unique_id=1183902159]
+layout_mode = 2
+text = "Начать игру"
+
+[node name="ContinueButton" type="Button" parent="LeftPanel/BoxContainer" unique_id=1525615891]
+layout_mode = 2
+text = "Продолжить игру"
+script = ExtResource("2_k8wto")
+
+[node name="TutorialButton" type="Button" parent="LeftPanel/BoxContainer" unique_id=188193168]
+layout_mode = 2
+text = "Туториал"
+
+[node name="SettingsButton" type="Button" parent="LeftPanel/BoxContainer" unique_id=2094875898]
+layout_mode = 2
+text = "Настройки"
+
+[node name="QuitButton" type="Button" parent="LeftPanel/BoxContainer" unique_id=1489183933]
+layout_mode = 2
+text = "Выход"
+
+[node name="RightPanel" type="Control" parent="." unique_id=1947986253]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 921.0
+offset_right = 1919.0
+offset_bottom = 1068.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1070077411]
+z_index = -1
+offset_left = 5.0
+offset_right = 1917.0
+offset_bottom = 1097.0
+mouse_filter = 2
+texture = ExtResource("3_hprto")

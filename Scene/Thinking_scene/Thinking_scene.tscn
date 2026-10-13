@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="3_wkqcv"]
 [ext_resource type="PackedScene" uid="uid://c5y8axgdikmsb" path="res://Scene/Thinking_scene/Basic_plan.tscn" id="4_ejado"]
 [ext_resource type="PackedScene" uid="uid://slxfr37luo6x" path="res://Scene/Thinking_scene/go_next_stage_pls.tscn" id="5_yo0ax"]
+[ext_resource type="PackedScene" uid="uid://bmccnihxntq2v" path="res://Scene/Thinking_scene/Save_button.tscn" id="6_f7r8q"]
 
 [node name="ThinkingScene" type="Node2D" unique_id=453553026]
 
@@ -21,3 +22,6 @@ position = Vector2(339, 466)
 
 [node name="Go_next_stage_pls" parent="." unique_id=564575345 instance=ExtResource("5_yo0ax")]
 position = Vector2(1702, 231)
+
+[node name="Save_button" parent="." unique_id=812197218 instance=ExtResource("6_f7r8q")]
+position = Vector2(1714, 525)

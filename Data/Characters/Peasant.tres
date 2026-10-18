@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://buferpqr7s6jq"]
+
+[ext_resource type="Script" uid="uid://dqw1jltfl8arx" path="res://Data/Characters/dynamic_name.gd" id="1_g0uvj"]
+[ext_resource type="Script" uid="uid://bd41kpy2vwyx1" path="res://Data/Characters/character_data.gd" id="2_3pt78"]
+[ext_resource type="Texture2D" uid="uid://du23btfcc1k1l" path="res://Image/Portrait/Peasant.png" id="2_i44sr"]
+
+[resource]
+script = ExtResource("2_3pt78")
+id = "4"
+display_name = "Peasant"
+portrait = ExtResource("2_i44sr")
+metadata/_custom_type_script = "uid://bd41kpy2vwyx1"

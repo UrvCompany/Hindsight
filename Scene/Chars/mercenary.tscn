@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://did306ukbv6n6"]
 
 [ext_resource type="Texture2D" uid="uid://dahll5ruum2t2" path="res://Image/Chars/mercenary.png" id="1_6knch"]
+[ext_resource type="Script" uid="uid://4berij5otken" path="res://Scene/Chars/mercenary.gd" id="1_fp6vj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm3c"]
 size = Vector2(133, 227.5)
 
 [node name="Mercenary" type="CharacterBody2D" unique_id=1430557277]
 top_level = true
+script = ExtResource("1_fp6vj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1661816280]
 position = Vector2(0, 14.999999)
@@ -19,4 +21,5 @@ texture = ExtResource("1_6knch")
 position = Vector2(4.5, 24.75)
 shape = SubResource("RectangleShape2D_7bm3c")
 
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

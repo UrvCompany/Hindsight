@@ -5,8 +5,11 @@
 [ext_resource type="Resource" uid="uid://d0lhlw4wbej15" path="res://Data/Dialogues/Guard2/guard_2_intro_rule.tres" id="2_54jwa"]
 [ext_resource type="Resource" uid="uid://c3jc655iqqb5j" path="res://Data/Dialogues/King/King_rules.tres" id="3_mk3y3"]
 [ext_resource type="Resource" uid="uid://cf613xtgbj26x" path="res://Data/Dialogues/Guard2/guard_2_level_1_stage_2_rule.tres" id="4_mk3y3"]
+[ext_resource type="Resource" uid="uid://dcy5e82t4krq2" path="res://Data/Dialogues/Mercenary/Mercenary_rule.tres" id="5_uvfw5"]
+[ext_resource type="Resource" uid="uid://0cvojpmky6kv" path="res://Data/Dialogues/Peasant/Peasant_rule.tres" id="6_27dc1"]
+[ext_resource type="Resource" uid="uid://c46iejwyj16c3" path="res://Data/Dialogues/King/King_lvl_1_stage_3_rule.tres" id="7_4deuf"]
 
 [resource]
 script = ExtResource("2_1oyjl")
-rules = Array[ExtResource("1_1oyjl")]([ExtResource("3_mk3y3"), ExtResource("2_54jwa"), ExtResource("4_mk3y3")])
+rules = Array[ExtResource("1_1oyjl")]([ExtResource("3_mk3y3"), ExtResource("2_54jwa"), ExtResource("4_mk3y3"), ExtResource("5_uvfw5"), ExtResource("6_27dc1"), ExtResource("7_4deuf")])
 metadata/_custom_type_script = "uid://dpg4l1cjeou3t"

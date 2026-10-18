@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://586yagkfylv4"]
+
+[ext_resource type="Texture2D" uid="uid://blvoyc4i8ivp3" path="res://Image/Scenes/King_defeat_cutscene.png" id="1_n6i7o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7bm3c"]
+font_size = 50
+
+[node name="peasants_victory" type="Sprite2D" unique_id=1586210091]
+position = Vector2(960, 536)
+texture = ExtResource("1_n6i7o")
+
+[node name="Label" type="Label" parent="." unique_id=2009480639]
+offset_left = -956.0
+offset_top = 329.0
+offset_right = 964.0
+offset_bottom = 542.0
+text = "Благодаря информации, которую вы предоставили, план революционеров получилось воплотить в жизнь; они вторглись в тронный зал узурпатора и антиоживили его."
+label_settings = SubResource("LabelSettings_7bm3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

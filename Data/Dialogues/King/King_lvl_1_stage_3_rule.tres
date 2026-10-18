@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialogueRule" format=3 uid="uid://c46iejwyj16c3"]
+
+[ext_resource type="Resource" uid="uid://d23fy4t1iln87" path="res://Data/Characters/King.tres" id="1_1rsin"]
+[ext_resource type="Script" uid="uid://ctcuqk68maycr" path="res://Data/Dialogues/dialogue_condition.gd" id="1_6auwf"]
+[ext_resource type="Script" uid="uid://b8yn3u7m60rw8" path="res://Data/Dialogues/dialogue_rule.gd" id="2_sv1em"]
+[ext_resource type="Resource" uid="uid://byyxwi5na0vht" path="res://Data/Dialogues/King/King_lvl_1_stage_3_con_1.tres" id="3_tea70"]
+[ext_resource type="Resource" uid="uid://bv0kgjyxkawad" path="res://Data/Dialogues/King/King_lvl_1_stage_3_con_2.tres" id="4_pxmxr"]
+[ext_resource type="Resource" uid="uid://cdvx2qqywiudm" path="res://Data/Dialogues/King/King_lvl_1_stage_3.tres" id="5_qbing"]
+
+[resource]
+script = ExtResource("2_sv1em")
+character = ExtResource("1_1rsin")
+dialogue = ExtResource("5_qbing")
+priority = 20
+conditions = Array[ExtResource("1_6auwf")]([ExtResource("3_tea70"), ExtResource("4_pxmxr")])
+metadata/_custom_type_script = "uid://b8yn3u7m60rw8"

@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_lqdk0"]
 [ext_resource type="PackedScene" uid="uid://crkl0kjusqaq8" path="res://Scene/Chars/King.tscn" id="5_0iilm"]
 [ext_resource type="Script" uid="uid://xh3th3ssp5og" path="res://Scene/Castle_interior/Throne_room/from_throne_to_CI2.gd" id="6_f4j7a"]
-[ext_resource type="Resource" uid="uid://d23fy4t1iln87" path="res://Data/Characters/King.tres" id="7_ucd2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm3c"]
 size = Vector2(701, 288)
@@ -32,7 +31,6 @@ shape = SubResource("RectangleShape2D_7bm3c")
 
 [node name="King" parent="." unique_id=1430557277 instance=ExtResource("5_0iilm")]
 position = Vector2(1198, 619)
-character_data = ExtResource("7_ucd2x")
 
 [connection signal="input_event" from="FromThroneToCastleInterior" to="FromThroneToCastleInterior" method="_on_input_event"]
 [connection signal="mouse_entered" from="FromThroneToCastleInterior" to="FromThroneToCastleInterior" method="_on_mouse_entered"]

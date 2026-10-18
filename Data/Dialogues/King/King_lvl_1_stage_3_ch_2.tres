@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueChoice" format=3 uid="uid://tfxd10v7bgls"]
+
+[ext_resource type="Script" uid="uid://b12ins5b06y1q" path="res://Data/Dialogues/dialogue_choice.gd" id="1_cs4lg"]
+
+[resource]
+script = ExtResource("1_cs4lg")
+text = "Дядь, вообще не моя проблема, все по кайфу делаешь."
+metadata/_custom_type_script = "uid://b12ins5b06y1q"

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://chmmwq3tcf7v2"]
+
+[ext_resource type="Texture2D" uid="uid://4jc4l4xn7sfj" path="res://Image/Scenes/peasants_defeat_cutscene.png" id="1_44ys6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7bm3c"]
+font_size = 50
+
+[node name="peasants_defeat" type="Sprite2D" unique_id=1090889739]
+position = Vector2(959, 532)
+texture = ExtResource("1_44ys6")
+
+[node name="Label" type="Label" parent="." unique_id=1270881993]
+offset_left = -958.0
+offset_top = 335.0
+offset_right = 959.0
+offset_bottom = 548.0
+text = "План восстания был воплощён в жизнь, но восстанцы не были готовы, к тому, что их ждёт; спустившись в подкоп, они встретили ужасную смерть от крокодилов."
+label_settings = SubResource("LabelSettings_7bm3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

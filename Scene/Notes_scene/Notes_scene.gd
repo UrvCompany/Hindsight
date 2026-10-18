@@ -19,12 +19,14 @@ const LEVEL_BOOKS := preload(
 
 @export var shelf_left_x: float = 150.0
 @export var shelf_right_x: float = 1780.0
-@export var shelf_y: float = 630.0
+@export var shelf_y_1: float = 630.0
+@export var shelf_y_2: float = 220.0
 
 
 @onready var books_container: Node2D = $BooksContainer
 @onready var mode_switch := $ModeSwitch
 
+var shelf_y: int = 0
 
 func _ready() -> void:
 	SupportingSceneManager.opened.connect(
@@ -49,16 +51,13 @@ func generate_books() -> void:
 	var books: Array = LEVEL_BOOKS.get_books(
 		SceneStateGlobal.CURRENT_LEVEL,
 		SceneStateGlobal.STAGE
-	)
+		)
 
 	if books.is_empty():
 		return
 
 	# Расстояние между книгами на полке
-	var spacing := (
-		shelf_right_x - shelf_left_x
-	) / float(max(books.size() - 1, 1))
-
+	var spacing := (shelf_right_x - shelf_left_x) / float(max(books.size() - 1, 1))
 
 	# Создаём книги
 	for position_index in books.size():
@@ -84,18 +83,23 @@ func generate_books() -> void:
 		book.scale = Vector2(
 			book_scale,
 			book_scale
-		)
-
+			)
+			
+		if SceneStateGlobal.STAGE == 0:
+			shelf_y = shelf_y_1	
+		else:
+			shelf_y = shelf_y_2
+			
 		# Позиция на полке
 		book.position = Vector2(
 			shelf_left_x + spacing * position_index,
 			shelf_y
-		)
+			)
 
 		# Обработка нажатия
 		book.book_clicked.connect(
 			_on_book_clicked
-		)
+			)
 
 		books_container.add_child(book)
 

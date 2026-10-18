@@ -19,11 +19,12 @@ func get_dialogue(character_data: CharacterData) -> DialogueData:
 	var best_priority: int = -2147483648
 
 	for rule: DialogueRule in DATABASE.rules:
-		
+		print('character_data', character_data)
 		if rule == null:
 			continue
 
 		if not rule.matches(character_data):
+			print('зашли в скип')
 			continue
 
 		if rule.priority > best_priority:
@@ -42,7 +43,6 @@ func get_dialogue(character_data: CharacterData) -> DialogueData:
 func start_dialogue(character_data: CharacterData) -> void:
 
 	var dialogue_data: DialogueData = get_dialogue(character_data)
-	print('Stage: ', SceneStateGlobal.STAGE, 'Level: ',  SceneStateGlobal.CURRENT_LEVEL)
 	if dialogue_data == null:
 		return
 

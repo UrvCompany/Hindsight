@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://b3g4li05bkkj5"]
+
+[ext_resource type="Resource" uid="uid://dieflpeqo33ws" path="res://Data/Characters/Mercenary.tres" id="1_k8mfq"]
+[ext_resource type="Script" uid="uid://bckcf0lamorra" path="res://Data/Dialogues/dialogue_line.gd" id="2_yica3"]
+[ext_resource type="Script" uid="uid://w00lxdhjv44h" path="res://Data/Dialogues/dialogue_data.gd" id="3_pakl7"]
+[ext_resource type="Resource" uid="uid://cdli44hdmnfu" path="res://Data/Dialogues/Mercenary/Mercenary_line.tres" id="3_yica3"]
+
+[resource]
+script = ExtResource("3_pakl7")
+dialogue_id = "4"
+character = ExtResource("1_k8mfq")
+lines = Array[ExtResource("2_yica3")]([ExtResource("3_yica3")])
+metadata/_custom_type_script = "uid://w00lxdhjv44h"

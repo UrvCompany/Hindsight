@@ -19,7 +19,8 @@ func _on_area_2d_input_event(
 	):
 		if character_data != null:
 			character_clicked.emit(character_data)
+			print('Нажали')
 		else:
 			push_warning(
 				"%s: character_data не задан" % name
-			)
+				)

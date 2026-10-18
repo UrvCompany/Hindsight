@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://gse16n2viecu"]
+
+[ext_resource type="Texture2D" uid="uid://blvoyc4i8ivp3" path="res://Image/Scenes/King_defeat_cutscene.png" id="1_xcqcx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7bm3c"]
+font_size = 50
+
+[node name="king_defeat" type="Sprite2D" unique_id=1906094240]
+position = Vector2(963, 546)
+texture = ExtResource("1_xcqcx")
+
+[node name="Label" type="Label" parent="." unique_id=401680169]
+offset_left = -963.0
+offset_top = 329.0
+offset_right = 960.0
+offset_bottom = 542.0
+text = "Король, чрезмерно уверенный в своём успехе при лобовой атаке, расслабился, чем и воспользовались революционеры, вторгнувшись в тронный зал через обходной путь."
+label_settings = SubResource("LabelSettings_7bm3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

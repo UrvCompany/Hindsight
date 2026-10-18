@@ -25,7 +25,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		and event.pressed
 	):
 		var content_rect: Rect2 = current_instance.get_global_rect()
-
 		if current_instance is DialogueBox:
 			var panel: Control = current_instance.get_node_or_null("Panel")
 			if panel != null:

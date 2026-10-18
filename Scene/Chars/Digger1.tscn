@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://ng4v71s88nel"]
 
 [ext_resource type="Texture2D" uid="uid://vpqe44nuirsu" path="res://Image/Chars/Digger1.png" id="1_etsjk"]
+[ext_resource type="Script" uid="uid://bqla0gd77x4ue" path="res://Scene/Chars/digger_1.gd" id="1_ewfqw"]
+[ext_resource type="Resource" uid="uid://buferpqr7s6jq" path="res://Data/Characters/Peasant.tres" id="2_g4srh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm3c"]
 size = Vector2(133, 227.5)
 
 [node name="Digger1" type="CharacterBody2D" unique_id=1430557277]
 top_level = true
+script = ExtResource("1_ewfqw")
+character_data = ExtResource("2_g4srh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1661816280]
 position = Vector2(0, 14.999999)

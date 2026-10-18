@@ -12,7 +12,7 @@ var loh: Sprite2D
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP 
-
+	next_stage_button.visible = true
 	meta_hover_started.connect(_on_meta_hover_started)
 	meta_hover_ended.connect(_on_meta_hover_ended)
 
@@ -123,5 +123,6 @@ func check_answers() -> bool:
 
 		if slot_words[slot_id] != correct_answers[i]:
 			return false
-
+			
+	next_stage_button.visible = true
 	return true

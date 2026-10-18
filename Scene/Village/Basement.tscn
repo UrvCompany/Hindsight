@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lesbt2fesj17"]
 
 [ext_resource type="Texture2D" uid="uid://bxjouumxgdteo" path="res://Image/Scenes/Basement.png" id="1_2yorf"]
+[ext_resource type="Script" uid="uid://bql5hhye7h1fw" path="res://Scene/Village/basement.gd" id="1_cfiwq"]
 [ext_resource type="Script" uid="uid://br6hegvcb27ya" path="res://Scene/Village/from_basement_to_tavern.gd" id="2_nwomb"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_dtu6f"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_cfiwq"]
@@ -11,6 +12,7 @@
 size = Vector2(436, 366.75)
 
 [node name="Basement" type="Area2D" unique_id=513882028]
+script = ExtResource("1_cfiwq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873714766]
 position = Vector2(961.99994, 497.99997)

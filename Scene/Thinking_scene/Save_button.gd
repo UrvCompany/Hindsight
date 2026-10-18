@@ -7,7 +7,6 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	print("=== СОХРАНЕНИЕ ИГРЫ ===")
 
 	# Сохраняем реальные данные игры.
 	var saved: bool = SaveManager.save_game()
@@ -23,5 +22,3 @@ func _on_pressed() -> void:
 		)
 	else:
 		push_error("Не удалось сохранить игру.")
-
-	print("=== СОХРАНЕНИЕ ЗАВЕРШЕНО ===")

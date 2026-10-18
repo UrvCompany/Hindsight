@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cmyo4yyecqv22"]
 
+[ext_resource type="Script" uid="uid://bi0usv3mwkh6x" path="res://Scene/Village/tavern.gd" id="1_ciq2l"]
 [ext_resource type="Texture2D" uid="uid://klmac41f8p2m" path="res://Image/Scenes/tavern.png" id="1_ibqaw"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="2_bcs4l"]
 [ext_resource type="Script" uid="uid://bstlrnkloqx3t" path="res://Scene/Village/from_ tavern_to_village.gd" id="2_yoqn0"]
@@ -7,6 +8,7 @@
 [ext_resource type="Script" uid="uid://ppetwkjb0dy0" path="res://Scene/Village/from_tavern_to_basement.gd" id="5_bcs4l"]
 [ext_resource type="PackedScene" uid="uid://bj3e0yqlxulu" path="res://Scene/Chars/Headman.tscn" id="6_exyls"]
 [ext_resource type="PackedScene" uid="uid://did306ukbv6n6" path="res://Scene/Chars/mercenary.tscn" id="7_i81rv"]
+[ext_resource type="Resource" uid="uid://dieflpeqo33ws" path="res://Data/Characters/Mercenary.tres" id="9_o35e2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
 size = Vector2(211, 563)
@@ -15,6 +17,7 @@ size = Vector2(211, 563)
 size = Vector2(396.25, 168)
 
 [node name="Tavern" type="Area2D" unique_id=513882028]
+script = ExtResource("1_ciq2l")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873714766]
 position = Vector2(961.99994, 497.99997)
@@ -48,6 +51,7 @@ scale = Vector2(1.785, 1.785)
 [node name="Mercenary" parent="." unique_id=1302927331 instance=ExtResource("7_i81rv")]
 position = Vector2(1071, 561)
 scale = Vector2(-1.64, 1.64)
+character_data = ExtResource("9_o35e2")
 
 [connection signal="input_event" from="to_Village" to="to_Village" method="_on_input_event"]
 [connection signal="mouse_entered" from="to_Village" to="to_Village" method="_on_mouse_entered"]

@@ -10,7 +10,6 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	print("=== ПРОДОЛЖЕНИЕ ИГРЫ ===")
 
 	# Загружаем сохранённые данные.
 	var loaded: bool = SaveManager.load_game()

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="DialogueLine" format=3 uid="uid://do1rmjdc38u6k"]
+
+[ext_resource type="Script" uid="uid://bckcf0lamorra" path="res://Data/Dialogues/dialogue_line.gd" id="1_igi8b"]
+[ext_resource type="Texture2D" uid="uid://du23btfcc1k1l" path="res://Image/Portrait/Peasant.png" id="1_l0knk"]
+[ext_resource type="Resource" uid="uid://buferpqr7s6jq" path="res://Data/Characters/Peasant.tres" id="3_hlump"]
+
+[resource]
+script = ExtResource("1_igi8b")
+text = "Эти абобусы заставляют копать нас яму аж на 3 метра.
+Совсем уебки!"
+speaker = ExtResource("3_hlump")
+portrait = ExtResource("1_l0knk")
+emotion = 2
+metadata/_custom_type_script = "uid://bckcf0lamorra"

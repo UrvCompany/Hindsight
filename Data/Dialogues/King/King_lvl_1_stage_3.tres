@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://cdvx2qqywiudm"]
+
+[ext_resource type="Script" uid="uid://b12ins5b06y1q" path="res://Data/Dialogues/dialogue_choice.gd" id="1_h51c8"]
+[ext_resource type="Resource" uid="uid://d23fy4t1iln87" path="res://Data/Characters/King.tres" id="1_ntqyv"]
+[ext_resource type="Script" uid="uid://bckcf0lamorra" path="res://Data/Dialogues/dialogue_line.gd" id="2_ntqyv"]
+[ext_resource type="Resource" uid="uid://cdl1t3hyvp2a5" path="res://Data/Dialogues/King/King_lvl_1_stage_3_ch_1.tres" id="3_gcdg2"]
+[ext_resource type="Script" uid="uid://w00lxdhjv44h" path="res://Data/Dialogues/dialogue_data.gd" id="3_h2kpv"]
+[ext_resource type="Resource" uid="uid://tfxd10v7bgls" path="res://Data/Dialogues/King/King_lvl_1_stage_3_ch_2.tres" id="4_47px4"]
+[ext_resource type="Resource" uid="uid://quwhdaf51aqu" path="res://Data/Dialogues/King/King_lvl_1_stage_3_line.tres" id="6_6ghx3"]
+
+[resource]
+script = ExtResource("3_h2kpv")
+dialogue_id = "7"
+character = ExtResource("1_ntqyv")
+lines = Array[ExtResource("2_ntqyv")]([ExtResource("6_6ghx3")])
+choices = Array[ExtResource("1_h51c8")]([ExtResource("3_gcdg2"), ExtResource("4_47px4")])
+metadata/_custom_type_script = "uid://w00lxdhjv44h"

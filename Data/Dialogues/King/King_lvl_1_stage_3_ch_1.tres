@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueChoice" format=3 uid="uid://cdl1t3hyvp2a5"]
+
+[ext_resource type="Script" uid="uid://b12ins5b06y1q" path="res://Data/Dialogues/dialogue_choice.gd" id="1_iik6v"]
+
+[resource]
+script = ExtResource("1_iik6v")
+text = "Там эти абраганы в таверне суету мутят"
+metadata/_custom_type_script = "uid://b12ins5b06y1q"

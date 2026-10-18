@@ -28,8 +28,7 @@ func save_game() -> bool:
 
 	file.store_string(JSON.stringify(save_data, "\t"))
 	file.close()
-
-	print("Игра сохранена")
+	
 	return true
 
 
@@ -94,7 +93,7 @@ func load_game() -> bool:
 		SceneStateGlobal.State.EXPLORATION
 	)
 
-	print("Игра загружена")
+
 	return true
 
 

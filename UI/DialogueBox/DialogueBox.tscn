@@ -2,17 +2,21 @@
 
 [ext_resource type="Script" uid="uid://d311lan0k15cg" path="res://UI/DialogueBox/dialogue_box.gd" id="1_5j58o"]
 [ext_resource type="Texture2D" uid="uid://buusboiaqte14" path="res://Image/Portrait/portrait_detective.png" id="2_66las"]
+[ext_resource type="Script" uid="uid://7yt32ssflw7w" path="res://UI/DialogueBox/next_button.gd" id="3_n6emj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrfct"]
 bg_color = Color(0.5946484, 0.70900303, 0.70900303, 0.43529412)
 
 [node name="DialogueBox" type="Control" unique_id=1067716845]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchor_left = 0.29200003
+anchor_top = 0.30200002
+anchor_right = 0.70900005
+anchor_bottom = 0.48700002
+offset_left = -559.6401
+offset_top = -325.16
+offset_right = -1360.2802
+offset_bottom = -524.96
 script = ExtResource("1_5j58o")
 
 [node name="Panel" type="Panel" parent="." unique_id=581347515]
@@ -38,20 +42,39 @@ layout_mode = 0
 offset_left = 239.0
 offset_top = 8.0
 offset_right = 793.0
-offset_bottom = 90.0
+offset_bottom = 38.0
 
 [node name="Text" type="Label" parent="Panel" unique_id=1369893540]
 layout_mode = 0
-offset_left = 240.0
-offset_top = 97.0
-offset_right = 794.0
-offset_bottom = 193.0
+offset_left = 239.0
+offset_top = 35.0
+offset_right = 793.0
+offset_bottom = 131.0
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="NextButton" type="Button" parent="Panel" unique_id=1945288572]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+layout_mode = 1
+anchors_preset = -1
+offset_right = 801.0
+offset_bottom = 200.0
 mouse_filter = 1
+flat = true
+script = ExtResource("3_n6emj")
+
+[node name="ChoiceButton1" type="Button" parent="Panel" unique_id=1307124792]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 115.0
+offset_right = 642.0
+offset_bottom = 156.0
+
+[node name="ChoiceButton2" type="Button" parent="Panel" unique_id=715285424]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 157.0
+offset_right = 643.0
+offset_bottom = 199.0
+
+[connection signal="pressed" from="Panel/NextButton" to="Panel/NextButton" method="_on_pressed"]

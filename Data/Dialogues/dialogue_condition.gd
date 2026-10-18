@@ -1,4 +1,3 @@
-
 extends Resource
 class_name DialogueCondition
 
@@ -9,7 +8,7 @@ enum ConditionType {
 	ITEM_OWNED,
 	CHARACTER_MET,
 	QUEST_COMPLETED
-	}
+}
 
 @export var type: ConditionType
 @export var key: String = ""
@@ -18,7 +17,6 @@ enum ConditionType {
 
 
 func is_satisfied() -> bool:
-	print('Зашел')
 	match type:
 		ConditionType.LEVEL_EQUALS:
 			return SceneStateGlobal.CURRENT_LEVEL == number_value

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bb6g71iafugxe"]
+
+[ext_resource type="Texture2D" uid="uid://bi80ryxuft43e" path="res://Image/Scenes/King_victory_cutscene.png" id="1_7ehch"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7bm3c"]
+font_size = 50
+
+[node name="king_victory" type="Sprite2D" unique_id=2054289734]
+position = Vector2(961, 545)
+texture = ExtResource("1_7ehch")
+
+[node name="Label" type="Label" parent="." unique_id=528836600]
+offset_left = -960.0
+offset_top = 402.0
+offset_right = 958.0
+offset_bottom = 543.0
+text = "Благодаря вашему вкладу королевской гвардии удалось раскрыть план повстанцев и предотвратить его свершение, убив предводителя"
+label_settings = SubResource("LabelSettings_7bm3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

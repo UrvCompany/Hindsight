@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://dieflpeqo33ws"]
+
+[ext_resource type="Script" uid="uid://dqw1jltfl8arx" path="res://Data/Characters/dynamic_name.gd" id="1_vw8p1"]
+[ext_resource type="Texture2D" uid="uid://bswoe8dy00x2s" path="res://Image/Portrait/mercenary.png" id="2_hoily"]
+[ext_resource type="Script" uid="uid://bd41kpy2vwyx1" path="res://Data/Characters/character_data.gd" id="3_tou5q"]
+
+[resource]
+script = ExtResource("3_tou5q")
+id = "3"
+display_name = "Mercenary"
+portrait = ExtResource("2_hoily")
+metadata/_custom_type_script = "uid://bd41kpy2vwyx1"

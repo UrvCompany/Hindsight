@@ -18,6 +18,7 @@ func _ready() -> void:
 		Basic_plane_rich_text.setup_text(CORRECT_ANSWER.Basic_plane[SceneStateGlobal.CURRENT_LEVEL][SceneStateGlobal.STAGE])
 		Basic_plane_rich_text.set_correct_answers(CORRECT_ANSWER.CORRECT_ANSWERS[SceneStateGlobal.CURRENT_LEVEL][SceneStateGlobal.STAGE])
 		Basic_plane_rich_text.set_loh(LOH)
+		print(CORRECT_ANSWER.CORRECT_ANSWERS[SceneStateGlobal.CURRENT_LEVEL][SceneStateGlobal.STAGE])
 
 	if SceneStateGlobal.STAGE == 2:		#Пока просто выводим план короны на третьем этапе
 		Basic_plane_rich_text.setup_text(CORRECT_ANSWER.Basic_plane[0][0])

@@ -66,12 +66,22 @@ rotation = -3.1415925
 shape = SubResource("RectangleShape2D_ci2nd")
 
 [node name="Guard1" parent="." unique_id=1430557277 instance=ExtResource("10_mw8ui")]
-position = Vector2(1234.0001, 567)
+position = Vector2(1197, 564)
 scale = Vector2(-1.15, 1.15)
 
 [node name="FloorShadow" type="Node2D" parent="Guard1" unique_id=1914308643]
 show_behind_parent = true
 position = Vector2(9.565218, 6.086957)
+script = ExtResource("13_shadow")
+feet_offset_y = -15.0
+
+[node name="Guard2" parent="." unique_id=1968145676 instance=ExtResource("10_mw8ui")]
+position = Vector2(736, 566)
+scale = Vector2(1.15, 1.15)
+
+[node name="FloorShadow" type="Node2D" parent="Guard2" unique_id=770959214]
+show_behind_parent = true
+position = Vector2(9.565218, 9.536743e-07)
 script = ExtResource("13_shadow")
 feet_offset_y = -15.0
 

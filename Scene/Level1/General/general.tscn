@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsmdyuo384i4t"]
 
-[ext_resource type="Texture2D" path="res://Image/Scenes/General_plain.png" id="1_1omfq"]
+[ext_resource type="Texture2D" uid="uid://c6gpsvejc5242" path="res://Image/Scenes/General_plain.png" id="1_1omfq"]
 [ext_resource type="Script" uid="uid://brw2o3n38vpbx" path="res://Scene/Level1/General/from_general_to_CI1.gd" id="1_tnxl6"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="4_i7tvd"]
 [ext_resource type="Script" uid="uid://bgjvqlh3u1mb1" path="res://Scene/Level1/General/from_general_to_village.gd" id="5_i7tvd"]
@@ -63,4 +63,3 @@ shape = SubResource("RectangleShape2D_lqsbf")
 [connection signal="input_event" from="to_Village" to="to_Village" method="_on_input_event"]
 [connection signal="mouse_entered" from="to_Village" to="to_Village" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="to_Village" to="to_Village" method="_on_mouse_exited"]
-

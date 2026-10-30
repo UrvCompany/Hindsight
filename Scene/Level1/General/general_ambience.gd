@@ -18,7 +18,7 @@ var water_polygon: PackedVector2Array = PackedVector2Array([
 
 func _ready() -> void:
 	var gradient := Gradient.new()
-	gradient.colors = PackedColorArray([Color(0.75, 0.73, 0.68, 0.24), Color(0.75, 0.73, 0.68, 0.0)])
+	gradient.colors = PackedColorArray([Color(0.75, 0.73, 0.68, 0.7), Color(0.75, 0.73, 0.68, 0.0)])
 	_puff = GradientTexture2D.new()
 	_puff.gradient = gradient
 	_puff.width = 64
@@ -42,10 +42,10 @@ func _draw() -> void:
 	if smoke_enabled:
 		for chimney in CHIMNEYS:
 			for i in range(9):
-				var age: float = fposmod(_time * 0.07 + float(i) / 9.0 + chimney.x, 1.0)
-				var uv: Vector2 = chimney + Vector2(age * 0.018 + sin(age * 8.0 + _time * 0.35) * age * 0.003, -age * 0.075)
-				var radius: float = lerpf(0.004, 0.019, age) * size.x
-				var fade: float = sin(age * PI) * intensity * 0.6
+				var age: float = fposmod(_time * 0.27 + float(i) / 9.0 + chimney.x, 1.0)
+				var uv: Vector2 = chimney + Vector2(age * 0.018 + sin(age * 8.0 + _time * 0.35) * age * 0.003, -age * 0.12)
+				var radius: float = lerpf(0.0025, 0.05, age) * size.x
+				var fade: float = sin(age * PI) * intensity * 1.0
 				draw_texture_rect(_puff, Rect2(_point(uv) - Vector2.ONE * radius, Vector2.ONE * radius * 2.0), false, Color(1, 1, 1, fade))
 	if birds_enabled:
 		for i in range(5):

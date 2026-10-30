@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DialogueRule" format=3 uid="uid://cvqtxeqoprfs3"]
+
+[ext_resource type="Script" uid="uid://b8yn3u7m60rw8" path="res://Data/Dialogues/dialogue_rule.gd" id="1"]
+[ext_resource type="Script" uid="uid://ctcuqk68maycr" path="res://Data/Dialogues/dialogue_condition.gd" id="2"]
+[ext_resource type="Resource" path="res://Data/Characters/Headman.tres" id="3"]
+[ext_resource type="Resource" uid="uid://dxk7qm0sme00s" path="res://Data/Dialogues/Headman/Headman_lvl_1_stage_3.tres" id="4"]
+
+[sub_resource type="Resource" id="Level"]
+script = ExtResource("2")
+
+[sub_resource type="Resource" id="Stage"]
+script = ExtResource("2")
+type = 1
+number_value = 2
+
+[resource]
+script = ExtResource("1")
+character = ExtResource("3")
+dialogue = ExtResource("4")
+priority = 20
+conditions = Array[ExtResource("2")]([SubResource("Level"), SubResource("Stage")])

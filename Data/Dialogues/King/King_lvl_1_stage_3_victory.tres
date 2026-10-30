@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://o4dsavl4l1yl"]
+
+[ext_resource type="Script" uid="uid://w00lxdhjv44h" path="res://Data/Dialogues/dialogue_data.gd" id="1_data"]
+[ext_resource type="Script" uid="uid://bckcf0lamorra" path="res://Data/Dialogues/dialogue_line.gd" id="2_line"]
+[ext_resource type="Script" uid="uid://b12ins5b06y1q" path="res://Data/Dialogues/dialogue_choice.gd" id="2_x2hl3"]
+[ext_resource type="Resource" uid="uid://d23fy4t1iln87" path="res://Data/Characters/King.tres" id="3_king"]
+[ext_resource type="Script" uid="uid://cw8fmeov7vq88" path="res://Data/Endings/ending_request.gd" id="ending_request"]
+
+[sub_resource type="Resource" id="EndingRequest"]
+script = ExtResource("ending_request")
+
+[sub_resource type="Resource" id="Resource_reply"]
+script = ExtResource("2_line")
+text = "Подкоп из таверны… Так вот почему они до сих пор не показались у ворот. Вы вовремя заговорили. Я прикажу обыскать таверну и выставить людей под тронным залом. Пусть идут — мы их встретим."
+speaker = ExtResource("3_king")
+
+[resource]
+script = ExtResource("1_data")
+dialogue_id = "king_level_1_stage_3_victory"
+character = ExtResource("3_king")
+lines = Array[ExtResource("2_line")]([SubResource("Resource_reply")])
+completion_ending = SubResource("EndingRequest")

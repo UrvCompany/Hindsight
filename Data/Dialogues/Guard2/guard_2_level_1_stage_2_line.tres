@@ -10,4 +10,5 @@ text = "Мне удалось выяснить, что последние мес
 speaker = ExtResource("3_xmbwn")
 portrait = ExtResource("1_1ignx")
 emotion = 4
+granted_words = Array[String](["тронный зал"])
 metadata/_custom_type_script = "uid://bckcf0lamorra"

@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://xkru2rv4cxwp" path="res://Image/Notes_screen/book_spread.png" id="1_spread"]
 [ext_resource type="Script" uid="uid://xeqkpny8q3p8" path="res://Scene/Notes_scene/book_spread.gd" id="2_script"]
 
+[ext_resource type="Script" path="res://UI/CollectibleText/collectible_rich_text.gd" id="3_words"]
+
 [node name="BookSpread" type="Control" unique_id=122996101]
 layout_mode = 3
 anchors_preset = 0
@@ -31,6 +33,7 @@ offset_bottom = -254.44443
 theme_override_colors/default_color = Color(0.15, 0.1, 0.08, 1)
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
+script = ExtResource("3_words")
 fit_content = true
 scroll_active = false
 
@@ -43,6 +46,7 @@ offset_bottom = -260.0
 theme_override_colors/default_color = Color(0.15, 0.1, 0.08, 1)
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
+script = ExtResource("3_words")
 text = "Сточные воды из замка направлялись прямиком в [u][url=ров]ров[/url][/u] перед его стенами, который имел глубину [u][url=10 м]10 м[/url][/u]."
 fit_content = true
 scroll_active = false

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://dxk7qm0sme00s"]
+
+[ext_resource type="Script" uid="uid://w00lxdhjv44h" path="res://Data/Dialogues/dialogue_data.gd" id="1"]
+[ext_resource type="Script" uid="uid://bckcf0lamorra" path="res://Data/Dialogues/dialogue_line.gd" id="2"]
+[ext_resource type="Resource" path="res://Data/Characters/Headman.tres" id="3"]
+[ext_resource type="Script" uid="uid://b12ins5b06y1q" path="res://Data/Dialogues/dialogue_choice.gd" id="4_choice"]
+[ext_resource type="Resource" path="res://Data/Dialogues/Headman/Headman_lvl_1_stage_3_ch_1.tres" id="5"]
+[ext_resource type="Resource" path="res://Data/Dialogues/Headman/Headman_lvl_1_stage_3_ch_2.tres" id="6"]
+
+[sub_resource type="Resource" id="Line"]
+script = ExtResource("2")
+text = "Люди готовы, инструменты на месте. Поведём подкоп на глубине трёх метров — и выйдем прямо под королём. Вы ведь осмотрели замок. Что скажете?"
+speaker = ExtResource("3")
+
+[resource]
+script = ExtResource("1")
+dialogue_id = "Headman_lvl_1_stage_3"
+character = ExtResource("3")
+lines = Array[ExtResource("2")]([SubResource("Line")])
+choices = Array[ExtResource("4_choice")]([ExtResource("5"), ExtResource("6")])

@@ -9,4 +9,5 @@ script = ExtResource("1_n8in6")
 text = "Этой ночью наш подкоп будет готов."
 speaker = ExtResource("3_rdf8v")
 portrait = ExtResource("1_dpchb")
+granted_words = Array[String](["ночь", "подкоп"])
 metadata/_custom_type_script = "uid://bckcf0lamorra"

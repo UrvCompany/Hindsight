@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://bvrxslka37wts"]
+
+[ext_resource type="Script" uid="uid://w00lxdhjv44h" path="res://Data/Dialogues/dialogue_data.gd" id="1"]
+[ext_resource type="Script" uid="uid://bckcf0lamorra" path="res://Data/Dialogues/dialogue_line.gd" id="2"]
+[ext_resource type="Script" uid="uid://b12ins5b06y1q" path="res://Data/Dialogues/dialogue_choice.gd" id="2_iqd1a"]
+[ext_resource type="Resource" path="res://Data/Characters/Headman.tres" id="3"]
+[ext_resource type="Script" uid="uid://cw8fmeov7vq88" path="res://Data/Endings/ending_request.gd" id="ending_request"]
+
+[sub_resource type="Resource" id="EndingRequest"]
+script = ExtResource("ending_request")
+side = 1
+
+[sub_resource type="Resource" id="Line"]
+script = ExtResource("2")
+text = "Так вот что они там устроили… Хорошо, что предупредили. Пойдём глубже, под самым дном рва, а перед проходкой проверим грунт. Лучше потратить лишнюю ночь, чем похоронить там всех."
+speaker = ExtResource("3")
+
+[resource]
+script = ExtResource("1")
+dialogue_id = "Headman_lvl_1_stage_3_victory"
+character = ExtResource("3")
+lines = Array[ExtResource("2")]([SubResource("Line")])
+completion_ending = SubResource("EndingRequest")

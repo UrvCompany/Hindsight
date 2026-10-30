@@ -4,6 +4,7 @@ class_name DialogueBox
 
 var dialogue_data: DialogueData
 var current_line_index: int = 0
+var default_rects: Dictionary = {}
 
 @onready var name_label: Label = $Panel/Name
 @onready var portrait_rect: TextureRect = $Panel/Portrait
@@ -14,6 +15,8 @@ var current_line_index: int = 0
 
 
 func _ready() -> void:
+	for control: Control in [$Panel, text_label, next_button, choice_button_1, choice_button_2]:
+		default_rects[control] = Rect2(control.position, control.size)
 	next_button.pressed.connect(_on_next_button_pressed)
 	choice_button_1.pressed.connect(_on_choice_pressed.bind(0))
 	choice_button_2.pressed.connect(_on_choice_pressed.bind(1))
@@ -26,8 +29,14 @@ func setup(data: Variant) -> void:
 		push_error("DialogueBox ожидал получить DialogueData")
 		return
 
+	for control: Control in default_rects:
+		var rect: Rect2 = default_rects[control]
+		control.position = rect.position
+		control.size = rect.size
+
 	dialogue_data = data as DialogueData
 	current_line_index = 0
+	_hide_choices()
 
 	if dialogue_data.lines.is_empty():
 		text_label.text = ""
@@ -35,9 +44,6 @@ func setup(data: Variant) -> void:
 		return
 
 	_show_current_line()
-
-	if not dialogue_data.choices.is_empty():
-		_show_choices()
 
 
 func _show_current_line() -> void:
@@ -72,10 +78,14 @@ func _show_current_line() -> void:
 
 	text_label.text = line.text
 
-	if dialogue_data.choices.is_empty():
-		next_button.show()
+	for word: String in line.granted_words:
+		if not word.is_empty() and not SceneStateGlobal.collected_words.has(word):
+			SupportingSceneManager.word_collected.emit(word)
+
+	if current_line_index == dialogue_data.lines.size() - 1 and not dialogue_data.choices.is_empty():
+		_show_choices()
 	else:
-		next_button.hide()
+		next_button.show()
 
 
 func _on_next_button_pressed() -> void:
@@ -99,8 +109,21 @@ func _show_choices() -> void:
 		return
 
 	if dialogue_data.choices.is_empty():
-		SupportingSceneManager.close()
+		_finish_dialogue()
 		return
+
+	var needs_wrapping := false
+	for choice: DialogueChoice in dialogue_data.choices:
+		if choice != null and choice.text.length() > 100:
+			needs_wrapping = true
+	if needs_wrapping:
+		$Panel.size = Vector2(1100, 500)
+		text_label.size = Vector2(854, 150)
+		for index in 2:
+			var button: Button = choice_button_1 if index == 0 else choice_button_2
+			button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+			button.position = Vector2(239, 190 + index * 150)
+			button.size = Vector2(854, 140)
 
 	if dialogue_data.choices.size() >= 1:
 		var first_choice: DialogueChoice = dialogue_data.choices[0]
@@ -138,3 +161,28 @@ func _on_choice_pressed(index: int) -> void:
 		setup(choice.next_dialogue)
 	else:
 		SupportingSceneManager.close()
+
+func _finish_dialogue() -> void:
+	if dialogue_data.completion_ending != null:
+		var ending_error := EndingManager.show_ending(dialogue_data.completion_ending)
+		if ending_error == OK:
+			SupportingSceneManager.close()
+		else:
+			push_error("Cannot open ending: " + error_string(ending_error))
+		return
+
+	if dialogue_data.completion_scene_path.is_empty():
+		SupportingSceneManager.close()
+		return
+
+	var target_scene := load(dialogue_data.completion_scene_path) as PackedScene
+	if target_scene == null:
+		push_error("Cannot load dialogue ending: " + dialogue_data.completion_scene_path)
+		return
+
+	var error := get_tree().change_scene_to_packed(target_scene)
+	if error != OK:
+		push_error("Cannot open dialogue ending: " + error_string(error))
+		return
+
+	SupportingSceneManager.close()

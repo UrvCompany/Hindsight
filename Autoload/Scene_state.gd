@@ -27,8 +27,9 @@ var collected_words: Array[String] = []
 
 # Главные сцены игры.
 var HOME_SCENE: Array[String] = [
-    "res://Scene/General/general.tscn"
-]
+    "res://Scene/Level1/General/general.tscn"
+	]
+
 
 # Сюжетные флаги.
 var flags: Dictionary = {}

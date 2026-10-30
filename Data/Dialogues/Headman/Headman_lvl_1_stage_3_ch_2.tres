@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogueChoice" format=3]
+
+[ext_resource type="Script" path="res://Data/Dialogues/dialogue_choice.gd" id="1"]
+[ext_resource type="Resource" path="res://Data/Dialogues/Headman/Headman_lvl_1_stage_3_defeat.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+text = "Три метра — в самый раз. Всё правильно делаете, продолжайте."
+next_dialogue = ExtResource("2")

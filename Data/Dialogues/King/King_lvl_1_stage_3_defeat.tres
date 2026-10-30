@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://xrv0o3m34x67"]
+
+[ext_resource type="Script" uid="uid://w00lxdhjv44h" path="res://Data/Dialogues/dialogue_data.gd" id="1_data"]
+[ext_resource type="Script" uid="uid://b12ins5b06y1q" path="res://Data/Dialogues/dialogue_choice.gd" id="2_5mbsi"]
+[ext_resource type="Script" uid="uid://bckcf0lamorra" path="res://Data/Dialogues/dialogue_line.gd" id="2_line"]
+[ext_resource type="Resource" uid="uid://d23fy4t1iln87" path="res://Data/Characters/King.tres" id="3_king"]
+[ext_resource type="Script" uid="uid://cw8fmeov7vq88" path="res://Data/Endings/ending_request.gd" id="ending_request"]
+
+[sub_resource type="Resource" id="EndingRequest"]
+script = ExtResource("ending_request")
+outcome = 1
+
+[sub_resource type="Resource" id="Resource_reply"]
+script = ExtResource("2_line")
+text = "Вот и славно. Ров полон, стены под охраной — пусть только попробуют сунуться. Сегодня я наконец смогу спокойно уснуть."
+speaker = ExtResource("3_king")
+
+[resource]
+script = ExtResource("1_data")
+dialogue_id = "king_level_1_stage_3_defeat"
+character = ExtResource("3_king")
+lines = Array[ExtResource("2_line")]([SubResource("Resource_reply")])
+completion_ending = SubResource("EndingRequest")

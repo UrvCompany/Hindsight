@@ -16,3 +16,6 @@ enum Emotion {
 @export var portrait: Texture2D
 @export var emotion: Emotion = Emotion.NEUTRAL
 @export var sound: AudioStream
+
+# Words learned when this line is displayed.
+@export var granted_words: Array[String] = []

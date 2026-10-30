@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://lesbt2fesj17"]
+
+[ext_resource type="Texture2D" uid="uid://bxjouumxgdteo" path="res://Image/Scenes/Basement.png" id="1_2yorf"]
+[ext_resource type="Script" uid="uid://bql5hhye7h1fw" path="res://Scene/Level1/Village/basement.gd" id="1_cfiwq"]
+[ext_resource type="Script" uid="uid://br6hegvcb27ya" path="res://Scene/Level1/Village/from_basement_to_tavern.gd" id="2_nwomb"]
+[ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_dtu6f"]
+[ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_cfiwq"]
+[ext_resource type="PackedScene" uid="uid://ng4v71s88nel" path="res://Scene/Level1/Chars/Digger1.tscn" id="5_dtu6f"]
+[ext_resource type="PackedScene" uid="uid://fn3tw2waut58" path="res://Scene/Level1/Chars/Digger2.tscn" id="6_cfiwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
+size = Vector2(436, 366.75)
+
+[node name="Basement" type="Area2D" unique_id=513882028]
+script = ExtResource("1_cfiwq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873714766]
+position = Vector2(961.99994, 497.99997)
+scale = Vector2(1.4088235, 1.2786459)
+texture = ExtResource("1_2yorf")
+
+[node name="Tavern" type="Area2D" parent="." unique_id=1933379268]
+script = ExtResource("2_nwomb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tavern" unique_id=1785810922]
+top_level = true
+position = Vector2(526, 247.625)
+shape = SubResource("RectangleShape2D_incjn")
+
+[node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_dtu6f")]
+
+[node name="WordsBor" parent="ModeSwitch" unique_id=1936151921 instance=ExtResource("4_cfiwq")]
+
+[node name="Digger1" parent="." unique_id=1430557277 instance=ExtResource("5_dtu6f")]
+position = Vector2(1394, 605)
+scale = Vector2(1.375, 1.375)
+
+[node name="Digger2" parent="." unique_id=760289293 instance=ExtResource("6_cfiwq")]
+position = Vector2(1058.0001, 556.00006)
+scale = Vector2(1.375, 1.375)
+
+[connection signal="input_event" from="Tavern" to="Tavern" method="_on_input_event"]
+[connection signal="mouse_entered" from="Tavern" to="Tavern" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Tavern" to="Tavern" method="_on_mouse_exited"]

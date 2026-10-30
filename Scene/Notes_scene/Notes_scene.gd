@@ -26,7 +26,6 @@ const LEVEL_BOOKS := preload(
 @onready var books_container: Node2D = $BooksContainer
 @onready var mode_switch := $ModeSwitch
 
-var shelf_y: int = 0
 
 func _ready() -> void:
 	SupportingSceneManager.opened.connect(
@@ -47,12 +46,18 @@ func generate_books() -> void:
 	for child in books_container.get_children():
 		child.queue_free()
 
-	# Получаем книги текущего уровня и этапа
-	var books: Array = LEVEL_BOOKS.get_books(
-		SceneStateGlobal.CURRENT_LEVEL,
-		SceneStateGlobal.STAGE
-		)
+	var level := SceneStateGlobal.CURRENT_LEVEL
+	match SceneStateGlobal.STAGE:
+		0:
+			generate_shelf(LEVEL_BOOKS.get_books(level, 0), shelf_y_1)
+		1:
+			generate_shelf(LEVEL_BOOKS.get_books(level, 1), shelf_y_2)
+		2:
+			generate_shelf(LEVEL_BOOKS.get_books(level, 0), shelf_y_1)
+			generate_shelf(LEVEL_BOOKS.get_books(level, 1), shelf_y_2)
 
+
+func generate_shelf(books: Array, shelf_y: float) -> void:
 	if books.is_empty():
 		return
 
@@ -84,11 +89,6 @@ func generate_books() -> void:
 			book_scale,
 			book_scale
 			)
-			
-		if SceneStateGlobal.STAGE == 0:
-			shelf_y = shelf_y_1	
-		else:
-			shelf_y = shelf_y_2
 			
 		# Позиция на полке
 		book.position = Vector2(

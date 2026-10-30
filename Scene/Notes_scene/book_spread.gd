@@ -6,8 +6,8 @@ class_name BookSpread
 
 
 func set_text(text_1: String, text_2: String) -> void:
-	paragraph_1.text = text_1
-	paragraph_2.text = text_2
+	paragraph_1.set_collectible_text(text_1)
+	paragraph_2.set_collectible_text(text_2)
 
 
 func _on_meta_clicked(meta: Variant) -> void:

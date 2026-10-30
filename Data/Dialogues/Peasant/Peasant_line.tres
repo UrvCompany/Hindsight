@@ -11,4 +11,5 @@ text = "Эти абобусы заставляют копать нас яму а
 speaker = ExtResource("3_hlump")
 portrait = ExtResource("1_l0knk")
 emotion = 2
+granted_words = Array[String](["3м"])
 metadata/_custom_type_script = "uid://bckcf0lamorra"

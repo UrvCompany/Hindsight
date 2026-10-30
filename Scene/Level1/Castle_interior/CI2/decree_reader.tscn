@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://06o8nki5b2vr"]
+
+[ext_resource type="Texture2D" uid="uid://bo6bp3h87qo5t" path="res://Image/Objects/royal_decree.jpeg" id="1_decree"]
+[ext_resource type="Script" uid="uid://b1cpt7jj5gsoj" path="res://Scene/Level1/Castle_interior/CI2/decree_reader.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://gm1cr8hb5bs6" path="res://UI/CollectibleText/collectible_rich_text.gd" id="3_words"]
+
+[node name="DecreeReader" type="Control" unique_id=307726021]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 960.0
+offset_bottom = 540.0
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=273563265]
+layout_mode = 0
+offset_left = -1024.0
+offset_top = -991.0
+offset_right = 1024.0
+offset_bottom = 991.0
+mouse_filter = 0
+texture = ExtResource("1_decree")
+
+[node name="Paragraph1" type="RichTextLabel" parent="." unique_id=403432639]
+layout_mode = 0
+offset_left = -480.0
+offset_top = -700.0
+offset_right = 430.0
+offset_bottom = -100.0
+theme_override_colors/default_color = Color(0.15, 0.1, 0.08, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+script = ExtResource("3_words")
+underline_width = 8.0
+
+[node name="Paragraph2" type="RichTextLabel" parent="." unique_id=1277945823]
+layout_mode = 0
+offset_left = -480.0
+offset_right = 430.0
+offset_bottom = 550.0
+theme_override_colors/default_color = Color(0.15, 0.1, 0.08, 1)
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+script = ExtResource("3_words")
+underline_width = 8.0
+
+[connection signal="meta_clicked" from="Paragraph1" to="." method="_on_meta_clicked"]
+[connection signal="meta_clicked" from="Paragraph2" to="." method="_on_meta_clicked"]

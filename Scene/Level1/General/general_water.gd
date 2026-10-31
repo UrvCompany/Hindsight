@@ -20,7 +20,7 @@ func _ready() -> void:
 		PackedVector2Array([Vector2(507,548),Vector2(533,553),Vector2(543,563),Vector2(540,578),Vector2(557,589),Vector2(585,596),Vector2(601,609),Vector2(631,616),Vector2(646,626),Vector2(640,636),Vector2(603,633),Vector2(582,617),Vector2(559,607),Vector2(539,594),Vector2(524,580),Vector2(512,567)]),
 		PackedVector2Array([Vector2(690,635),Vector2(720,638),Vector2(743,651),Vector2(772,657),Vector2(779,670),Vector2(773,689),Vector2(758,700),Vector2(741,688),Vector2(731,673),Vector2(708,656)]),
 		PackedVector2Array([Vector2(807,666),Vector2(840,671),Vector2(871,675),Vector2(900,676),Vector2(928,680),Vector2(935,686),Vector2(920,701),Vector2(893,711),Vector2(866,707),Vector2(843,707),Vector2(818,700),Vector2(800,699),Vector2(806,685)])
-	]
+		]
 	for outline in patches:
 		_add_patch(outline, background.texture)
 

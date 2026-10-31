@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://by7a45g8y7kpv"]
 
-[ext_resource type="Texture2D" uid="uid://bv3wdv0lnbpoo" path="res://Image/Scenes/village.png" id="1_n3r3j"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/village_clear.png" id="1_n3r3j"]
 [ext_resource type="PackedScene" uid="uid://cgdxcup1amgqt" path="res://Scene/Level1/Chars/peasant.tscn" id="2_54nwh"]
 [ext_resource type="Script" uid="uid://c58doyr8unv4q" path="res://Scene/Level1/Village/from_village_to_tavern.gd" id="2_ixtae"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_54nwh"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_cf3ct"]
 [ext_resource type="Script" uid="uid://ddem8nruh1htf" path="res://Scene/Level1/Village/from_village_to_general.gd" id="5_bcmxs"]
 
+[ext_resource type="Script" path="res://Scene/Level1/Village/village_sky.gd" id="20_sky"]
+[ext_resource type="Script" path="res://Scene/Level1/Village/village_water.gd" id="21_water"]
+[ext_resource type="Script" path="res://Scene/Level1/Village/village_smoke.gd" id="22_smoke"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/General_clouds.png" id="23_clouds"]
+[ext_resource type="Shader" path="res://Scene/Level1/General/general_water.gdshader" id="24_shader"]
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
 size = Vector2(365, 184)
 
@@ -20,6 +25,16 @@ position = Vector2(961.99994, 497.99997)
 scale = Vector2(1.4088235, 1.2786459)
 texture = ExtResource("1_n3r3j")
 
+[node name="LivingSky" type="Node2D" parent="Sprite2D"]
+script = ExtResource("20_sky")
+cloud_texture = ExtResource("23_clouds")
+
+[node name="LivingRiver" type="Node2D" parent="Sprite2D"]
+script = ExtResource("21_water")
+water_shader = ExtResource("24_shader")
+
+[node name="ChimneySmoke" type="Node2D" parent="Sprite2D"]
+script = ExtResource("22_smoke")
 [node name="peasant" parent="Sprite2D" unique_id=1430557277 instance=ExtResource("2_54nwh")]
 position = Vector2(936, 574)
 scale = Vector2(0.18, 0.18)

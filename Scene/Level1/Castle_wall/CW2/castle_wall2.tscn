@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://dlav37qmdxxt5"]
 
 [ext_resource type="Script" uid="uid://ch3dgpkr3ec5c" path="res://Scene/Level1/Castle_wall/CW2/castle_wall_2.gd" id="1_h073p"]
-[ext_resource type="Texture2D" uid="uid://bsegx6bcgrbvc" path="res://Image/Scenes/CW2.png" id="1_m7bjk"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/CW2_clear.png" id="1_m7bjk"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="2_mj511"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_7ectw"]
 [ext_resource type="Script" uid="uid://dkh4ybiqnknkv" path="res://Scene/Level1/Castle_wall/CW2/from_CW2_to_CW1l.gd" id="5_eem41"]
 [ext_resource type="PackedScene" uid="uid://c6un7avb2qhti" path="res://Scene/Level1/Castle_wall/CW2/crocodile_cage.tscn" id="6_1y723"]
 [ext_resource type="PackedScene" uid="uid://dgsibrposldxx" path="res://Scene/Level1/Chars/Archer.tscn" id="7_1y723"]
 
+[ext_resource type="Script" path="res://Scene/Level1/Castle_wall/CW2/cw2_sky.gd" id="20_sky"]
+[ext_resource type="Script" path="res://Scene/Level1/Castle_wall/CW2/cw2_water.gd" id="21_water"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/General_clouds.png" id="22_clouds"]
+[ext_resource type="Shader" path="res://Scene/Level1/Castle_wall/CW2/cw2_water.gdshader" id="23_shader"]
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jswec"]
 size = Vector2(175, 460.5)
 
@@ -19,6 +23,13 @@ position = Vector2(957.4999, 460)
 scale = Vector2(1.1516787, 0.9692471)
 texture = ExtResource("1_m7bjk")
 
+[node name="LivingSky" type="Node2D" parent="Sprite2D"]
+script = ExtResource("20_sky")
+cloud_texture = ExtResource("22_clouds")
+
+[node name="LivingRiver" type="Node2D" parent="Sprite2D"]
+script = ExtResource("21_water")
+water_shader = ExtResource("23_shader")
 [node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("2_mj511")]
 
 [node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_7ectw")]

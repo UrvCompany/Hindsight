@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6un7avb2qhti"]
 
-[ext_resource type="Texture2D" uid="uid://b8w8tapxnkw0e" path="res://Image/Objects/crocodile_crop2.png" id="2_1t5q0"]
+[ext_resource type="Texture2D" path="res://Image/Objects/crocodile_cage_painterly.png" id="2_1t5q0"]
 [ext_resource type="Script" uid="uid://qftgmhhdsph0" path="res://Scene/Level1/Castle_wall/CW2/crocodile_cage.gd" id="2_dt423"]
 
 [node name="Area2D" type="Area2D" unique_id=547108231]

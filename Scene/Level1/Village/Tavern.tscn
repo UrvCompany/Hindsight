@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmyo4yyecqv22"]
 
 [ext_resource type="Script" uid="uid://bi0usv3mwkh6x" path="res://Scene/Level1/Village/tavern.gd" id="1_ciq2l"]
-[ext_resource type="Texture2D" uid="uid://klmac41f8p2m" path="res://Image/Scenes/tavern.png" id="1_ibqaw"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/tavern_clear.png" id="1_ibqaw"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="2_bcs4l"]
 [ext_resource type="Script" uid="uid://bstlrnkloqx3t" path="res://Scene/Level1/Village/from_ tavern_to_village.gd" id="2_yoqn0"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="3_exyls"]
@@ -10,6 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://did306ukbv6n6" path="res://Scene/Level1/Chars/mercenary.tscn" id="7_i81rv"]
 [ext_resource type="Resource" uid="uid://dieflpeqo33ws" path="res://Data/Characters/Mercenary.tres" id="9_o35e2"]
 
+[ext_resource type="Script" path="res://Scene/Level1/Village/tavern_sky.gd" id="20_sky"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/General_clouds.png" id="21_clouds"]
+[ext_resource type="Shader" path="res://Scene/Level1/Village/tavern_fire.gdshader" id="22_fire"]
+[ext_resource type="Script" path="res://Scene/Level1/Castle_interior/CI1/torchlight.gd" id="23_light"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fire"]
+shader = ExtResource("22_fire")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
 size = Vector2(211, 563)
 
@@ -21,8 +28,14 @@ script = ExtResource("1_ciq2l")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1873714766]
 position = Vector2(961.99994, 497.99997)
-scale = Vector2(1.4088235, 1.2786459)
+scale = Vector2(1.14799279, 1.04246290)
 texture = ExtResource("1_ibqaw")
+material = SubResource("ShaderMaterial_fire")
+script = ExtResource("23_light")
+
+[node name="LivingSky" type="Node2D" parent="Sprite2D"]
+script = ExtResource("20_sky")
+cloud_texture = ExtResource("21_clouds")
 
 [node name="to_Village" type="Area2D" parent="." unique_id=1933379268]
 script = ExtResource("2_yoqn0")

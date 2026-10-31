@@ -21,6 +21,7 @@ SupportingSceneManager="*res://Autoload/supporting_scene_manager.tscn"
 DialogueManager="*uid://dpihlkl8qbc3y"
 SaveManager="*uid://bny4v85lw548c"
 EndingManager="*res://Autoload/ending_manager.gd"
+MusicManager="*uid://h62wffne5htm"
 
 [display]
 

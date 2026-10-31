@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2o0t8wlvrnkd"]
 
 [ext_resource type="Script" uid="uid://bvqrp0lr8miqj" path="res://Scene/Level1/Castle_wall/CW2/CrocodileCageSupScene.gd" id="2_3bppr"]
-[ext_resource type="Texture2D" uid="uid://c2h6pbprpwqm5" path="res://Image/Objects/crocodile_crop.png" id="2_dofts"]
+[ext_resource type="Texture2D" uid="uid://1d520sfdk4vv" path="res://Image/Objects/crocodile_cage_painterly.png" id="2_biy7q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aioa1"]
 radius = 53.014343
@@ -25,8 +25,9 @@ scale = Vector2(1.5, 1.5)
 script = ExtResource("2_3bppr")
 
 [node name="Sprite2D" type="Sprite2D" parent="CrocodileCage" unique_id=1935694115]
-position = Vector2(18, -18)
-texture = ExtResource("2_dofts")
+position = Vector2(17.333344, -18.666656)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_biy7q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CrocodileCage" unique_id=1957688613]
 position = Vector2(25, -8)

@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://ducbga514ugqt"]
 
-[ext_resource type="Texture2D" uid="uid://dn3f8qccrh73y" path="res://Image/Scenes/wall1.png" id="1_js6j8"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/wall1_clear.png" id="1_js6j8"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="2_bnqeu"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_cgynt"]
 [ext_resource type="Script" uid="uid://8jny01mwrpo2" path="res://Scene/Level1/Castle_wall/CW1/from_CW1_to_CI1.gd" id="4_u2err"]
 [ext_resource type="PackedScene" uid="uid://dkts28jsiepe0" path="res://Scene/Level1/Chars/guard_3.tscn" id="8_js6j8"]
 [ext_resource type="Script" uid="uid://d1cui0cjwo25s" path="res://Scene/Level1/Castle_wall/CW1/from_CW1_to_CW2.gd" id="9_jswec"]
 
+[ext_resource type="Script" path="res://Scene/Level1/Castle_wall/CW1/wall_sky.gd" id="10_sky"]
+[ext_resource type="Script" path="res://Scene/Level1/Castle_wall/CW1/wall_water.gd" id="11_water"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/General_clouds.png" id="12_clouds"]
+[ext_resource type="Shader" path="res://Scene/Level1/General/general_water.gdshader" id="13_water"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aioa1"]
-radius = 87.0
+radius = 115.0
 height = 270.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_878ex"]
@@ -18,8 +23,16 @@ size = Vector2(417, 549)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1861742231]
 position = Vector2(965, 442.50003)
-scale = Vector2(1.4161766, 1.139323)
+scale = Vector2(1.151914, 0.9298619)
 texture = ExtResource("1_js6j8")
+
+[node name="LivingSky" type="Node2D" parent="Sprite2D"]
+script = ExtResource("10_sky")
+cloud_texture = ExtResource("12_clouds")
+
+[node name="LivingRiver" type="Node2D" parent="Sprite2D"]
+script = ExtResource("11_water")
+water_shader = ExtResource("13_water")
 
 [node name="WordsBor" parent="." unique_id=1936151921 instance=ExtResource("2_bnqeu")]
 
@@ -30,14 +43,16 @@ script = ExtResource("4_u2err")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallStairs" unique_id=392954023]
 top_level = true
-position = Vector2(394, 465)
+position = Vector2(401, 425)
 shape = SubResource("CapsuleShape2D_aioa1")
 
 [node name="Guard3" parent="." unique_id=383297953 instance=ExtResource("8_js6j8")]
-position = Vector2(922, 598)
+position = Vector2(999.99994, 597)
+scale = Vector2(1.25, 1.25)
 
 [node name="Guard4" parent="." unique_id=937132247 instance=ExtResource("8_js6j8")]
-position = Vector2(690, 549)
+position = Vector2(795, 553)
+scale = Vector2(1.25, 1.25)
 
 [node name="FromWallToWall2" type="Area2D" parent="." unique_id=1655598633]
 script = ExtResource("9_jswec")

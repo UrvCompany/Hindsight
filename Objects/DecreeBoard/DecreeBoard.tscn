@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://qx1r7s6xr3pv"]
+
+[ext_resource type="Texture2D" path="res://Image/Objects/DecreeBoard.png" id="1_art"]
+[ext_resource type="Script" uid="uid://7ya4emo8et17" path="res://Objects/DecreeBoard/DecreeBoard.gd" id="2_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_board"]
+size = Vector2(920, 1260)
+
+[node name="DecreeBoard" type="Area2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_script")
+
+[node name="ContactShadow" type="Polygon2D" parent="."]
+position = Vector2(12, 15)
+color = Color(0.025, 0.018, 0.012, 0.4)
+polygon = PackedVector2Array(-405.45, -592.745, -373.15, -605.37, -256.7, -616.641, -123.25, -636.075, -122.4, -687.332, -61.2, -723.734, -0.85, -763.809, 52.7, -749.439, 121.55, -738.49, 123.25, -683.925, 249.9, -708.51, 272, -729, 398.65, -753.027, 398.65, 672.585, 78.2, 609.708, 97.75, 760.246, 50.15, 716.413, 30.6, 743.633, 0, 597, -15.3, 677.936, -46.75, 660.788, -93.5, 688.53, -79.9, 581.994, -404.6, 532.124)
+antialiased = true
+
+[node name="WallStrap0" type="Polygon2D" parent="."]
+color = Color(0.115, 0.10, 0.08, 1)
+polygon = PackedVector2Array(-289, -571.875, -289, -699.975, -282.2, -718.011, -261.8, -722.709, -255, -707.625, -255, -578.125)
+antialiased = true
+
+[node name="WallBolt0" type="Polygon2D" parent="."]
+color = Color(0.30, 0.27, 0.21, 1)
+polygon = PackedVector2Array(-265.2, -697.954, -266.111, -694.064, -268.6, -690.816, -272, -689.08, -275.4, -689.316, -277.889, -691.456, -278.8, -694.926, -277.889, -698.802, -275.4, -702.05, -272, -703.8, -268.6, -703.578, -266.111, -701.438)
+antialiased = true
+
+[node name="WallStrap1" type="Polygon2D" parent="."]
+color = Color(0.115, 0.10, 0.08, 1)
+polygon = PackedVector2Array(255, -671.875, 255, -822.375, 261.8, -843.291, 282.2, -847.989, 289, -830.025, 289, -678.125)
+antialiased = true
+
+[node name="WallBolt1" type="Polygon2D" parent="."]
+color = Color(0.30, 0.27, 0.21, 1)
+polygon = PackedVector2Array(278.8, -819.074, 277.889, -814.544, 275.4, -810.828, 272, -808.92, 268.6, -809.327, 266.111, -811.936, 265.2, -816.046, 266.111, -820.562, 268.6, -824.279, 272, -826.2, 275.4, -825.806, 277.889, -823.198)
+antialiased = true
+
+[node name="BoardArtwork" type="Polygon2D" parent="."]
+modulate = Color(0.82, 0.77, 0.68, 1)
+texture = ExtResource("1_art")
+polygon = PackedVector2Array(-405.45, -592.745, -373.15, -605.37, -256.7, -616.641, -123.25, -636.075, -122.4, -687.332, -61.2, -723.734, -0.85, -763.809, 52.7, -749.439, 121.55, -738.49, 123.25, -683.925, 249.9, -708.51, 272, -729, 398.65, -753.027, 398.65, 672.585, 78.2, 609.708, 97.75, 760.246, 50.15, 716.413, 30.6, 743.633, 0, 597, -15.3, 677.936, -46.75, 660.788, -93.5, 688.53, -79.9, 581.994, -404.6, 532.124)
+uv = PackedVector2Array(35, 95, 73, 88, 210, 101, 367, 108, 368, 55, 440, 31, 511, 4, 574, 30, 655, 55, 657, 108, 806, 108, 832, 93, 981, 94, 981, 1370, 604, 1364, 627, 1507, 571, 1474, 548, 1505, 512, 1365, 494, 1449, 457, 1438, 402, 1476, 418, 1364, 36, 1372)
+antialiased = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_board")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

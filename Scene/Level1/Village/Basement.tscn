@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lesbt2fesj17"]
 
-[ext_resource type="Texture2D" uid="uid://bxjouumxgdteo" path="res://Image/Scenes/Basement.png" id="1_2yorf"]
+[ext_resource type="Texture2D" uid="uid://cfa3j1jp3ggy0" path="res://Image/Scenes/Basement.png" id="1_2yorf"]
 [ext_resource type="Script" uid="uid://bql5hhye7h1fw" path="res://Scene/Level1/Village/basement.gd" id="1_cfiwq"]
 [ext_resource type="Script" uid="uid://br6hegvcb27ya" path="res://Scene/Level1/Village/from_basement_to_tavern.gd" id="2_nwomb"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_dtu6f"]
@@ -32,11 +32,11 @@ shape = SubResource("RectangleShape2D_incjn")
 [node name="WordsBor" parent="ModeSwitch" unique_id=1936151921 instance=ExtResource("4_cfiwq")]
 
 [node name="Digger1" parent="." unique_id=1430557277 instance=ExtResource("5_dtu6f")]
-position = Vector2(1394, 605)
+position = Vector2(1435, 631)
 scale = Vector2(1.375, 1.375)
 
 [node name="Digger2" parent="." unique_id=760289293 instance=ExtResource("6_cfiwq")]
-position = Vector2(1058.0001, 556.00006)
+position = Vector2(1023, 605)
 scale = Vector2(1.375, 1.375)
 
 [connection signal="input_event" from="Tavern" to="Tavern" method="_on_input_event"]

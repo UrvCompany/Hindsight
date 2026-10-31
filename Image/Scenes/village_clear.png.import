@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4y72lo5085t5"
-path="res://.godot/imported/throne_room1.jpg-0c5ac88f8af093f0b73c9bb614e9886c.ctex"
+uid="uid://chcmg336v3g8a"
+path="res://.godot/imported/village_clear.png-c9b9b0948dec48597f37c99e2d8b990d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Scenes/throne_room1.jpg"
-dest_files=["res://.godot/imported/throne_room1.jpg-0c5ac88f8af093f0b73c9bb614e9886c.ctex"]
+source_file="res://Image/Scenes/village_clear.png"
+dest_files=["res://.godot/imported/village_clear.png-c9b9b0948dec48597f37c99e2d8b990d.ctex"]
 
 [params]
 

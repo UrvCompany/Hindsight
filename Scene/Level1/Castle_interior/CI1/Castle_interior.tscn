@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cr8afvd0y8lek"]
 
-[ext_resource type="Texture2D" uid="uid://c3pv2ty8y4hsa" path="res://Image/Scenes/castle_interior_painterly.png" id="1_mw8ui"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/castle_interior_calm.png" id="1_mw8ui"]
 [ext_resource type="Script" uid="uid://bhyy6mvmgppl1" path="res://Scene/Level1/Castle_interior/CI1/stairs.gd" id="2_nw1ot"]
 [ext_resource type="Script" uid="uid://5u610yq0aup1" path="res://Scene/Level1/Castle_interior/CI1/exit.gd" id="4_2gxig"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="6_ongvb"]
@@ -32,7 +32,7 @@ size = Vector2(131.99988, 374)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1529196207]
 material = SubResource("ShaderMaterial_torch")
 position = Vector2(961, 476.09003)
-scale = Vector2(1.1503894, 1.0104246)
+scale = Vector2(1.1497005, 1.0104246)
 texture = ExtResource("1_mw8ui")
 script = ExtResource("11_torch")
 
@@ -94,3 +94,4 @@ feet_offset_y = -15.0
 [connection signal="input_event" from="CastleInteriorSecondScene" to="CastleInteriorSecondScene" method="_on_input_event"]
 [connection signal="mouse_entered" from="CastleInteriorSecondScene" to="CastleInteriorSecondScene" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CastleInteriorSecondScene" to="CastleInteriorSecondScene" method="_on_mouse_exited"]
+

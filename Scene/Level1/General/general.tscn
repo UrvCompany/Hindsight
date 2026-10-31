@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://bso0grcsrorc7" path="res://Scene/Level1/General/general_water.gd" id="9_water"]
 [ext_resource type="Shader" uid="uid://y1e53hhn5eaw" path="res://Scene/Level1/General/general_water.gdshader" id="10_water_shader"]
 
+[ext_resource type="Script" path="res://Scene/Level1/General/castle_outline.gd" id="11_outline"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
 size = Vector2(480.75, 386)
 
@@ -35,6 +37,9 @@ water_shader = ExtResource("10_water_shader")
 [node name="Ambience" type="Node2D" parent="Sprite2D" unique_id=683417717]
 script = ExtResource("6_ambience")
 water_enabled = false
+
+[node name="CastleOutline" type="Node2D" parent="Sprite2D"]
+script = ExtResource("11_outline")
 
 [node name="to_Castle" type="Area2D" parent="." unique_id=1933379268]
 script = ExtResource("1_tnxl6")

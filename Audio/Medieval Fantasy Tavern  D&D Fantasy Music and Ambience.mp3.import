@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cai5ht88f3iwj"
+path="res://.godot/imported/Medieval Fantasy Tavern  D&D Fantasy Music and Ambience.mp3-b7d499ccc0977de7b6901a9733bf7aca.mp3str"
+
+[deps]
+
+source_file="res://Audio/Medieval Fantasy Tavern  D&D Fantasy Music and Ambience.mp3"
+dest_files=["res://.godot/imported/Medieval Fantasy Tavern  D&D Fantasy Music and Ambience.mp3-b7d499ccc0977de7b6901a9733bf7aca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

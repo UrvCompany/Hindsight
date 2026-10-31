@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://ce78pn1q113fn"]
 
 [ext_resource type="Script" uid="uid://cf74xc2qyx6bs" path="res://Scene/Level1/Castle_interior/CI2/Castle_interior_second.gd" id="1_daggj"]
-[ext_resource type="Texture2D" uid="uid://e6umcttai63l" path="res://Image/Scenes/castle_interior_2.png" id="2_fwq5l"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/castle_interior_2_calm.png" id="2_fwq5l"]
 [ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="3_da57y"]
 [ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="4_qdlwq"]
 [ext_resource type="Script" uid="uid://eh1lsrnov4hv" path="res://Scene/Level1/Castle_interior/CI2/from_CI2_to_CI1.gd" id="5_daggj"]
 [ext_resource type="Script" uid="uid://1ct4khfn1di1" path="res://Scene/Level1/Castle_interior/CI2/from_CI2_to_throne.gd" id="6_daggj"]
-[ext_resource type="PackedScene" uid="uid://qx1r7s6xr3pv" path="res://Objects/Decree_board/Decree_board.tscn" id="7_chc88"]
+[ext_resource type="PackedScene" uid="uid://qx1r7s6xr3pv" path="res://Objects/DecreeBoard/DecreeBoard.tscn" id="7_chc88"]
+
+[ext_resource type="Script" path="res://Scene/Level1/Castle_interior/CI1/torchlight.gd" id="8_torch_script"]
+[ext_resource type="Shader" path="res://Scene/Level1/Castle_interior/CI2/torchlight_ci2.gdshader" id="9_torch_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_torch"]
+shader = ExtResource("9_torch_shader")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_backexit"]
 size = Vector2(140.375, 397.75)
@@ -19,8 +25,12 @@ script = ExtResource("1_daggj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=863109951]
 position = Vector2(962.49994, 478.49994)
-scale = Vector2(1.4139706, 1.2408854)
+scale = Vector2(1.1514973, 1.0116773)
 texture = ExtResource("2_fwq5l")
+material = SubResource("ShaderMaterial_torch")
+script = ExtResource("8_torch_script")
+light_strength = 0.65
+shadow_strength = 0.6
 
 [node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("3_da57y")]
 
@@ -50,3 +60,5 @@ position = Vector2(1675.0001, 471)
 [connection signal="input_event" from="ToThroneRoom" to="ToThroneRoom" method="_on_input_event"]
 [connection signal="mouse_entered" from="ToThroneRoom" to="ToThroneRoom" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ToThroneRoom" to="ToThroneRoom" method="_on_mouse_exited"]
+
+

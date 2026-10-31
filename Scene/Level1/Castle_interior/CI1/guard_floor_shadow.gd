@@ -86,8 +86,8 @@ func _draw() -> void:
 		Color(1, 1, 1, shadow_opacity * 0.85)
 	)
 
-#	# Сбрасываем трансформацию
-#	draw_set_transform(Vector2.ZERO)
-
-#	# Отображаем положение ног
-#	draw_circle(_feet, 8.0, Color.RED)
+	## Сбрасываем трансформацию
+	#draw_set_transform(Vector2.ZERO)
+#
+	## Отображаем положение ног
+	#draw_circle(_feet, 8.0, Color.RED)

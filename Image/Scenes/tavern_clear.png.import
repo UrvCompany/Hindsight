@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbkotr827yi1x"
-path="res://.godot/imported/Decree_board.png-58791cc494ca9970f40ebbd3028905b8.ctex"
+uid="uid://d28tcvphwmcoo"
+path="res://.godot/imported/tavern_clear.png-5e17cef63a3c3cd939e2db1aaa302984.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Objects/Decree_board.png"
-dest_files=["res://.godot/imported/Decree_board.png-58791cc494ca9970f40ebbd3028905b8.ctex"]
+source_file="res://Image/Scenes/tavern_clear.png"
+dest_files=["res://.godot/imported/tavern_clear.png-5e17cef63a3c3cd939e2db1aaa302984.ctex"]
 
 [params]
 

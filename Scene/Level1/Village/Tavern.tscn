@@ -15,6 +15,8 @@
 [ext_resource type="Shader" path="res://Scene/Level1/Village/tavern_fire.gdshader" id="22_fire"]
 [ext_resource type="Script" path="res://Scene/Level1/Castle_interior/CI1/torchlight.gd" id="23_light"]
 
+[ext_resource type="Script" path="res://Scene/Level1/Castle_interior/Throne_room/transition_sparkles.gd" id="24_sparkles"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fire"]
 shader = ExtResource("22_fire")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
@@ -56,6 +58,9 @@ script = ExtResource("5_bcs4l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="to_basement" unique_id=987456711]
 position = Vector2(-49, 65)
 shape = SubResource("RectangleShape2D_lqsbf")
+
+[node name="TransitionSparkles" type="Node2D" parent="to_basement"]
+script = ExtResource("24_sparkles")
 
 [node name="Headman" parent="." unique_id=1430557277 instance=ExtResource("6_exyls")]
 position = Vector2(566, 600)

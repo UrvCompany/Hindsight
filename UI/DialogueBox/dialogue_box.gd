@@ -158,6 +158,10 @@ func _on_choice_pressed(index: int) -> void:
 		return
 
 	if choice.next_dialogue != null:
+		if choice.next_dialogue.completion_ending != null:
+			if not SaveManager.save_final_choice(dialogue_data):
+				push_error("Не удалось сохранить точку перед финальным решением")
+				return
 		setup(choice.next_dialogue)
 	else:
 		SupportingSceneManager.close()

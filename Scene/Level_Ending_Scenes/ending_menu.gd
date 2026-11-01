@@ -70,10 +70,8 @@ func _show_main_options() -> void:
 	_add_button("В главное меню", _open_main_menu)
 
 func _show_chapters() -> void:
-	_clear_options()
-	for index in SceneStateGlobal.HOME_SCENE.size():
-		_add_button("Глава %d" % (index + 1), _start_chapter.bind(index))
-	_add_button("Назад", _show_main_options)
+	get_tree().change_scene_to_file("res://UI/Chapter_select/ChapterSelect.tscn")
+
 
 func _start_chapter(index: int) -> void:
 	if index < 0 or index >= SceneStateGlobal.HOME_SCENE.size():

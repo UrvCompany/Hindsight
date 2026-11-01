@@ -218,5 +218,3 @@ Book_spread и decree_reader объединены в общий переиспо
 **Файлы:** `castle_wall.tscn`
 **Сущности:** `WallStairs` (`input_event`, `mouse_entered`, `mouse_exited`)
 -------------------------------------------------------------------------------
-
-

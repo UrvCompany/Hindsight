@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scene/Level1/Castle_wall/CW2/cw2_water.gd" id="21_water"]
 [ext_resource type="Texture2D" path="res://Image/Scenes/General_clouds.png" id="22_clouds"]
 [ext_resource type="Shader" path="res://Scene/Level1/Castle_wall/CW2/cw2_water.gdshader" id="23_shader"]
+[ext_resource type="Script" path="res://Scene/Level1/Castle_wall/CW2/cage_outline.gd" id="24_outline"]
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jswec"]
 size = Vector2(175, 460.5)
 
@@ -43,6 +44,9 @@ shape = SubResource("RectangleShape2D_jswec")
 
 [node name="СrocodileСage" parent="." unique_id=75112205 instance=ExtResource("6_1y723")]
 position = Vector2(1537, 703)
+
+[node name="CageOutline" type="Node2D" parent="СrocodileСage"]
+script = ExtResource("24_outline")
 
 [node name="Guard2" parent="." unique_id=937132247 instance=ExtResource("7_1y723")]
 position = Vector2(1177, 602)

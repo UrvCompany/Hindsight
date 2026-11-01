@@ -4,24 +4,28 @@
 [ext_resource type="Script" uid="uid://cbmqq8ajp3amk" path="res://Scene/Thinking_scene/button.gd" id="2_cdqw3"]
 
 [node name="Go_next_stage_pls" type="Area2D" unique_id=564575345]
+scale = Vector2(0.845, 0.845)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=458484834]
+position = Vector2(-1.1834412, 3.5503006)
+scale = Vector2(3.1221137, 0.5046228)
 texture = ExtResource("1_e6n1i")
 
 [node name="Label" type="Label" parent="." unique_id=337152649]
-offset_left = -86.0
-offset_top = -64.0
-offset_right = 89.0
-offset_bottom = 68.0
+offset_left = -293.49112
+offset_top = -39.053246
+offset_right = 301.77518
+offset_bottom = 46.153854
+theme_override_font_sizes/font_size = 35
 text = "Go next stage pls"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=6020852]
-offset_left = -92.0
-offset_top = -92.0
-offset_right = 93.0
-offset_bottom = 91.0
+offset_left = -291.12427
+offset_top = -43.78698
+offset_right = 294.67456
+offset_bottom = 44.97042
 script = ExtResource("2_cdqw3")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

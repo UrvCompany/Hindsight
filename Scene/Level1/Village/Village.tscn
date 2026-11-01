@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scene/Level1/Village/village_smoke.gd" id="22_smoke"]
 [ext_resource type="Texture2D" path="res://Image/Scenes/General_clouds.png" id="23_clouds"]
 [ext_resource type="Shader" path="res://Scene/Level1/General/general_water.gdshader" id="24_shader"]
+[ext_resource type="Script" path="res://Scene/Level1/Village/tavern_outline.gd" id="25_outline"]
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
 size = Vector2(365, 184)
 
@@ -42,6 +43,9 @@ scale = Vector2(0.18, 0.18)
 [node name="peasant2" parent="Sprite2D" unique_id=415911923 instance=ExtResource("2_54nwh")]
 position = Vector2(1470, 465)
 scale = Vector2(0.1, 0.1)
+
+[node name="TavernOutline" type="Node2D" parent="Sprite2D"]
+script = ExtResource("25_outline")
 
 [node name="to_Tavern" type="Area2D" parent="." unique_id=1933379268]
 script = ExtResource("2_ixtae")

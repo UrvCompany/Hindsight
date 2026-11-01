@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scene/Level1/Castle_interior/CI1/torchlight.gd" id="8_torch_script"]
 [ext_resource type="Shader" path="res://Scene/Level1/Castle_interior/CI2/torchlight_ci2.gdshader" id="9_torch_shader"]
 
+[ext_resource type="Script" path="res://Objects/DecreeBoard/decree_outline.gd" id="30_outline"]
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_torch"]
 shader = ExtResource("9_torch_shader")
 
@@ -53,6 +54,9 @@ shape = SubResource("RectangleShape2D_7bm3c")
 
 [node name="DecreeBoard" parent="." unique_id=951285973 instance=ExtResource("7_chc88")]
 position = Vector2(1675.0001, 471)
+
+[node name="DecreeOutline" type="Node2D" parent="DecreeBoard"]
+script = ExtResource("30_outline")
 
 [connection signal="input_event" from="BackToCastleInterior" to="BackToCastleInterior" method="_on_input_event"]
 [connection signal="mouse_entered" from="BackToCastleInterior" to="BackToCastleInterior" method="_on_mouse_entered"]

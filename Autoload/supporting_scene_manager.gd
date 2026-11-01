@@ -5,6 +5,36 @@ signal closed
 signal word_collected(word: String)
 
 var current_instance: Control = null
+var escape_menu: Control = null
+var _previous_paused: bool = false
+
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+func _input(event: InputEvent) -> void:
+	if not event.is_action_pressed("ui_cancel") or event.is_echo():
+		return
+	if is_instance_valid(current_instance):
+		close()
+	elif is_instance_valid(escape_menu):
+		_close_escape_menu()
+	else:
+		var scene := get_tree().current_scene
+		if scene == null or scene.scene_file_path.begins_with("res://UI/"):
+			return
+		escape_menu = Control.new()
+		escape_menu.set_script(load("res://UI/Pause_menu/escape_menu.gd"))
+		escape_menu.dismissed.connect(_close_escape_menu)
+		container.add_child(escape_menu)
+		_previous_paused = get_tree().paused
+		get_tree().paused = true
+	get_viewport().set_input_as_handled()
+
+func _close_escape_menu() -> void:
+	if is_instance_valid(escape_menu):
+		escape_menu.queue_free()
+		escape_menu = null
+	get_tree().paused = _previous_paused
 
 @onready var dimmer: ColorRect = $Dimmer
 @onready var container: Control = $Container

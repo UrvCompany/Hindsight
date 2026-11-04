@@ -17,10 +17,10 @@ const LEVEL_BOOKS := preload(
 @export var book_textures: Array[Texture2D] = []
 @export var book_scale: float = 0.35
 
-@export var shelf_left_x: float = 150.0
-@export var shelf_right_x: float = 1780.0
-@export var shelf_y_1: float = 630.0
-@export var shelf_y_2: float = 220.0
+@export var shelf_left_x: float = 390.0
+@export var shelf_right_x: float = 1530.0
+@export var shelf_y_1: float = 665.0
+@export var shelf_y_2: float = 330.0
 
 
 @onready var books_container: Node2D = $BooksContainer
@@ -28,6 +28,14 @@ const LEVEL_BOOKS := preload(
 
 
 func _ready() -> void:
+	book_textures.clear()
+	var atlas_image = load("res://Image/Notes_screen/book_spines_painterly.png")
+	var regions = [Rect2(56, 52, 142, 906), Rect2(241, 67, 140, 890), Rect2(424, 67, 139, 890), Rect2(601, 81, 145, 877), Rect2(789, 69, 145, 889), Rect2(980, 78, 142, 880), Rect2(1165, 83, 136, 873), Rect2(1349, 81, 133, 877)]
+	for region in regions:
+		var atlas := AtlasTexture.new()
+		atlas.atlas = atlas_image
+		atlas.region = region
+		book_textures.append(atlas)
 	SupportingSceneManager.opened.connect(
 		func():
 			mode_switch.set_ui_visible(false)
@@ -81,13 +89,14 @@ func generate_shelf(books: Array, shelf_y: float) -> void:
 
 		# Данные книги
 		book.closed_texture = book_textures[book_index]
+		book.cover_index = book_index
 		book.page_text_1 = book_data["page_text_1"]
 		book.page_text_2 = book_data["page_text_2"]
 
 		# Размер
 		book.scale = Vector2(
-			book_scale,
-			book_scale
+			90.0 / book.closed_texture.get_width() * book_scale / 0.35,
+			320.0 / book.closed_texture.get_height() * book_scale / 0.35
 			)
 			
 		# Позиция на полке
@@ -109,6 +118,7 @@ func _on_book_clicked(book: Book) -> void:
 		BOOK_SPREAD_SCENE
 	) as BookSpread
 
+	spread.set_cover(book.cover_index)
 	spread.set_text(
 		book.page_text_1,
 		book.page_text_2

@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://chmmwq3tcf7v2"]
 
-[ext_resource type="Texture2D" uid="uid://4jc4l4xn7sfj" path="res://Image/Scenes/peasants_defeat_cutscene.png" id="1_44ys6"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/peasants_defeat_painterly.png" id="1_44ys6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7bm3c"]
 font_size = 50
 
 [node name="peasants_defeat" type="Sprite2D" unique_id=1090889739]
-position = Vector2(1010, 538)
+position = Vector2(960, 540)
+[node name="Artwork" type="Sprite2D" parent="."]
+scale = Vector2(1.153153, 1.153153)
 texture = ExtResource("1_44ys6")
 
 [node name="Label" type="Label" parent="." unique_id=1270881993]

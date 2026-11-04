@@ -4,6 +4,7 @@ class_name Book
 signal book_clicked(book: Book)
 
 @export var closed_texture: Texture2D
+@export var cover_index: int = 0
 @export_multiline var page_text_1: String = ""
 @export_multiline var page_text_2: String = ""
 

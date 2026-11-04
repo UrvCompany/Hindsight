@@ -1,6 +1,6 @@
 extends Node
 
-const CHAPTERS = "res://UI/Chapter_select/ChapterSelect.tscn"
+const INTRO = "res://UI/Intro/Intro.tscn"
 var confirmation: ConfirmationDialog
 
 func _ready() -> void:
@@ -19,7 +19,7 @@ func _on_start_pressed() -> void:
 
 func _confirm_new_game() -> void:
 	if SaveManager.new_game():
-		get_tree().change_scene_to_file(CHAPTERS)
+		get_tree().change_scene_to_file(INTRO)
 	else:
 		confirmation.dialog_text = "Не удалось сбросить сохранение. Проверьте доступ к файлам."
 		confirmation.popup_centered()

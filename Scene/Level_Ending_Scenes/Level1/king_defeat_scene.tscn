@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://gse16n2viecu"]
 
-[ext_resource type="Texture2D" uid="uid://blvoyc4i8ivp3" path="res://Image/Scenes/King_defeat_cutscene.png" id="1_xcqcx"]
+[ext_resource type="Texture2D" path="res://Image/Scenes/king_defeat_painterly.png" id="1_xcqcx"]
 
 
 [sub_resource type="LabelSettings" id="LabelSettings_7bm3c"]
 font_size = 50
 
 [node name="king_defeat" type="Sprite2D" unique_id=1906094240]
-position = Vector2(963, 546)
+position = Vector2(960, 540)
+[node name="Artwork" type="Sprite2D" parent="."]
+scale = Vector2(1.148325, 1.148325)
 texture = ExtResource("1_xcqcx")
 
 [node name="Label" type="Label" parent="." unique_id=401680169]

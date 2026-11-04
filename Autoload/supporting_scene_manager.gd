@@ -22,14 +22,20 @@ func _input(event: InputEvent) -> void:
 		var scene := get_tree().current_scene
 		if scene == null or scene.scene_file_path.begins_with("res://UI/"):
 			return
-		escape_menu = Control.new()
-		escape_menu.set_script(load("res://UI/Pause_menu/escape_menu.gd"))
-		escape_menu.dismissed.connect(_close_escape_menu)
-		container.add_child(escape_menu)
-		_previous_paused = get_tree().paused
-		get_tree().paused = true
+		show_escape_menu()
 	get_viewport().set_input_as_handled()
 
+func show_escape_menu() -> void:
+	if is_instance_valid(escape_menu):
+		return
+	if is_instance_valid(current_instance):
+		close()
+	escape_menu = Control.new()
+	escape_menu.set_script(load("res://UI/Pause_menu/escape_menu.gd"))
+	escape_menu.dismissed.connect(_close_escape_menu)
+	container.add_child(escape_menu)
+	_previous_paused = get_tree().paused
+	get_tree().paused = true
 func _close_escape_menu() -> void:
 	if is_instance_valid(escape_menu):
 		escape_menu.queue_free()

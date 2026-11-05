@@ -3,9 +3,9 @@ class_name DecreeReader
 
 const CORRECT_ANSWER := preload("res://Data/CorrectAnswer.gd")
 
-const DECREE_TEXT_1 := "Я, король Альберик III, повелеваю незамедлительно выкопать перед замком [u][url=%s]ров[/url][/u]. Исполнение приказа не терпит промедления." % CORRECT_ANSWER.DITCH
+const DECREE_TEXT_1 := "Дополнение после обследования грунта. Вместо предварительного сухого укрепления устроить перед замком [u][url=%s]ров[/url][/u] с водой из реки. Прежний проект считать отменённым." % CORRECT_ANSWER.DITCH
 
-const DECREE_TEXT_2 := "Второй мой указ - отправить [u][url=%s]всех воинов[/url][/u] на патрулирование [u][url=%s]стен замка[/url][/u]. Полагаю, столь простое распоряжение не требует дополнительных разъяснений." % [ CORRECT_ANSWER.WARRIORS, CORRECT_ANSWER.CASTLE_WALL ]
+const DECREE_TEXT_2 := "После наполнения рва выпустить доставленных хищников. Отправить [u][url=%s]всех воинов[/url][/u] на патрулирование [u][url=%s]стен замка[/url][/u]. Прежнее расписание внутренних постов отменить." % [CORRECT_ANSWER.WARRIORS, CORRECT_ANSWER.CASTLE_WALL]
 
 @onready var paragraph_1: RichTextLabel = $Paragraph1
 @onready var paragraph_2: RichTextLabel = $Paragraph2

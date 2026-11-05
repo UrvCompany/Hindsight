@@ -3,22 +3,22 @@ extends Area2D
 
 # Сцена интерьера замка
 @export_file("*.tscn") var castle_interior_scene_path: String
-@export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_up.png")
+@export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_up.svg")
 
 
 func _on_mouse_entered() -> void:
-	Input.set_custom_mouse_cursor(cursor_texture)
+	CursorManager.show_transition(cursor_texture)
 
 
 func _on_mouse_exited() -> void:
-	Input.set_custom_mouse_cursor(null)
+	CursorManager.reset()
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			Input.set_custom_mouse_cursor(null)
+			CursorManager.reset()
 			interact()
 
 

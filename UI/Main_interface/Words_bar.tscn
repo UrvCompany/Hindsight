@@ -1,68 +1,44 @@
 [gd_scene format=3 uid="uid://cyhibh2uwf6gh"]
 
-[ext_resource type="Texture2D" uid="uid://b3qs6kmrq6h5w" path="res://Image/Words_bar/words_bar.png" id="1_8e5ya"]
-[ext_resource type="PackedScene" uid="uid://c6ek2h82noovt" path="res://UI/Main_interface/words.tscn" id="2_foe3s"]
-[ext_resource type="Script" uid="uid://cjdy64e7myemb" path="res://UI/Main_interface/words_bar.gd" id="3_wbscript"]
+[ext_resource type="Script" path="res://UI/Main_interface/words_bar.gd" id="1_y6h1m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6e4e"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+bg_color = Color(0.14901961, 0.12156863, 0.101960786, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.654902, 0.5411765, 0.34117648, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [node name="WordsBar" type="CanvasLayer" unique_id=1936151921]
 layer = 10
-script = ExtResource("3_wbscript")
+script = ExtResource("1_y6h1m")
 
-[node name="Words_bar_background" type="Sprite2D" parent="." unique_id=1600646945]
-position = Vector2(959.5, 966)
-scale = Vector2(0.791014, 1)
-texture = ExtResource("1_8e5ya")
+[node name="Panel" type="Panel" parent="." unique_id=1867213966]
+offset_top = 852.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_k6e4e")
 
-[node name="Slot1" parent="." unique_id=147135466 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(10, 878)
+[node name="Scroll" type="ScrollContainer" parent="Panel" unique_id=1504462887]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 18.0
+offset_right = 1892.0
+offset_bottom = 210.0
+horizontal_scroll_mode = 0
 
-[node name="Slot2" parent="." unique_id=774793037 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(327, 878)
-
-[node name="Slot3" parent="." unique_id=1299459292 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(644, 878)
-
-[node name="Slot4" parent="." unique_id=1879297213 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(961, 878)
-
-[node name="Slot5" parent="." unique_id=1479292324 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(1278, 878)
-
-[node name="Slot6" parent="." unique_id=1810302695 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(1595, 878)
-
-[node name="Slot7" parent="." unique_id=631725576 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(10, 938)
-
-[node name="Slot8" parent="." unique_id=1870635571 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(327, 938)
-
-[node name="Slot9" parent="." unique_id=23407141 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(644, 938)
-
-[node name="Slot10" parent="." unique_id=353148806 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(961, 938)
-
-[node name="Slot11" parent="." unique_id=1779539386 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(1278, 938)
-
-[node name="Slot12" parent="." unique_id=946242681 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(1595, 938)
-
-[node name="Slot13" parent="." unique_id=79859350 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(10, 998)
-
-[node name="Slot14" parent="." unique_id=983812754 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(327, 998)
-
-[node name="Slot15" parent="." unique_id=170679944 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(644, 998)
-
-[node name="Slot16" parent="." unique_id=477840312 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(961, 998)
-
-[node name="Slot17" parent="." unique_id=341357256 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(1278, 998)
-
-[node name="Slot18" parent="." unique_id=1288639789 groups=["Words_slots"] instance=ExtResource("2_foe3s")]
-position = Vector2(1595, 998)
+[node name="Grid" type="GridContainer" parent="Panel/Scroll" unique_id=1567525155]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 10
+columns = 6

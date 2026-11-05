@@ -2,17 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://c6gpsvejc5242" path="res://Image/Scenes/General_plain.png" id="1_1omfq"]
 [ext_resource type="Script" uid="uid://brw2o3n38vpbx" path="res://Scene/Level1/General/from_general_to_CI1.gd" id="1_tnxl6"]
-[ext_resource type="PackedScene" uid="uid://qtk6m4wutd7s" path="res://UI/Main_interface/Mode_switch.tscn" id="4_i7tvd"]
 [ext_resource type="Script" uid="uid://bgjvqlh3u1mb1" path="res://Scene/Level1/General/from_general_to_village.gd" id="5_i7tvd"]
-[ext_resource type="PackedScene" uid="uid://cyhibh2uwf6gh" path="res://UI/Main_interface/Words_bar.tscn" id="5_lgp12"]
 [ext_resource type="Script" uid="uid://cjqjuq5k2wgrq" path="res://Scene/Level1/General/general_ambience.gd" id="6_ambience"]
 [ext_resource type="Script" uid="uid://fappp4j0ucns" path="res://Scene/Level1/General/general_sky.gd" id="7_sky"]
 [ext_resource type="Texture2D" uid="uid://vaqu54b4fvj5" path="res://Image/Scenes/General_clouds.png" id="8_clouds"]
 [ext_resource type="Script" uid="uid://bso0grcsrorc7" path="res://Scene/Level1/General/general_water.gd" id="9_water"]
 [ext_resource type="Shader" uid="uid://y1e53hhn5eaw" path="res://Scene/Level1/General/general_water.gdshader" id="10_water_shader"]
+[ext_resource type="Script" uid="uid://cklwpv0fhntlg" path="res://Scene/Level1/General/castle_outline.gd" id="11_outline"]
 
-[ext_resource type="Script" path="res://Scene/Level1/General/castle_outline.gd" id="11_outline"]
-
+[ext_resource type="PackedScene" path="res://UI/Main_interface/Words_bar.tscn" id="20_words"]
+[ext_resource type="PackedScene" path="res://UI/Main_interface/Mode_switch.tscn" id="21_modes"]
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_incjn"]
 size = Vector2(480.75, 386)
 
@@ -38,7 +37,7 @@ water_shader = ExtResource("10_water_shader")
 script = ExtResource("6_ambience")
 water_enabled = false
 
-[node name="CastleOutline" type="Node2D" parent="Sprite2D"]
+[node name="CastleOutline" type="Node2D" parent="Sprite2D" unique_id=1997200830]
 script = ExtResource("11_outline")
 
 [node name="to_Castle" type="Area2D" parent="." unique_id=1933379268]
@@ -50,10 +49,6 @@ top_level = true
 position = Vector2(1382, 400)
 shape = SubResource("RectangleShape2D_incjn")
 
-[node name="ModeSwitch" parent="." unique_id=1512219395 instance=ExtResource("4_i7tvd")]
-
-[node name="WordsBor" parent="ModeSwitch" unique_id=1936151921 instance=ExtResource("5_lgp12")]
-
 [node name="to_Village" type="Area2D" parent="." unique_id=1353458573]
 position = Vector2(249, 698)
 script = ExtResource("5_i7tvd")
@@ -62,6 +57,9 @@ script = ExtResource("5_i7tvd")
 position = Vector2(101.5, 30)
 shape = SubResource("RectangleShape2D_lqsbf")
 
+[node name="WordsBor" parent="." instance=ExtResource("20_words")]
+
+[node name="ModeSwitch" parent="." instance=ExtResource("21_modes")]
 [connection signal="input_event" from="to_Castle" to="to_Castle" method="_on_input_event"]
 [connection signal="mouse_entered" from="to_Castle" to="to_Castle" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="to_Castle" to="to_Castle" method="_on_mouse_exited"]

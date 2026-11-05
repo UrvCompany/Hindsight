@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_vfe6u")
-text = "Путешественники, скажите что у вас есть что-то для меня."
+text = "Ров затоплен, гарнизон у стен. Но мне докладывают о шёпоте в деревне. Вы нашли что-нибудь, чего нет в моих распоряжениях?"
 speaker = ExtResource("3_4jtl6")
 portrait = ExtResource("1_j30ot")
 emotion = 4

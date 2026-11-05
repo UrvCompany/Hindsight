@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
 
+CursorManager="*res://Autoload/cursor_manager.gd"
 SceneStateGlobal="*uid://jkkxhebkg8rk"
 SupportingSceneManager="*res://Autoload/supporting_scene_manager.tscn"
 DialogueManager="*uid://dpihlkl8qbc3y"

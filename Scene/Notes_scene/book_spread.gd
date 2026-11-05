@@ -11,6 +11,11 @@ func _ready() -> void:
 	font.font_names = PackedStringArray(["Georgia", "Noto Serif", "Times New Roman"])
 	for paragraph in [paragraph_1, paragraph_2]:
 		paragraph.add_theme_font_override("normal_font", font)
+		var bold_font := SystemFont.new()
+		bold_font.font_names = font.font_names
+		bold_font.font_weight = 700
+		paragraph.add_theme_font_override("bold_font", bold_font)
+		paragraph.add_theme_font_size_override("bold_font_size", 26)
 		paragraph.add_theme_font_size_override("normal_font_size", 30)
 		paragraph.add_theme_constant_override("line_separation", 9)
 		paragraph.add_theme_color_override("default_color", Color("382c22"))

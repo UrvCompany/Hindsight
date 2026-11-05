@@ -2,18 +2,18 @@ extends Area2D
 
 
 @export_file("*.tscn") var target_scene_path: String = "res://Scene/Level1/Village/Village.tscn"
-@export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_down.png")
+@export var cursor_texture: Texture2D = preload("res://Image/Arrow/cursor_down.svg")
 
 
 
 func _on_mouse_entered() -> void:
 	var access_pass = may_i_go() 
 	if access_pass:
-		Input.set_custom_mouse_cursor(cursor_texture)
+		CursorManager.show_transition(cursor_texture)
 
 
 func _on_mouse_exited() -> void:
-	Input.set_custom_mouse_cursor(null)
+	CursorManager.reset()
 
 
 func _on_input_event(
@@ -44,7 +44,7 @@ func choise_scene_path():
 	"""
 	
 	if SceneStateGlobal.STAGE == 2 or SceneStateGlobal.STAGE == 1:
-			Input.set_custom_mouse_cursor(null)
+			CursorManager.reset()
 			SceneStateGlobal.current_scene = get_tree().get_current_scene().scene_file_path
 			return target_scene_path
 

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="DialogueChoice" format=3 uid="uid://tfxd10v7bgls"]
 
 [ext_resource type="Script" uid="uid://b12ins5b06y1q" path="res://Data/Dialogues/dialogue_choice.gd" id="1_cs4lg"]
-[ext_resource type="Resource" path="res://Data/Dialogues/King/King_lvl_1_stage_3_defeat.tres" id="2_reply"]
+[ext_resource type="Resource" uid="uid://xrv0o3m34x67" path="res://Data/Dialogues/King/King_lvl_1_stage_3_defeat.tres" id="2_reply"]
 
 [resource]
 script = ExtResource("1_cs4lg")
-text = "Дядь, вообще не моя проблема, все по кайфу делаешь."
+text = "Мне нечего добавить к вашим приготовлениям. Оставьте действующий план без изменений."
 next_dialogue = ExtResource("2_reply")
 metadata/_custom_type_script = "uid://b12ins5b06y1q"

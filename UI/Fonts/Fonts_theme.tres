@@ -1,0 +1,43 @@
+[gd_resource type="Theme" format=3 uid="uid://cd5k1vyswud6y"]
+
+[ext_resource type="FontVariation" uid="uid://suxha3bp5e7w" path="res://UI/Fonts/Montserrat_FontVariation_wght_400.tres" id="1_8p517"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hprto"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.09019608, 0.10980392, 0.14117648, 1)
+border_color = Color(0.5019608, 0.39215687, 0.2627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5jgj"]
+bg_color = Color(0.09019608, 0.10980392, 0.14117648, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5019608, 0.39215687, 0.2627451, 1)
+expand_margin_left = 2.0
+expand_margin_top = 36.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ei1jt"]
+bg_color = Color(0.09019608, 0.10980392, 0.14117648, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.5019608, 0.39215687, 0.2627451, 1)
+expand_margin_left = 2.0
+expand_margin_top = 36.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[resource]
+default_font = ExtResource("1_8p517")
+default_font_size = 16
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_hprto")
+Window/font_sizes/title_font_size = 100
+Window/styles/embedded_border = SubResource("StyleBoxFlat_i5jgj")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxFlat_ei1jt")

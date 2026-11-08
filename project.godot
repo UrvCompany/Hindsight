@@ -24,6 +24,10 @@ SaveManager="*uid://bny4v85lw548c"
 EndingManager="*res://Autoload/ending_manager.gd"
 MusicManager="*uid://h62wffne5htm"
 
+[copy_files_on_export]
+
+files=Array[PackedStringArray]([PackedStringArray("res://ThirdPartyLicenses", "ThirdPartyLicenses", "")])
+
 [display]
 
 window/size/viewport_width=1920
@@ -34,6 +38,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="Hindsight"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/copy_files_on_export/plugin.cfg")
 
 [gui]
 

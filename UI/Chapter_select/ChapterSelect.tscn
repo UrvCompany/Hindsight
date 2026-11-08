@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cg4kfokfijuls"]
 
 [ext_resource type="Script" uid="uid://vqauly4sqt1y" path="res://UI/Chapter_select/chapter_select.gd" id="1"]
-[ext_resource type="Theme" uid="uid://cd5k1vyswud6y" path="res://UI/Fonts_theme.tres" id="1_ccmwx"]
+[ext_resource type="Theme" uid="uid://cd5k1vyswud6y" path="res://UI/Fonts/Fonts_theme.tres" id="1_ccmwx"]
 
 [node name="ChapterSelect" type="Control" unique_id=1124094482]
 layout_mode = 3

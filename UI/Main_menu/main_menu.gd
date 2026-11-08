@@ -6,6 +6,7 @@ var confirmation: ConfirmationDialog
 func _ready() -> void:
 	$LeftPanel/BoxContainer/StartButton.pressed.connect(_on_start_pressed)
 	confirmation = ConfirmationDialog.new()
+	confirmation.theme = preload("res://UI/Fonts_theme.tres")
 	confirmation.title = "Начать новую игру?"
 	confirmation.dialog_text = "Весь прогресс будет сброшен. Это действие нельзя отменить."
 	confirmation.ok_button_text = "Сбросить и начать"

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cyhibh2uwf6gh"]
 
-[ext_resource type="Script" path="res://UI/Main_interface/words_bar.gd" id="1_y6h1m"]
+[ext_resource type="Script" uid="uid://cjdy64e7myemb" path="res://UI/Main_interface/words_bar.gd" id="1_y6h1m"]
+
+[sub_resource type="Theme" id="Theme_dgs6p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6e4e"]
 content_margin_left = 18.0
@@ -26,6 +28,7 @@ script = ExtResource("1_y6h1m")
 offset_top = 852.0
 offset_right = 1920.0
 offset_bottom = 1080.0
+theme = SubResource("Theme_dgs6p")
 theme_override_styles/panel = SubResource("StyleBoxFlat_k6e4e")
 
 [node name="Scroll" type="ScrollContainer" parent="Panel" unique_id=1504462887]

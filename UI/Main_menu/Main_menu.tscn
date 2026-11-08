@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://242r32dcegnm"]
 
 [ext_resource type="Script" uid="uid://dj348yhoqdy31" path="res://UI/Main_menu/main_menu.gd" id="1_bd57o"]
+[ext_resource type="FontVariation" uid="uid://yvh8e4naa08j" path="res://UI/Fonts/Montserrat_FontVariation_wght_600.tres" id="2_hprto"]
 [ext_resource type="Script" uid="uid://b8j5hw0m4y0sx" path="res://UI/Main_menu/continue_button.gd" id="2_k8wto"]
+[ext_resource type="Script" uid="uid://by3u7j3jc4te7" path="res://UI/hover_button.gd" id="3_7oxer"]
 [ext_resource type="Texture2D" uid="uid://73l7kjpgliof" path="res://Image/Interface/main_menu.png" id="3_hprto"]
+
+[sub_resource type="Theme" id="Theme_q1j8p"]
 
 [node name="MainMenu" type="Node2D" unique_id=1332706293]
 script = ExtResource("1_bd57o")
@@ -17,33 +21,58 @@ offset_bottom = 1073.0
 
 [node name="BoxContainer" type="BoxContainer" parent="LeftPanel" unique_id=2097796817]
 layout_mode = 0
-offset_left = 181.0
-offset_top = 201.0
-offset_right = 765.0
-offset_bottom = 929.0
+offset_left = 226.0
+offset_top = 490.0
+offset_right = 637.0
+offset_bottom = 899.0
 alignment = 1
 vertical = true
 
 [node name="StartButton" type="Button" parent="LeftPanel/BoxContainer" unique_id=1183902159]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_hprto")
+theme_override_font_sizes/font_size = 24
 text = "Новая игра"
+flat = true
+script = ExtResource("3_7oxer")
 
 [node name="ContinueButton" type="Button" parent="LeftPanel/BoxContainer" unique_id=1525615891]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_hprto")
+theme_override_font_sizes/font_size = 24
 text = "Продолжить игру"
+flat = true
 script = ExtResource("2_k8wto")
 
 [node name="TutorialButton" type="Button" parent="LeftPanel/BoxContainer" unique_id=188193168]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_hprto")
+theme_override_font_sizes/font_size = 24
 text = "Туториал"
+flat = true
+script = ExtResource("3_7oxer")
 
 [node name="SettingsButton" type="Button" parent="LeftPanel/BoxContainer" unique_id=2094875898]
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_hprto")
+theme_override_font_sizes/font_size = 24
 text = "Настройки"
+flat = true
+script = ExtResource("3_7oxer")
 
 [node name="QuitButton" type="Button" parent="LeftPanel/BoxContainer" unique_id=1489183933]
 layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_q1j8p")
+theme_override_fonts/font = ExtResource("2_hprto")
+theme_override_font_sizes/font_size = 24
 text = "Выход"
+flat = true
+script = ExtResource("3_7oxer")
 
 [node name="RightPanel" type="Control" parent="." unique_id=1947986253]
 layout_mode = 3

@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://b1cpt7jj5gsoj" path="res://Scene/Level1/Castle_interior/CI2/decree_reader.gd" id="2_script"]
 [ext_resource type="Script" uid="uid://gm1cr8hb5bs6" path="res://UI/CollectibleText/collectible_rich_text.gd" id="3_words"]
 
+[sub_resource type="Theme" id="Theme_5r4nv"]
+
 [node name="DecreeReader" type="Control" unique_id=307726021]
 layout_mode = 3
 anchors_preset = 0
@@ -12,6 +14,7 @@ offset_top = 540.0
 offset_right = 960.0
 offset_bottom = 540.0
 scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_5r4nv")
 script = ExtResource("2_script")
 
 [node name="Background" type="TextureRect" parent="." unique_id=273563265]

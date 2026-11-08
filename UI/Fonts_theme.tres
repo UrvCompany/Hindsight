@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cd5k1vyswud6y"]
+
+[ext_resource type="FontVariation" uid="uid://suxha3bp5e7w" path="res://UI/Fonts/Montserrat_FontVariation_wght_400.tres" id="1_8p517"]
+
+[resource]
+default_font = ExtResource("1_8p517")
+default_font_size = 16

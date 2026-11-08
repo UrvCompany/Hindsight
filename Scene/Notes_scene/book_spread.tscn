@@ -1,41 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1shgqsq1e6cq"]
+[gd_scene format=3 uid="uid://b1shgqsq1e6cq"]
 
-[ext_resource type="Texture2D" path="res://Image/Notes_screen/book_spread_painterly.png" id="1"]
-[ext_resource type="Script" path="res://Scene/Notes_scene/book_spread.gd" id="2"]
-[ext_resource type="Script" path="res://UI/CollectibleText/collectible_rich_text.gd" id="3"]
-[ext_resource type="Shader" path="res://Scene/Notes_scene/cover_tint.gdshader" id="4"]
+[ext_resource type="Texture2D" uid="uid://b6hhy53gvkod0" path="res://Image/Notes_screen/book_spread_painterly.png" id="1"]
+[ext_resource type="Script" uid="uid://xeqkpny8q3p8" path="res://Scene/Notes_scene/book_spread.gd" id="2"]
+[ext_resource type="Script" uid="uid://gm1cr8hb5bs6" path="res://UI/CollectibleText/collectible_rich_text.gd" id="3"]
+[ext_resource type="Shader" uid="uid://fg55x2rc67q" path="res://Scene/Notes_scene/cover_tint.gdshader" id="4"]
+
+[sub_resource type="Theme" id="Theme_3b2lj"]
+
 [sub_resource type="ShaderMaterial" id="Cover"]
 shader = ExtResource("4")
+shader_parameter/cover_color = Color(0.3, 0.07, 0.09, 1)
 
-[node name="BookSpread" type="Control"]
+[node name="BookSpread" type="Control" unique_id=184952095]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 1536.0
 offset_bottom = 1024.0
+theme = SubResource("Theme_3b2lj")
 script = ExtResource("2")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=2120120303]
+material = SubResource("Cover")
+layout_mode = 0
 offset_right = 1536.0
 offset_bottom = 1024.0
+mouse_filter = 2
 texture = ExtResource("1")
 expand_mode = 1
-material = SubResource("Cover")
-mouse_filter = 2
 
-[node name="Paragraph1" type="RichTextLabel" parent="."]
+[node name="Paragraph1" type="RichTextLabel" parent="." unique_id=1574528645]
+layout_mode = 0
 offset_left = 150.0
 offset_top = 190.0
 offset_right = 660.0
 offset_bottom = 760.0
 bbcode_enabled = true
-scroll_active = true
 script = ExtResource("3")
 
-[node name="Paragraph2" type="RichTextLabel" parent="."]
+[node name="Paragraph2" type="RichTextLabel" parent="." unique_id=563925199]
+layout_mode = 0
 offset_left = 830.0
 offset_top = 190.0
 offset_right = 1340.0
 offset_bottom = 760.0
 bbcode_enabled = true
-scroll_active = true
 script = ExtResource("3")
 
 [connection signal="meta_clicked" from="Paragraph1" to="." method="_on_meta_clicked"]

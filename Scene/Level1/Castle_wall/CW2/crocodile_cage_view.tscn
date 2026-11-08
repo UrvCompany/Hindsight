@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bvqrp0lr8miqj" path="res://Scene/Level1/Castle_wall/CW2/CrocodileCageSupScene.gd" id="2_3bppr"]
 [ext_resource type="Texture2D" uid="uid://1d520sfdk4vv" path="res://Image/Objects/crocodile_cage_painterly.png" id="2_biy7q"]
 
+[sub_resource type="Theme" id="Theme_scqku"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aioa1"]
 radius = 53.014343
 height = 230.02734
@@ -18,6 +20,7 @@ offset_top = 230.48
 offset_right = 955.76
 offset_bottom = 538.48
 mouse_filter = 2
+theme = SubResource("Theme_scqku")
 
 [node name="CrocodileCage" type="Area2D" parent="." unique_id=527235431]
 position = Vector2(203, 181)

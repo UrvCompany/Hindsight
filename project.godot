@@ -35,6 +35,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="Hindsight"
 
+[gui]
+
+theme/custom="uid://cd5k1vyswud6y"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

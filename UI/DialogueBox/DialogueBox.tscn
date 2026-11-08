@@ -6,6 +6,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrfct"]
 bg_color = Color(0.5946484, 0.70900303, 0.70900303, 0.43529412)
 
+[sub_resource type="Theme" id="Theme_impb4"]
+
 [node name="DialogueBox" type="Control" unique_id=1067716845]
 layout_mode = 3
 anchor_left = 0.29200003
@@ -67,6 +69,7 @@ offset_left = 358.0
 offset_top = 115.0
 offset_right = 642.0
 offset_bottom = 156.0
+theme = SubResource("Theme_impb4")
 
 [node name="ChoiceButton2" type="Button" parent="Panel" unique_id=715285424]
 layout_mode = 0

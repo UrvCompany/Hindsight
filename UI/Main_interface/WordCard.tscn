@@ -1,6 +1,8 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://cn47tyyis5pv5"]
 
-[ext_resource type="Script" path="res://UI/Main_interface/button.gd" id="1_ia8b6"]
+[ext_resource type="Script" uid="uid://cxh3n8hq3q267" path="res://UI/Main_interface/button.gd" id="1_ia8b6"]
+
+[sub_resource type="Theme" id="Theme_soe1f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tw4wq"]
 content_margin_left = 18.0
@@ -69,6 +71,7 @@ corner_radius_bottom_left = 3
 [node name="WordCard" type="Button" unique_id=1652709072]
 custom_minimum_size = Vector2(290, 46)
 size_flags_horizontal = 3
+theme = SubResource("Theme_soe1f")
 theme_override_colors/font_color = Color(0.20392157, 0.16078432, 0.12156863, 1)
 theme_override_colors/font_pressed_color = Color(0.20392157, 0.16078432, 0.12156863, 1)
 theme_override_colors/font_hover_color = Color(0.20392157, 0.16078432, 0.12156863, 1)

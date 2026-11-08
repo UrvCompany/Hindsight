@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://uuvt5s0geevj"]
 
-[ext_resource type="Script" path="res://UI/Intro/intro.gd" id="1"]
+[ext_resource type="Script" uid="uid://cw6lypiyk2kvo" path="res://UI/Intro/intro.gd" id="1"]
 
-[node name="Intro" type="Control"]
+[sub_resource type="Theme" id="Theme_g2kns"]
+
+[node name="Intro" type="Control" unique_id=1310559384]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,4 +12,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = SubResource("Theme_g2kns")
 script = ExtResource("1")

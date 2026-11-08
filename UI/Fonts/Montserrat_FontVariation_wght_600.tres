@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" format=3 uid="uid://yvh8e4naa08j"]
+
+[ext_resource type="FontFile" uid="uid://c8j08vdpq5x6h" path="res://UI/Fonts/Montserrat-VariableFont_wght.ttf" id="1_lwuuc"]
+
+[resource]
+base_font = ExtResource("1_lwuuc")
+variation_opentype = {
+2003265652: 600
+}

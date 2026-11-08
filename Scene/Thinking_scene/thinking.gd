@@ -14,11 +14,9 @@ var cards: Array[RichTextLabel] = []
 var notes_status: Label
 var status: Label
 var advance: Button
-var serif: SystemFont
+const UI_FONT = preload("res://UI/Fonts/Montserrat_FontVariation_wght_400.tres")
 
 func _ready() -> void:
-	serif = SystemFont.new()
-	serif.font_names = PackedStringArray(["Georgia", "Noto Serif", "Times New Roman"])
 	var desk := TextureRect.new()
 	desk.texture = preload("res://Image/Thinking_screen/thinking_desk.png")
 	desk.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -58,7 +56,7 @@ func _label(parent: Node, caption: String, at: Vector2, dimensions: Vector2, fon
 	label.size = dimensions
 	label.text = caption
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	label.add_theme_font_override("font", serif)
+	label.add_theme_font_override("font", UI_FONT)
 	label.add_theme_font_size_override("font_size", font_size)
 	label.add_theme_color_override("font_color", color)
 	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -93,7 +91,7 @@ func _text(parent: Node, source: String, at: Vector2, dimensions: Vector2, saved
 	text.set_script(PLAN_TEXT)
 	text.position = at
 	text.size = dimensions
-	text.add_theme_font_override("normal_font", serif)
+	text.add_theme_font_override("normal_font", UI_FONT)
 	text.add_theme_font_size_override("normal_font_size", font_size)
 	text.add_theme_color_override("default_color", Color("3c3026"))
 	text.add_theme_constant_override("line_separation", 12)

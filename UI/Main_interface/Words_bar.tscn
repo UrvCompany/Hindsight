@@ -24,7 +24,7 @@ corner_radius_bottom_left = 3
 layer = 10
 script = ExtResource("1_y6h1m")
 
-[node name="Panel" type="Panel" parent="." unique_id=1867213966]
+[node name="Panel" type="Panel" parent="." unique_id=1867213966 groups=["dialogue_bottom_ui"]]
 offset_top = 852.0
 offset_right = 1920.0
 offset_bottom = 1080.0

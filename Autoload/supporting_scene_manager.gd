@@ -95,6 +95,10 @@ func open(scene: PackedScene, data: Variant = null) -> Control:
 
 	current_instance = instance as Control
 	container.add_child(current_instance)
+	if current_instance is DialogueBox:
+		current_instance.bottom_ui = (
+		get_tree().get_first_node_in_group("dialogue_bottom_ui") as Control
+	)
 
 	if data != null:
 		if current_instance.has_method("setup"):

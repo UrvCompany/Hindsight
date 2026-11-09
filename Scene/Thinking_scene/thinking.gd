@@ -177,7 +177,7 @@ func _is_correct() -> bool:
 	var answers: Array = ANSWERS.CORRECT_ANSWERS.get(SceneStateGlobal.CURRENT_LEVEL, {}).get(viewed_stage, [])
 	if answers.is_empty(): return false
 	for i in range(answers.size()):
-		if plan.words.get("slot_%d" % i, "") != answers[i]: return false
+		if plan.words.get("slot_%d" % i, "") != answers[i]: return true ## true ДЛЯ ДЕБАГА 
 	return true
 
 func _check() -> void:

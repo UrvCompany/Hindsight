@@ -1,4 +1,3 @@
-
 extends Control
 class_name DialogueBox
 
@@ -12,10 +11,24 @@ const BUTTON_COLOR := Color("c4ad83")
 const BUTTON_HOVER := Color("b59a6d")
 const BUTTON_PRESSED := Color("a58a60")
 
-const PORTRAIT_SIZE := 176
-const PANEL_TOP := 0.2
-const PANEL_BOTTOM := 0.6
+const PORTRAIT_SIZE := 144
 
+const PANEL_LEFT := 0.20
+const PANEL_RIGHT := 0.80
+const PANEL_MIN_HEIGHT := 190.0
+const PANEL_MAX_HEIGHT_RATIO := 0.75
+const TEXT_MAX_HEIGHT := 170.0
+
+const BUTTON_HEIGHT := 36.0
+const BUTTON_OPACITY := 0.45
+
+const CHOICE_INSET_HORIZONTAL := -5.0
+const CHOICE_INSET_VERTICAL := -2.0
+
+const NEXT_BUTTON_OFFSET := Vector2(-6.0, -6.0)
+
+
+var bottom_ui: Control
 
 var dialogue_data: DialogueData
 
@@ -31,6 +44,7 @@ var _choice_buttons: Array[Button] = []
 
 func _ready() -> void:
 	_build_interface()
+	resized.connect(_update_panel_size)
 
 
 func _build_interface() -> void:
@@ -42,21 +56,22 @@ func _build_interface() -> void:
 	# Основная бумажная панель.
 	_panel = PanelContainer.new()
 	_panel.name = "Panel"
-	_panel.anchor_left = 0.07
-	_panel.anchor_right = 0.93
-	_panel.anchor_top = PANEL_TOP
-	_panel.anchor_bottom = PANEL_BOTTOM
-	_panel.custom_minimum_size.y = 360
+	_panel.anchor_left = PANEL_LEFT
+	_panel.anchor_right = PANEL_RIGHT
+	_panel.anchor_top = 0.5
+	_panel.anchor_bottom = 0.5
+	_panel.offset_top = -PANEL_MIN_HEIGHT / 2.0
+	_panel.offset_bottom = PANEL_MIN_HEIGHT / 2.0
 	_panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	_panel.add_theme_stylebox_override("panel", _make_paper_style())
 	add_child(_panel)
 
 	# Внутренние отступы панели.
 	var margin := MarginContainer.new()
-	margin.add_theme_constant_override("margin_left", 18)
-	margin.add_theme_constant_override("margin_right", 18)
-	margin.add_theme_constant_override("margin_top", 16)
-	margin.add_theme_constant_override("margin_bottom", 16)
+	margin.add_theme_constant_override("margin_left", 14)
+	margin.add_theme_constant_override("margin_right", 14)
+	margin.add_theme_constant_override("margin_top", 12)
+	margin.add_theme_constant_override("margin_bottom", 12)
 	_panel.add_child(margin)
 
 	var outer := HBoxContainer.new()
@@ -125,20 +140,44 @@ func _build_interface() -> void:
 	_next_button.name = "NextButton"
 	_next_button.text = "Продолжить  →"
 	_next_button.size_flags_horizontal = Control.SIZE_SHRINK_END
-	_next_button.add_theme_color_override("font_color", MUTED_INK)
+
+	_next_button.add_theme_color_override("font_color", INK_COLOR)
 	_next_button.add_theme_color_override("font_hover_color", INK_COLOR)
+	_next_button.add_theme_color_override("font_pressed_color", Color.WHITE)
+	_next_button.add_theme_color_override("font_hover_pressed_color", Color.WHITE)
 	_next_button.add_theme_font_size_override("font_size", 16)
+
 	_next_button.add_theme_stylebox_override(
-		"normal", _make_choice_style(Color(0, 0, 0, 0))
+		"normal", _make_choice_style(BUTTON_COLOR)
 	)
 	_next_button.add_theme_stylebox_override(
-		"hover", _make_choice_style(Color(0.35, 0.25, 0.16, 0.12))
+		"hover", _make_choice_style(BUTTON_HOVER)
 	)
+	_next_button.add_theme_stylebox_override(
+		"pressed", _make_choice_style(BUTTON_PRESSED)
+	)
+	_next_button.add_theme_stylebox_override(
+		"hover_pressed", _make_choice_style(BUTTON_PRESSED)
+	)
+
+	# Обёртка позволяет смещать кнопку внутри VBoxContainer.
+	var next_button_holder := Control.new()
+	next_button_holder.name = "NextButtonHolder"
+	next_button_holder.custom_minimum_size = _next_button.get_combined_minimum_size()
+	next_button_holder.size_flags_horizontal = Control.SIZE_SHRINK_END
+	content.add_child(next_button_holder)
+
+	_next_button.position = NEXT_BUTTON_OFFSET
+	_next_button.size = _next_button.get_combined_minimum_size()
+	next_button_holder.add_child(_next_button)
+
 	_next_button.pressed.connect(_on_next_button_pressed)
-	content.add_child(_next_button)
 
 	_choices_box.hide()
-	_next_button.hide()
+	next_button_holder.hide()
+
+	# Сохраняем ссылку на обёртку для управления видимостью.
+	_next_button.set_meta("holder", next_button_holder)
 
 
 func _make_paper_style() -> StyleBoxTexture:
@@ -158,9 +197,19 @@ func _make_paper_style() -> StyleBoxTexture:
 	return style
 
 
-func _make_choice_style(color: Color) -> StyleBoxFlat:
+# Стиль подложек кнопок.
+func _make_choice_style(
+	color: Color,
+	is_choice: bool = false
+) -> StyleBoxFlat:
 	var style := StyleBoxFlat.new()
-	style.bg_color = color
+
+	style.bg_color = Color(
+		color.r,
+		color.g,
+		color.b,
+		color.a * BUTTON_OPACITY
+	)
 
 	style.border_width_left = 0
 	style.border_width_right = 0
@@ -169,8 +218,14 @@ func _make_choice_style(color: Color) -> StyleBoxFlat:
 
 	style.content_margin_left = 12
 	style.content_margin_right = 12
-	style.content_margin_top = 8
-	style.content_margin_bottom = 8
+	style.content_margin_top = 4
+	style.content_margin_bottom = 4
+
+	if is_choice:
+		style.expand_margin_left = CHOICE_INSET_HORIZONTAL
+		style.expand_margin_right = CHOICE_INSET_HORIZONTAL
+		style.expand_margin_top = CHOICE_INSET_VERTICAL
+		style.expand_margin_bottom = CHOICE_INSET_VERTICAL
 
 	return style
 
@@ -179,28 +234,114 @@ func _create_choice_button(index: int, choice: DialogueChoice) -> Button:
 	var button := Button.new()
 	button.name = "ChoiceButton%d" % (index + 1)
 	button.text = choice.text
-	button.custom_minimum_size.y = 42
+	button.custom_minimum_size.y = BUTTON_HEIGHT
 	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 
 	button.add_theme_color_override("font_color", INK_COLOR)
 	button.add_theme_color_override("font_hover_color", INK_COLOR)
+	button.add_theme_color_override("font_pressed_color", Color.WHITE)
+	button.add_theme_color_override("font_hover_pressed_color", Color.WHITE)
 	button.add_theme_font_size_override("font_size", 16)
 
 	button.add_theme_stylebox_override(
-		"normal", _make_choice_style(BUTTON_COLOR)
+		"normal", _make_choice_style(BUTTON_COLOR, true)
 	)
 	button.add_theme_stylebox_override(
-		"hover", _make_choice_style(BUTTON_HOVER)
+		"hover", _make_choice_style(BUTTON_HOVER, true)
 	)
 	button.add_theme_stylebox_override(
-		"pressed", _make_choice_style(BUTTON_PRESSED)
+		"pressed", _make_choice_style(BUTTON_PRESSED, true)
+	)
+	button.add_theme_stylebox_override(
+		"hover_pressed", _make_choice_style(BUTTON_PRESSED, true)
 	)
 
 	button.pressed.connect(_on_choice_pressed.bind(index))
 
 	return button
+
+
+# Автоматически подбираем высоту и положение панели.
+func _update_panel_size() -> void:
+	# Даём контейнерам время рассчитать размеры.
+	await get_tree().process_frame
+
+	if not is_instance_valid(_panel):
+		return
+
+	var text_height := _lines_box.get_combined_minimum_size().y
+
+	# Ограничиваем видимую область текста.
+	var visible_text_height := clampf(
+		text_height,
+		55.0,
+		TEXT_MAX_HEIGHT
+	)
+
+	_lines_scroll.custom_minimum_size.y = visible_text_height
+
+	var choices_height := 0.0
+
+	if _choices_box.visible:
+		choices_height = _choices_box.get_combined_minimum_size().y
+
+	var next_height := 0.0
+	var next_button_holder := _next_button.get_meta("holder") as Control
+
+	if is_instance_valid(next_button_holder) and next_button_holder.visible:
+		next_height = next_button_holder.get_combined_minimum_size().y
+
+	# Высота правой части панели.
+	var content_height := (
+		_name_label.get_combined_minimum_size().y
+		+ 1.0
+		+ visible_text_height
+		+ choices_height
+		+ next_height
+		+ 24.0
+	)
+
+	# Учитываем портрет и внутренние отступы.
+	var panel_height := maxf(
+		content_height + 56.0,
+		PORTRAIT_SIZE + 56.0
+	)
+
+	var viewport_size := get_viewport_rect().size
+
+	# Учитываем нижнюю панель интерфейса.
+	var bottom_reserved := 0.0
+
+	if is_instance_valid(bottom_ui) and bottom_ui.visible:
+		var bottom_rect := bottom_ui.get_global_rect()
+
+		bottom_reserved = (
+			viewport_size.y - bottom_rect.position.y
+		)
+
+		bottom_reserved = clampf(
+			bottom_reserved,
+			0.0,
+			viewport_size.y
+		)
+
+	# Доступная область над нижним интерфейсом.
+	var available_height := viewport_size.y - bottom_reserved
+
+	# Ограничиваем высоту панели.
+	panel_height = maxf(panel_height, PANEL_MIN_HEIGHT)
+
+	var max_height := available_height * PANEL_MAX_HEIGHT_RATIO
+
+	panel_height = minf(panel_height, max_height)
+
+	# Центрируем относительно доступной области.
+	var center_offset := -bottom_reserved / 2.0
+
+	_panel.offset_top = center_offset - panel_height / 2.0
+	_panel.offset_bottom = center_offset + panel_height / 2.0
 
 
 func setup(data: Variant) -> void:
@@ -227,7 +368,10 @@ func _render_dialogue() -> void:
 	_name_label.text = ""
 	_portrait.texture = null
 	_choices_box.hide()
-	_next_button.hide()
+
+	var next_button_holder := _next_button.get_meta("holder") as Control
+	if is_instance_valid(next_button_holder):
+		next_button_holder.hide()
 
 	var primary_speaker: CharacterData = dialogue_data.character
 
@@ -299,7 +443,11 @@ func _render_dialogue() -> void:
 			_choices_box.add_child(button)
 			_choice_buttons.append(button)
 	else:
-		_next_button.show()
+		if is_instance_valid(next_button_holder):
+			next_button_holder.show()
+
+	# Пересчитываем высоту после создания содержимого.
+	_update_panel_size()
 
 
 func _on_next_button_pressed() -> void:

@@ -13,9 +13,9 @@ func _ready() -> void:
 	$LeftPanel/BoxContainer/QuitButton.pressed.connect(_on_quit_button_pressed)
 
 	confirmation = ConfirmationDialog.new()
+	confirmation.borderless = true #убирает заголовок confirmation.title на котором и висит драгэнддроп, убрал строку с этим методом
 	confirmation.theme = UI_THEME
 	confirmation.transparent = true
-	confirmation.title = "Начать новую игру?"
 	confirmation.dialog_text = "Весь прогресс будет сброшен. Это действие нельзя отменить."
 	confirmation.ok_button_text = "Сбросить и начать"
 	confirmation.cancel_button_text = "Отмена"
@@ -31,9 +31,9 @@ func _ready() -> void:
 	add_child(confirmation)
 
 	quit_confirmation = ConfirmationDialog.new()
+	quit_confirmation.borderless = true #убирает заголовок quit_confirmation.title на котором и висит драгэнддроп, убрал строку с этим методом
 	quit_confirmation.theme = UI_THEME
 	quit_confirmation.transparent = true
-	quit_confirmation.title = "Выход"
 	quit_confirmation.dialog_text = "Вы действительно хотите выйти из игры?"
 	quit_confirmation.ok_button_text = "Выйти"
 	quit_confirmation.cancel_button_text = "Остаться"

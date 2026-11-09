@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6pmibyeera3n"
-path="res://.godot/imported/castle_interior_2_painterly.png-ec762667cd70e9c9dc76bb62acaaaef2.ctex"
+uid="uid://hi38e886jhl8"
+path="res://.godot/imported/dialogue_paper.svg-01e4b57bb1698853abded4eb22c39456.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/Scenes/castle_interior_2_painterly.png"
-dest_files=["res://.godot/imported/castle_interior_2_painterly.png-ec762667cd70e9c9dc76bb62acaaaef2.ctex"]
+source_file="res://Image/Interface/dialogue_paper.svg"
+dest_files=["res://.godot/imported/dialogue_paper.svg-01e4b57bb1698853abded4eb22c39456.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

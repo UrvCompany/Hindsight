@@ -12,6 +12,17 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _input(event: InputEvent) -> void:
+	if is_instance_valid(current_instance):
+		if (
+			event is InputEventMouseButton
+			and event.button_index == MOUSE_BUTTON_LEFT
+			and event.pressed
+		):
+			var panel := current_instance.get_node_or_null("Panel") as Control
+			if panel != null and not panel.get_global_rect().has_point(event.position):
+				close()
+				get_viewport().set_input_as_handled()
+				return
 	if not event.is_action_pressed("ui_cancel") or event.is_echo():
 		return
 	if is_instance_valid(current_instance):

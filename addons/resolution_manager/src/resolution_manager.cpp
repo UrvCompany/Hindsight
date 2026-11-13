@@ -1,3 +1,4 @@
+
 #include <windows.h>
 #include <string>
 #include <map>
@@ -139,6 +140,11 @@ void ResolutionManager::_bind_methods() {
         D_METHOD("commit_resolution", "device_name"),
         &ResolutionManager::commit_resolution
     );
+
+    ClassDB::bind_method(
+        D_METHOD("get_device_name_at_position", "x", "y"),
+        &ResolutionManager::get_device_name_at_position
+    );
 }
 
 String ResolutionManager::get_test_message() const {
@@ -171,6 +177,46 @@ Array ResolutionManager::get_available_monitors() const {
     }
 
     return monitors;
+}
+
+String ResolutionManager::get_device_name_at_position(int x, int y) const {
+    for (DWORD i = 0; ; i++) {
+        DISPLAY_DEVICEW device = {};
+        device.cb = sizeof(DISPLAY_DEVICEW);
+
+        if (!EnumDisplayDevicesW(nullptr, i, &device, 0)) {
+            break;
+        }
+
+        if (!(device.StateFlags & DISPLAY_DEVICE_ATTACHED_TO_DESKTOP)) {
+            continue;
+        }
+
+        DEVMODEW mode = {};
+        mode.dmSize = sizeof(DEVMODEW);
+
+        if (!EnumDisplaySettingsW(
+            device.DeviceName,
+            ENUM_CURRENT_SETTINGS,
+            &mode
+        )) {
+            continue;
+        }
+
+        int left = mode.dmPosition.x;
+        int top = mode.dmPosition.y;
+        int right = left + static_cast<int>(mode.dmPelsWidth);
+        int bottom = top + static_cast<int>(mode.dmPelsHeight);
+
+        if (
+            x >= left && x < right &&
+            y >= top && y < bottom
+        ) {
+            return wide_to_godot_string(device.DeviceName);
+        }
+    }
+
+    return String();
 }
 
 int ResolutionManager::set_resolution(

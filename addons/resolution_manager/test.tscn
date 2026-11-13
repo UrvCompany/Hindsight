@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://drnj4ndi11dtm"]
+
+[sub_resource type="GDScript" id="GDScript_mqnb6"]
+script/source = "extends Node
+
+func _ready() -> void:
+	print(\"Extension class exists: \", ClassDB.class_exists(\"ResolutionManager\"))
+
+	if ClassDB.class_exists(\"ResolutionManager\"):
+		var manager = ClassDB.instantiate(\"ResolutionManager\")
+		print(manager.get_test_message())
+"
+
+[node name="Test" type="Node" unique_id=1089356276]
+script = SubResource("GDScript_mqnb6")

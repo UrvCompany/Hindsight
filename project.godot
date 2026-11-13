@@ -23,6 +23,7 @@ DialogueManager="*uid://dpihlkl8qbc3y"
 SaveManager="*uid://bny4v85lw548c"
 EndingManager="*res://Autoload/ending_manager.gd"
 MusicManager="*uid://h62wffne5htm"
+SettingsManager="*uid://ddxggoviwk0ui"
 
 [copy_files_on_export]
 
@@ -32,6 +33,7 @@ files=Array[PackedStringArray]([PackedStringArray("res://ThirdPartyLicenses", "T
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/initial_position_type=0
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

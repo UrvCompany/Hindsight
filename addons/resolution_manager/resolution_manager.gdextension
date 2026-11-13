@@ -1,0 +1,10 @@
+[configuration]
+
+entry_symbol = "resolution_manager_library_init"
+compatibility_minimum = "4.7"
+reloadable = true
+
+[libraries]
+
+windows.debug.x86_64 = "res://addons/resolution_manager/bin/windows/resolution_manager.dll"
+windows.release.x86_64 = "res://addons/resolution_manager/bin/windows/resolution_manager.dll"

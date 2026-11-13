@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://d3p5763ky7wgu"]
+
+[sub_resource type="GDScript" id="GDScript_imsx4"]
+script/source = "
+extends Node
+
+func _ready() -> void:
+	var manager := ResolutionManager.new()
+	var monitors: Array = manager.get_available_monitors()
+
+	if monitors.is_empty():
+		print(\"No active monitors found\")
+		return
+
+	var monitor: Dictionary = monitors[0]
+	var device_name: String = monitor[\"device_name\"]
+
+	print(\"Testing monitor: \", device_name)
+	print(\"Changing resolution to 1920x1080 @ 180 Hz\")
+
+	var result: int = manager.set_resolution(
+		device_name,
+		1920,
+		1080,
+		180
+	)
+
+	print(\"Change result: \", result)
+
+	if result != 0:
+		print(\"Resolution change failed\")
+		return
+
+	print(\"Resolution changed successfully\")
+
+	await get_tree().create_timer(5.0).timeout
+
+	print(\"Restoring original resolution\")
+
+	var restore_result: int = manager.restore_resolution(device_name)
+
+	print(\"Restore result: \", restore_result)
+"
+
+[node name="test_resolutions" type="Node" unique_id=180834559]
+script = SubResource("GDScript_imsx4")

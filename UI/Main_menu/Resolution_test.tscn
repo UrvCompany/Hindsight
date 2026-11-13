@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://de3iviwlvflot"]
+
+[sub_resource type="GDScript" id="GDScript_hb70k"]
+script/source = "
+extends Node
+
+
+func _ready() -> void:
+	var screen := DisplayServer.window_get_current_screen()
+	var window := get_window()
+
+	print(\"OS: \", OS.get_name())
+	print(\"Display Server: \", DisplayServer.get_name())
+	print(\"Active Screen: \", screen)
+	print(\"Current Resolution: \", DisplayServer.screen_get_size(screen))
+	print(\"Window Mode: \", window.mode)
+"
+
+[node name="ResolutionTest" type="Node2D" unique_id=55469708]
+script = SubResource("GDScript_hb70k")

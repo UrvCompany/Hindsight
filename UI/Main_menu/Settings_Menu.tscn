@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dh4guqxrf6y4y"]
+
+[ext_resource type="Script" uid="uid://c4grbuvmgxeo6" path="res://UI/Main_menu/Settings_Menu.gd" id="1_baxw1"]
+
+[node name="SettingsMenu" type="Control" unique_id=2069889414]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_baxw1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1394073106]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=1933021136]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer" unique_id=203357325]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ВРЕМЕННО" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1645934855]
+layout_mode = 2
+text = "если хочешь протестить настройки разрешения, зайди в Game на самом верху в годот, в правом верхнем углу вьюпорта нажми три точки кебаб ии убери галку embed game on next play"
+autowrap_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1204656652]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Display Settings"
+
+[node name="DisplayModeRow" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=31367427]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/DisplayModeRow" unique_id=1298665796]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Display Mode"
+
+[node name="DisplayModeOption" type="OptionButton" parent="MarginContainer/CenterContainer/VBoxContainer/DisplayModeRow" unique_id=2002096018]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+
+[node name="ResolutionRow" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=416803460]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/ResolutionRow" unique_id=2061857716]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Resolution"
+
+[node name="ResolutionOption" type="OptionButton" parent="MarginContainer/CenterContainer/VBoxContainer/ResolutionRow" unique_id=1776636006]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+
+[node name="RefreshRateRow" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=256824372]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/RefreshRateRow" unique_id=1703160964]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Refresh rate"
+
+[node name="RefreshRateOption" type="OptionButton" parent="MarginContainer/CenterContainer/VBoxContainer/RefreshRateRow" unique_id=1813178587]
+custom_minimum_size = Vector2(240, 40)
+layout_mode = 2
+
+[node name="ButtonsRow" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=508106023]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ApplyButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/ButtonsRow" unique_id=1725284042]
+custom_minimum_size = Vector2(140, 44)
+layout_mode = 2
+text = "Apply"
+
+[node name="BackButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer/ButtonsRow" unique_id=824552116]
+custom_minimum_size = Vector2(140, 44)
+layout_mode = 2
+text = "Back"

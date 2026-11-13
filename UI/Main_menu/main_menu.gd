@@ -1,7 +1,7 @@
-
 extends Node
 
 const INTRO = "res://UI/Intro/Intro.tscn"
+const SETTINGS = "res://UI/Main_menu/Settings_Menu.tscn"
 const UI_THEME = preload("res://UI/Fonts/Fonts_theme.tres")
 
 var confirmation: ConfirmationDialog
@@ -10,10 +10,11 @@ var quit_confirmation: ConfirmationDialog
 
 func _ready() -> void:
 	$LeftPanel/BoxContainer/StartButton.pressed.connect(_on_start_pressed)
+	$LeftPanel/BoxContainer/SettingsButton.pressed.connect(_on_settings_pressed)
 	$LeftPanel/BoxContainer/QuitButton.pressed.connect(_on_quit_button_pressed)
 
 	confirmation = ConfirmationDialog.new()
-	confirmation.borderless = true #убирает заголовок confirmation.title на котором и висит драгэнддроп, убрал строку с этим методом
+	confirmation.borderless = true
 	confirmation.theme = UI_THEME
 	confirmation.transparent = true
 	confirmation.dialog_text = "Весь прогресс будет сброшен. Это действие нельзя отменить."
@@ -31,7 +32,7 @@ func _ready() -> void:
 	add_child(confirmation)
 
 	quit_confirmation = ConfirmationDialog.new()
-	quit_confirmation.borderless = true #убирает заголовок quit_confirmation.title на котором и висит драгэнддроп, убрал строку с этим методом
+	quit_confirmation.borderless = true
 	quit_confirmation.theme = UI_THEME
 	quit_confirmation.transparent = true
 	quit_confirmation.dialog_text = "Вы действительно хотите выйти из игры?"
@@ -47,6 +48,10 @@ func _ready() -> void:
 
 	quit_confirmation.confirmed.connect(_on_quit_confirmed)
 	add_child(quit_confirmation)
+
+
+func _on_settings_pressed() -> void:
+	get_tree().change_scene_to_file(SETTINGS)
 
 
 func _on_quit_button_pressed() -> void:

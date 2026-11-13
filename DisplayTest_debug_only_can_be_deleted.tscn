@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dxcg22x8nspcf"]
+
+[ext_resource type="Script" uid="uid://8ij7of3dif4r" path="res://display_test.gd" id="1_qi0gp"]
+
+[node name="DisplayTest" type="ColorRect" unique_id=922499571]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.7195905, 0.31709433, 0.3177944, 1)
+script = ExtResource("1_qi0gp")
+
+[node name="ViewportLabel" type="Label" parent="." unique_id=1925389358]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 183.0
+offset_right = 620.0
+offset_bottom = 278.0
+text = "привет"
+
+[node name="WindowLabel" type="Label" parent="." unique_id=867521108]
+layout_mode = 0
+offset_left = 1116.0
+offset_top = 170.0
+offset_right = 1309.0
+offset_bottom = 327.0
+text = "пока"
+
+[node name="WindowedButton" type="Button" parent="." unique_id=1635300488]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 501.0
+offset_right = 234.0
+offset_bottom = 582.0
+text = "WindowedButton"
+
+[node name="BorderlessButton" type="Button" parent="." unique_id=54741685]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 610.0
+offset_right = 240.0
+offset_bottom = 698.0
+text = "BorderlessButton"
+
+[node name="FullscreenButton" type="Button" parent="." unique_id=928856658]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 723.0
+offset_right = 242.0
+offset_bottom = 806.0
+text = "FullscreenButton"
+
+[node name="Resolution720Button" type="Button" parent="." unique_id=909170640]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 835.0
+offset_right = 252.0
+offset_bottom = 924.0
+text = "Resolution720Button"
+
+[node name="Resolution1080Button" type="Button" parent="." unique_id=132212083]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 957.0
+offset_right = 244.0
+offset_bottom = 1033.0
+text = "Resolution1080Button"

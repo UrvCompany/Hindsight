@@ -31,8 +31,11 @@ layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="ВРЕМЕННО" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1645934855]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "если хочешь протестить настройки разрешения, зайди в Game на самом верху в годот, в правом верхнем углу вьюпорта нажми три точки кебаб ии убери галку embed game on next play"
+horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Title" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer" unique_id=1204656652]

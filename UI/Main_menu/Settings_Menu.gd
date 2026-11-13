@@ -19,6 +19,7 @@ const DISPLAY_MODES := [
 var _confirmation_dialog: ConfirmationDialog
 var _countdown_timer: Timer
 var _countdown := 15
+var _opened_as_overlay := false
 
 
 func _ready() -> void:
@@ -325,4 +326,10 @@ func _on_back_pressed() -> void:
 	if SettingsManager._preview_active:
 		return
 
-	get_tree().change_scene_to_file("res://UI/Main_menu/Main_menu.tscn")
+	if _opened_as_overlay:
+		back_requested.emit()
+	else:
+		get_tree().change_scene_to_file("res://UI/Main_menu/Main_menu.tscn")
+		
+func open_as_overlay() -> void:
+	_opened_as_overlay = true
